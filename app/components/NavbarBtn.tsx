@@ -25,7 +25,7 @@ export default function NavbarBtn({ path }: NavbarBtnProps) {
         transition={{ duration: 0.2, ease: "easeInOut" }}
         className="px-10 py-4 border-2 border-white rounded-[100px]"
       >
-        Let's Cook
+        Let's Cook!
       </motion.a>
     </div>
   );

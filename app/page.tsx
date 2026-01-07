@@ -1,5 +1,6 @@
 import LinkedInBrand from "./components/LinkedInBrand";
 import Navbar from "./components/Navbar";
+import Services from "./components/Services";
 import Showcase from "./components/Showcase";
 import Specs from "./components/Specs";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Showcase />
       <Specs />
       <LinkedInBrand />
+      <Services />
 {/* <svg
   viewBox="0 0 1440 120"
   preserveAspectRatio="none"
