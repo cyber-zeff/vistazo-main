@@ -33,12 +33,10 @@
 }
 
 .quantaFont {
-  color: #fff;
   font-family: "QuantaGroteskPro";
-  font-size: 128px;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0rem;
+  letter-spacing: 0; 
 }

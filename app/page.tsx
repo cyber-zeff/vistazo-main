@@ -10,8 +10,8 @@ export default function Home() {
       <Navbar />
       <Showcase />
       <Specs />
-      <LinkedInBrand />
       <Services />
+      <LinkedInBrand />
 {/* <svg
   viewBox="0 0 1440 120"
   preserveAspectRatio="none"

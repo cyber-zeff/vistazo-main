@@ -14,12 +14,12 @@ export default function Showcase() {
         {/* DESKTOP / LAPTOP VERSION */}
         <div className="hidden md:block relative z-10 w-full">
 
-          <h1 className="font-extrabold text-[100px] leading-[1.1] tracking-tight quantaFont">
+          <h1 className="font-extrabold text-[128px] leading-normal tracking-tight quantaFont">
             DESIGNED FOR
           </h1>
 
           {/* Typewriter Line */}
-          <div className="font-extrabold text-[100px] leading-[1.1] tracking-tight quantaFont">
+          <div className="font-extrabold text-[128px] leading-normal tracking-tight quantaFont">
             <span className="text-[#F9D94D]">
               <Typewriter />
             </span>
@@ -54,7 +54,7 @@ export default function Showcase() {
               />
             </div>
 
-            <h1 className="font-extrabold text-[100px] leading-[1.1] tracking-tight quantaFont">
+            <h1 className="font-extrabold text-[128px] leading-normal tracking-tight quantaFont">
               BUILT TO SCALE.
             </h1>
           </div>

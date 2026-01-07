@@ -2,21 +2,21 @@
 
 import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-
 
 const services = [
-    { title: "LOGO & BRAND IDENTITY", image: "/logo-brand-identity-design.jpg" },
-    { title: "WEBSITE DESIGN", image: "/website-design-mockup.png" },
-    { title: "WEBSITE COPYWRITING", image: "/website-copywriting-content.jpg" },
-    { title: "WEB DEVELOPMENT", image: "/web-development-code.png" },
+    { title: "logo & brand identity", image: "#" },
+    { title: "website design", image: "#" },
+    { title: "website copywriting", image: "#" },
+    { title: "web development", image: "#" },
+    {title: "seo optimization", image: "#" }
 ]
 
 function DiamondStar({ className }: { className?: string }) {
     return (
-        <svg className={className} width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
-            <path d="M16 0L20 12L32 16L20 20L16 32L12 20L0 16L12 12L16 0Z" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
+            <path d="M20 0C24.743 16.1245 40 20 40 20C40 20 25.4881 23.8755 20 40C14.5119 23.8755 0 20 0 20C0 20 15.257 16.1245 20 0Z" fill="currentColor" />
         </svg>
+
     )
 }
 
@@ -45,7 +45,7 @@ function ServiceItem({
             tl.to(
                 star,
                 {
-                    rotation: -180,
+                    rotation: 180,
                     duration: 0.5,
                     ease: "power2.out",
                 },
@@ -79,13 +79,13 @@ function ServiceItem({
     return (
         <div
             ref={itemRef}
-            className="group relative flex items-center justify-between px-6 md:px-12 py-6 md:py-8 border-b border-white/20 cursor-pointer transition-colors duration-300 hover:bg-indigo-600/50"
+            className="group relative flex items-center justify-between px-6 md:px-12 py-6 md:py-8 border-b border-white/20 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] rounded-[15px]"
         >
             <div className="flex items-center gap-4 md:gap-6">
-                <div ref={starRef} className="text-white transition-colors duration-300 group-hover:text-yellow-400">
+                <div ref={starRef} className="text-white transition-colors duration-300 group-hover:text-[#F9D94D]">
                     <DiamondStar className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
-                <h3 className="text-2xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight transition-colors duration-300 group-hover:text-yellow-400">
+                <h3 className="text-[48px] quantaFont tracking-tight transition-colors duration-300 group-hover:text-[#F9D94D]">
                     {service.title}
                 </h3>
             </div>
@@ -104,9 +104,12 @@ function ServiceItem({
 
 export default function HoverVistazo() {
     return (
-        <section className="py-16 md:py-24">
-            <div className="max-w-7xl mx-auto px-6 mb-12">
-                <p className="text-white/80 text-lg md:text-xl">
+        <section className="px-25.5 md:py-24">
+            <div className="max-w-7xl mx-auto mb-12">
+                <h2 className="text-[96px] quantaFont leading-normal">
+                    What we serve on <br /> the <span className="text-[#F9D94D]">menu</span>
+                </h2>
+                <p className="text-[20px]">
                     Just everything you actually need to build a personal brand that pays.
                 </p>
             </div>
