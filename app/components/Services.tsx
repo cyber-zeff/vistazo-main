@@ -1,22 +1,21 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import gsap from "gsap"
+import { useRef } from "react"
+import { motion } from "framer-motion"
 
 const services = [
     { title: "logo & brand identity", image: "#" },
     { title: "website design", image: "#" },
     { title: "website copywriting", image: "#" },
     { title: "web development", image: "#" },
-    {title: "seo optimization", image: "#" }
+    { title: "seo optimization", image: "#" },
 ]
 
-function DiamondStar({ className }: { className?: string }) {
+function DiamondStar() {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
-            <path d="M20 0C24.743 16.1245 40 20 40 20C40 20 25.4881 23.8755 20 40C14.5119 23.8755 0 20 0 20C0 20 15.257 16.1245 20 0Z" fill="currentColor" />
+            <path d="M20 0C24.743 16.1245 40 20 40 20C40 20 25.4881 23.8755 20 40C14.5119 23.8755 0 20 0 20C0 20 15.257 16.1245 20 0Z" />
         </svg>
-
     )
 }
 
@@ -27,82 +26,77 @@ function ServiceItem({
     service: { title: string; image: string }
     index: number
 }) {
-    const itemRef = useRef<HTMLDivElement>(null)
-    const starRef = useRef<HTMLDivElement>(null)
-    const cardRef = useRef<HTMLDivElement>(null)
-    const timelineRef = useRef<gsap.core.Timeline | null>(null)
-
-    useEffect(() => {
-        const initGSAP = async () => {
-            const item = itemRef.current
-            const star = starRef.current
-            const card = cardRef.current
-            if (!item || !star || !card) return
-
-            // Create hover timeline
-            const tl = gsap.timeline({ paused: true })
-
-            tl.to(
-                star,
-                {
-                    rotation: 180,
-                    duration: 0.5,
-                    ease: "power2.out",
-                },
-                0,
-            ).to(
-                card,
-                {
-                    x: 0,
-                    opacity: 1,
-                    duration: 0.4,
-                    ease: "power2.out",
-                },
-                0,
-            )
-
-            timelineRef.current = tl
-
-            item.addEventListener("mouseenter", () => tl.play())
-            item.addEventListener("mouseleave", () => tl.reverse())
-        }
-
-        initGSAP()
-
-        return () => {
-            if (timelineRef.current) {
-                timelineRef.current.kill()
-            }
-        }
-    }, [])
+    const tilt = index % 2 === 0 ? 5 : -5
 
     return (
-        <div
-            ref={itemRef}
-            className="group relative flex items-center justify-between px-6 md:px-12 py-6 md:py-8 border-b border-white/20 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] rounded-[15px]"
+        <motion.div
+            whileHover="hover"
+            initial="rest"
+            animate="rest"
+            className="group relative mt-4 md:mt-8 flex items-center justify-between px-3 py-6 md:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] rounded-[15px]"
         >
             <div className="flex items-center gap-4 md:gap-6">
-                <div ref={starRef} className="text-white transition-colors duration-300 group-hover:text-[#F9D94D]">
-                    <DiamondStar className="w-6 h-6 md:w-8 md:h-8" />
-                </div>
+                <motion.div
+                    variants={{
+                        rest: { rotate: 0 },
+                        hover: { rotate: 180 },
+                    }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="text-white transition-colors duration-300 group-hover:text-[#F9D94D]"
+                >
+                    <DiamondStar />
+                </motion.div>
+
                 <h3 className="text-[48px] quantaFont tracking-tight transition-colors duration-300 group-hover:text-[#F9D94D]">
                     {service.title}
                 </h3>
             </div>
 
-            {/* Card that slides in on hover */}
+            {/* Hover Card */}
+            <motion.div
+                variants={{
+                    rest: {
+                        opacity: 0,
+                        scale: 0.85,
+                        rotate: tilt,
+                    },
+                    hover: {
+                        opacity: 1,
+                        scale: 1,
+                        rotate: tilt,
+                    },
+                }}
+                transition={{
+                    type: "spring",
+                    stiffness: 120,
+                    damping: 18,
+                    mass: 0.8,
+                }}
+                style={{
+                    transformOrigin: "90% 50%",
+                    boxShadow:
+                        tilt === 5
+                            ? "8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)"
+                            : "-8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)",
+                }}
+                className="absolute right-8 top-1/2 -translate-y-1/2 w-81.25 h-95.25 bg-gray-100 rounded-[53px] overflow-hidden">
+                <img
+                    src={service.image || "/placeholder.svg"}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                />
+            </motion.div>
+
+            {/* Bottom Divider Line */}
             <div
-                ref={cardRef}
-                className="absolute right-8 md:right-16 w-48 md:w-64 h-64 md:h-80 bg-gray-100 rounded-3xl shadow-2xl opacity-0 translate-x-full overflow-hidden"
-                style={{ transform: "translateX(100px)" }}
-            >
-                <img src={service.image || "/placeholder.svg"} alt={service.title} className="w-full h-full object-cover" />
-            </div>
-        </div>
+                className="absolute left-0 right-0 -bottom-3 h-[0.5px] bg-white
+                    pointer-events-none transition-opacity duration-300 group-hover:opacity-0" />
+
+        </motion.div>
     )
 }
 
-export default function HoverVistazo() {
+export default function Services() {
     return (
         <section className="px-25.5 md:py-24">
             <div className="max-w-7xl mx-auto mb-12">
@@ -113,6 +107,7 @@ export default function HoverVistazo() {
                     Just everything you actually need to build a personal brand that pays.
                 </p>
             </div>
+
             <div className="max-w-7xl mx-auto">
                 {services.map((service, index) => (
                     <ServiceItem key={index} service={service} index={index} />
