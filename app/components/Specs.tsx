@@ -23,7 +23,7 @@ export default function Specs() {
                         <motion.div
                             animate={{ rotate: [0, -360] }}
                             transition={{
-                                duration: 12,
+                                duration: 35,
                                 repeat: Number.POSITIVE_INFINITY,
                                 ease: "linear",
                             }}
