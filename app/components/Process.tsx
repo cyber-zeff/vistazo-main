@@ -27,12 +27,12 @@ const ProcessSection: React.FC = () => {
                 { x: () => window.innerWidth + 150 },
                 {
                     x: 0,
-                    ease: "back.out(0.8)",
+                    ease: "back.out(0.6)",
                     scrollTrigger: {
                         trigger: headingRef.current,
-                        start: "top 75%",
-                        end: "top 40%",
-                        scrub: 1,
+                        start: "top 85%",
+                        end: "top 25%",
+                        scrub: 3,
                         invalidateOnRefresh: true,
                     },
                 }
@@ -43,13 +43,13 @@ const ProcessSection: React.FC = () => {
                 { x: () => -(window.innerWidth + 150) },
                 {
                     x: 0,
-                    ease: "back.out(0.8)",
+                    ease: "back.out(0.6)",
                     stagger: 0.15,
                     scrollTrigger: {
                         trigger: headingRef.current,
-                        start: "top 75%",
-                        end: "top 40%",
-                        scrub: 1,
+                        start: "top 85%",
+                        end: "top 25%",
+                        scrub: 3,
                         invalidateOnRefresh: true,
                     },
                 }
@@ -138,6 +138,39 @@ const ProcessSection: React.FC = () => {
                 duration: 0.5,
             });
 
+            cardsTl.to(cards[0], {
+                y: "-=12",
+                ease: "sine.inOut",
+                duration: 0.6,
+            });
+            cardsTl.to(cards[0], {
+                y: "+=12",
+                ease: "sine.inOut",
+                duration: 0.6,
+            });
+
+            cardsTl.to(cards[1], {
+                y: "-=20",
+                ease: "sine.inOut",
+                duration: 0.6,
+            }, "<");
+            cardsTl.to(cards[1], {
+                y: "+=20",
+                ease: "sine.inOut",
+                duration: 0.6,
+            });
+
+            cardsTl.to(cards[2], {
+                y: "-=12",
+                ease: "sine.inOut",
+                duration: 0.6,
+            }, "<");
+            cardsTl.to(cards[2], {
+                y: "+=12",
+                ease: "sine.inOut",
+                duration: 0.6,
+            });
+
             // Exit
             cardsTl.to(cards[0], {
                 y: -680,
@@ -160,21 +193,6 @@ const ProcessSection: React.FC = () => {
                 ease: "back.in(1.4)",
                 duration: 2,
             }, "-=1.3");
-
-
-            // FLOATY / BOUNCY EFFECT
-            gsap.to(cards, {
-                y: (i) => (i === 1 ? "-=20" : "-=12"),
-                ease: "sine.inOut",
-                stagger: 0.3,
-                scrollTrigger: {
-                    trigger: cardsWrapperRef.current,
-                    start: "top center+=60",
-                    end: "top center-=60",
-                    scrub: 3,
-                    invalidateOnRefresh: true,
-                },
-            });
         });
 
         return () => ctx.revert();
