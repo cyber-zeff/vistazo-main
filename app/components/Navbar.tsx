@@ -117,9 +117,14 @@ export default function WaveNavbar() {
                             >
                                 {link.name}
                                 <motion.span
-                                    animate={{ width: isHovered ? "100%" : "0%" }}
+                                    initial={{ scaleX: 0, transformOrigin: "left" }}
+                                    animate={
+                                        isHovered
+                                            ? { scaleX: 1, transformOrigin: "left" }
+                                            : { scaleX: 0, transformOrigin: "right" }
+                                    }
                                     transition={{ duration: 0.4, ease: "easeInOut" }}
-                                    className="absolute left-0 -bottom-1 h-0.75 bg-white"
+                                    className="absolute left-0 -bottom-1 h-0.75 w-full bg-white"
                                 />
                             </a>
                         );
