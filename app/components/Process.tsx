@@ -27,7 +27,7 @@ const ProcessSection: React.FC = () => {
                 { x: () => window.innerWidth + 150 },
                 {
                     x: 0,
-                    ease: "back.out(1.2)",
+                    ease: "back.out(0.8)",
                     scrollTrigger: {
                         trigger: headingRef.current,
                         start: "top 75%",
@@ -43,7 +43,7 @@ const ProcessSection: React.FC = () => {
                 { x: () => -(window.innerWidth + 150) },
                 {
                     x: 0,
-                    ease: "back.out(1.2)",
+                    ease: "back.out(0.8)",
                     stagger: 0.15,
                     scrollTrigger: {
                         trigger: headingRef.current,
