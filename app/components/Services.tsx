@@ -58,7 +58,7 @@ function ServiceItem({
                     rest: {
                         opacity: 0,
                         scale: 0.85,
-                        rotate: tilt,
+                        rotate: 0, // ✅ changed from tilt → 0
                     },
                     hover: {
                         opacity: 1,
@@ -79,13 +79,9 @@ function ServiceItem({
                             ? "8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)"
                             : "-8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)",
                 }}
-                className="absolute right-8 top-1/2 -translate-y-1/2 w-81.25 h-95.25 bg-gray-100 rounded-[53px] overflow-hidden">
-                <img
-                    src={service.image || "/placeholder.svg"}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                />
-            </motion.div>
+                className="absolute right-8 top-1/2 -translate-y-1/2 w-81.25 h-95.25 bg-gray-100 rounded-[53px] overflow-hidden"
+            />
+
 
             {/* Bottom Divider Line */}
             <div
