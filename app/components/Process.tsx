@@ -72,8 +72,8 @@ const ProcessSection: React.FC = () => {
                 scrollTrigger: {
                     trigger: cardsWrapperRef.current,
                     start: "top center",
-                    end: "+=300%",
-                    scrub: 2,
+                    end: "+=200%",
+                    scrub: 1.5,
                     pin: true,
                     pinSpacing: true,
                     anticipatePin: 1,
@@ -81,21 +81,86 @@ const ProcessSection: React.FC = () => {
                 },
             });
 
+            // Entrance
             cardsTl.to(cards[0], {
                 y: -160,
-                ease: "none",
-                duration: 2,
+                rotation: -2,
+                scale: 1.02,
+                ease: "back.out(1.4)",
+                duration: 1.5,
             });
             cardsTl.to(cards[1], {
                 y: -160,
-                ease: "none",
-                duration: 2,
-            });
+                rotation: 0,
+                scale: 1.05,
+                ease: "back.out(1.4)",
+                duration: 1.5,
+            }, "-=1");
             cardsTl.to(cards[2], {
                 y: -160,
-                ease: "none",
+                rotation: 2,
+                scale: 1.02,
+                ease: "back.out(1.4)",
+                duration: 1.5,
+            }, "-=1");
+
+            // Pause at center
+            cardsTl.to(cards[0], {
+                y: "-=18",
+                ease: "sine.inOut",
+                duration: 0.5,
+            });
+            cardsTl.to(cards[0], {
+                y: "+=18",
+                ease: "sine.inOut",
+                duration: 0.5,
+            });
+
+            cardsTl.to(cards[1], {
+                y: "-=26",
+                ease: "sine.inOut",
+                duration: 0.5,
+            }, "<");
+            cardsTl.to(cards[1], {
+                y: "+=26",
+                ease: "sine.inOut",
+                duration: 0.5,
+            });
+
+            cardsTl.to(cards[2], {
+                y: "-=18",
+                ease: "sine.inOut",
+                duration: 0.5,
+            }, "<");
+            cardsTl.to(cards[2], {
+                y: "+=18",
+                ease: "sine.inOut",
+                duration: 0.5,
+            });
+
+            // Exit
+            cardsTl.to(cards[0], {
+                y: -680,
+                rotation: -2,
+                scale: 1.02,
+                ease: "back.in(1.4)",
                 duration: 2,
             });
+            cardsTl.to(cards[1], {
+                y: -680,
+                rotation: 0,
+                scale: 1.05,
+                ease: "back.in(1.4)",
+                duration: 2,
+            }, "-=1.3");
+            cardsTl.to(cards[2], {
+                y: -680,
+                rotation: 2,
+                scale: 1.02,
+                ease: "back.in(1.4)",
+                duration: 2,
+            }, "-=1.3");
+
 
             // FLOATY / BOUNCY EFFECT
             gsap.to(cards, {
