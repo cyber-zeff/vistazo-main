@@ -4,6 +4,7 @@ import Showcase from "./components/Showcase";
 import Specs from "./components/Specs";
 import LinkedInBrand from "./components/LinkedInBrand";
 import ProcessSection from "./components/Process";
+import Footer from "./components/Footer";
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Services />
       <LinkedInBrand />
       <ProcessSection />
+      <Footer />
     
 {/* <svg
   viewBox="0 0 1440 120"
