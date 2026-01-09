@@ -22,9 +22,7 @@ const ProcessSection: React.FC = () => {
         if (!headingRef.current) return;
 
         const ctx = gsap.context(() => {
-            // ======================
-            // TEXT ANIMATIONS (UNCHANGED)
-            // ======================
+            // TEXT ANIMATIONS
             gsap.fromTo(
                 resultsRef.current,
                 { x: () => window.innerWidth + 150 },
@@ -58,28 +56,25 @@ const ProcessSection: React.FC = () => {
                 }
             );
 
-            // ======================
-            // CARD ANIMATIONS (NEW)
-            // ======================
-
+            // CARD ANIMATIONS
             const cards = [
                 leftCardRef.current,
                 centerCardRef.current,
                 rightCardRef.current,
             ];
 
-            // Start WELL below viewport (not visible)
+            // Start WELL below viewport
             gsap.set(cards, {
-                y: 160,      // 👈 below screen
-                opacity: 1,  // never fade
+                y: 160,
+                opacity: 1,
             });
 
             const cardsTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: cardsWrapperRef.current,
-                    start: "top center",     // cards engage at center
-                    end: "+=300%",           // long scroll = smooth motion
-                    scrub: 2,                // smoother inertia
+                    start: "top center",
+                    end: "+=300%",
+                    scrub: 2,
                     pin: true,
                     pinSpacing: true,
                     anticipatePin: 1,
@@ -87,31 +82,23 @@ const ProcessSection: React.FC = () => {
                 },
             });
 
-            // ---- CARD 1 TRAVEL ----
             cardsTl.to(cards[0], {
-                y: -160,                  // 👈 full continuous travel
-                ease: "none",             // 👈 NO stopping, pure scroll
+                y: -160,
+                ease: "none",
                 duration: 2,
             });
-
-            // ---- CARD 2 TRAVEL (DELAYED BY SCROLL) ----
             cardsTl.to(cards[1], {
                 y: -160,
                 ease: "none",
                 duration: 2,
             });
-
-            // ---- CARD 3 TRAVEL ----
             cardsTl.to(cards[2], {
                 y: -160,
                 ease: "none",
                 duration: 2,
             });
 
-            // ======================
             // FLOATY / BOUNCY EFFECT
-            // ======================
-
             gsap.to(cards, {
                 y: (i) => (i === 1 ? "-=20" : "-=12"),
                 ease: "sine.inOut",
@@ -124,9 +111,6 @@ const ProcessSection: React.FC = () => {
                     invalidateOnRefresh: true,
                 },
             });
-
-
-
         });
 
         return () => ctx.revert();
@@ -134,7 +118,6 @@ const ProcessSection: React.FC = () => {
 
     return (
         <section className="relative w-full bg-[#FFFEF6] overflow-hidden pb-10">
-            {/* Heading */}
             <div className="z-10 text-center">
                 <h2 ref={headingRef}>
                     <span className="relative inline-block mx-3">
@@ -176,7 +159,6 @@ const ProcessSection: React.FC = () => {
                 </h2>
             </div>
 
-            {/* Cards (UNCHANGED visually — only refs added) */}
             <div ref={cardsWrapperRef} className="relative z-0 mt-24 flex justify-center gap-8 px-4 -space-x-9">
                 <div
                     ref={leftCardRef}
