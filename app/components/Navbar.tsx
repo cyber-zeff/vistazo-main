@@ -17,7 +17,7 @@ export default function WaveNavbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="w-screen sticky top-0 z-50 px-25">
+        <header className="w-full sticky top-0 z-50 px-25">
             {/* Wave Background with drop shadow */}
             <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -13,6 +13,7 @@ const ProcessSection: React.FC = () => {
     const extraRef = useRef<HTMLSpanElement>(null);
 
     // 👉 Card refs (ADDED)
+    const cardsWrapperRef = useRef<HTMLDivElement>(null);
     const leftCardRef = useRef<HTMLDivElement>(null);
     const centerCardRef = useRef<HTMLDivElement>(null);
     const rightCardRef = useRef<HTMLDivElement>(null);
@@ -61,77 +62,70 @@ const ProcessSection: React.FC = () => {
             // CARD ANIMATIONS (NEW)
             // ======================
 
-            // ======================
-            // CARD ANIMATION (REFINED)
-            // ======================
-
             const cards = [
-                rightCardRef.current,
-                centerCardRef.current,
                 leftCardRef.current,
+                centerCardRef.current,
+                rightCardRef.current,
             ];
 
-            // Initial state
+            // Start WELL below viewport (not visible)
             gsap.set(cards, {
-                y: 220,
-                scale: 0.92,
-                opacity: 0,
+                y: 160,      // 👈 below screen
+                opacity: 1,  // never fade
             });
 
             const cardsTl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: headingRef.current,
-                    start: "top 35%",
-                    end: "bottom 5%", // 👈 longer scroll = smoother pacing
-                    scrub: 1.5,       // 👈 slows everything down
+                    trigger: cardsWrapperRef.current,
+                    start: "top center",     // cards engage at center
+                    end: "+=300%",           // long scroll = smooth motion
+                    scrub: 2,                // smoother inertia
+                    pin: true,
+                    pinSpacing: true,
+                    anticipatePin: 1,
                     invalidateOnRefresh: true,
                 },
             });
 
-            // ---- ENTER (slow + smooth) ----
-            cardsTl.to(cards, {
-                y: 0,
-                scale: 1,
-                opacity: 1,
-                ease: "power3.out",
-                stagger: {
-                    each: 0.55, // 👈 noticeable delay
-                },
-                duration: 1.6,
+            // ---- CARD 1 TRAVEL ----
+            cardsTl.to(cards[0], {
+                y: -160,                  // 👈 full continuous travel
+                ease: "none",             // 👈 NO stopping, pure scroll
+                duration: 2,
             });
 
-            // ---- HOLD (cards together moment) ----
-            cardsTl.to({}, { duration: 0.8 });
-
-            // ---- EXIT (MIRROR of enter) ----
-            cardsTl.to(cards, {
-                y: -220,
-                scale: 0.98,
-                opacity: 0,
-                ease: "power3.inOut",
-                stagger: {
-                    each: 0.55, // 👈 SAME stagger as entry
-                },
-                duration: 1.6,
+            // ---- CARD 2 TRAVEL (DELAYED BY SCROLL) ----
+            cardsTl.to(cards[1], {
+                y: -160,
+                ease: "none",
+                duration: 2,
             });
 
+            // ---- CARD 3 TRAVEL ----
+            cardsTl.to(cards[2], {
+                y: -160,
+                ease: "none",
+                duration: 2,
+            });
 
             // ======================
             // FLOATY / BOUNCY EFFECT
             // ======================
 
             gsap.to(cards, {
-                y: (i) => (i === 1 ? -26 : -16),
+                y: (i) => (i === 1 ? "-=20" : "-=12"),
                 ease: "sine.inOut",
-                stagger: 0.2,
+                stagger: 0.3,
                 scrollTrigger: {
-                    trigger: headingRef.current,
-                    start: "top 15%",
-                    end: "bottom -40%",
-                    scrub: 2.5, // 👈 ultra-smooth float
+                    trigger: cardsWrapperRef.current,
+                    start: "top center+=60",
+                    end: "top center-=60",
+                    scrub: 3,
                     invalidateOnRefresh: true,
                 },
             });
+
+
 
         });
 
@@ -139,7 +133,7 @@ const ProcessSection: React.FC = () => {
     }, []);
 
     return (
-        <section className="relative w-full bg-[#FFFEF6] overflow-visible pb-10">
+        <section className="relative w-full bg-[#FFFEF6] overflow-hidden pb-10">
             {/* Heading */}
             <div className="z-10 text-center">
                 <h2 ref={headingRef}>
@@ -183,7 +177,7 @@ const ProcessSection: React.FC = () => {
             </div>
 
             {/* Cards (UNCHANGED visually — only refs added) */}
-            <div className="relative z-0 mt-24 flex justify-center gap-8 px-4 -space-x-9">
+            <div ref={cardsWrapperRef} className="relative z-0 mt-24 flex justify-center gap-8 px-4 -space-x-9">
                 <div
                     ref={leftCardRef}
                     className="h-100 w-85 rotate-2 rounded-[25px] bg-gray-200"
