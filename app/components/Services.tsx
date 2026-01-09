@@ -1,6 +1,5 @@
 "use client"
 
-import { useRef } from "react"
 import { motion } from "framer-motion"
 
 const services = [
@@ -58,7 +57,7 @@ function ServiceItem({
                     rest: {
                         opacity: 0,
                         scale: 0.85,
-                        rotate: 0, // ✅ changed from tilt → 0
+                        rotate: 0,
                     },
                     hover: {
                         opacity: 1,

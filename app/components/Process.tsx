@@ -12,7 +12,6 @@ const ProcessSection: React.FC = () => {
     const resultsRef = useRef<HTMLSpanElement>(null);
     const extraRef = useRef<HTMLSpanElement>(null);
 
-    // 👉 Card refs (ADDED)
     const cardsWrapperRef = useRef<HTMLDivElement>(null);
     const leftCardRef = useRef<HTMLDivElement>(null);
     const centerCardRef = useRef<HTMLDivElement>(null);

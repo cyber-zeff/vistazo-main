@@ -25,7 +25,7 @@ export default function Showcase() {
             </span>
           </div>
 
-          {/* Right-side GIF */}
+          {/* GIF */}
           <div className="absolute right-20 top-0 z-0 pointer-events-none">
             <div className="rounded-[100px] overflow-hidden w-87.5 h-87.5 max-w-full">
               <Image
@@ -99,7 +99,7 @@ export default function Showcase() {
             </h1>
           </div>
 
-          {/* Centered GIF */}
+          {/* GIF */}
           <div className="mt-2 flex justify-center">
             <div className="rounded-full overflow-hidden w-37.5 h-37.5 max-w-full">
               <Image

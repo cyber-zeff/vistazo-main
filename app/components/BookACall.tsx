@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 interface GetStartedBtnProps {
-  path: string; // 👈 new prop for navigation path
+  path: string;
 }
 
 const GetStartedBtn: React.FC<GetStartedBtnProps> = ({ path }) => {

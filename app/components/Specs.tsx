@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 export default function Specs() {
     const features = ["Unlimited Revisions", "30-Day Post-Launch Support", "Quick Feedback Loops", "Fast Turnaround Time"]
 
-    // Duplicate features multiple times for seamless circular animation
     const duplicatedFeatures = [...features, ...features, ...features]
 
     return (

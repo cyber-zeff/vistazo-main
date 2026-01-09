@@ -51,7 +51,6 @@ export default function LinkedInBrand() {
 
                         {/* Profile avatars and button container */}
                         <div className="flex items-center gap-4">
-                            {/* Avatar circles */}
                             <div className="flex items-center -space-x-6">
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
@@ -70,7 +69,6 @@ export default function LinkedInBrand() {
                                 </div>
                             </div>
 
-                            {/* CTA Button */}
                             <button className="bg-white text-[#361E98] w-45 h-12.5 ml-9 py-3 rounded-[100px] inline-flex items-center justify-center gap-2 whitespace-nowrap">
                                 <p className="font-bold text-[16px] leading-normal -tracking-[0.8px]">Claim Yours!</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -80,22 +78,16 @@ export default function LinkedInBrand() {
                         </div>
                     </div>
 
-                    {/* Right side - Profile cover mockups */}
+                    {/* Right side */}
                     <div className="flex-1 hidden md:flex items-end justify-center h-96 shrink-0 -space-x-12">
-
-                        {/* Left mockup - Light gray */}
                         <motion.div
                             {...hoverStandUp}
                             className="w-55 h-75 -rotate-[5deg] bg-gray-300 rounded-[25px] cursor-pointer"
                         />
-
-                        {/* Center mockup - Medium gray */}
                         <motion.div
                             {...hoverStandUp}
                             className="w-55 h-75 bg-gray-400 rounded-[25px] z-10 relative -top-10 cursor-pointer"
                         />
-
-                        {/* Right mockup - Dark gray */}
                         <motion.div
                             {...hoverStandUp}
                             className="w-55 h-75 rotate-[5deg] bg-gray-500 rounded-[25px] z-20 cursor-pointer"
