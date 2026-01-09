@@ -11,7 +11,7 @@ export default function NavbarBtn({ path }: NavbarBtnProps) {
   const [hover, setHover] = useState(false);
 
   return (
-    <div className="flex items-center justify-center gap-2 text-4 ">
+    <div className="flex items-center justify-center gap-2">
       <motion.a
         href={path}
         onMouseEnter={() => setHover(true)}
@@ -23,7 +23,7 @@ export default function NavbarBtn({ path }: NavbarBtnProps) {
             : "0px 6px 0px 0px #FFFFFF",
         }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
-        className="px-10 py-4 border-2 border-white rounded-[100px]"
+        className="px-10 py-4 border-2 border-white rounded-[100px] font-medium leading-normal text-[16px] -tracking-[0.8]"
       >
         Let's Cook!
       </motion.a>

@@ -29,7 +29,7 @@ const GetStartedBtn: React.FC<GetStartedBtnProps> = ({ path }) => {
         <motion.span
           animate={{ color: isHovered ? "#FFFFFF" : "#361E98" }}
           transition={{ duration: 0.3 }}
-          className="z-10 ml-4 font-medium absolute"
+          className="z-10 ml-4 font-medium text-[16px] leading-normal -tracking-[0.8]"
         >
           Book a Call
         </motion.span>
