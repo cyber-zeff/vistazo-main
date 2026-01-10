@@ -199,7 +199,7 @@ const ProcessSection: React.FC = () => {
     }, []);
 
     return (
-        <section className="relative w-full bg-[#FFFEF6] overflow-hidden pb-10">
+        <section className="relative w-full bg-[#FFFFFF] overflow-hidden pb-10">
             <div className="z-10 text-center">
                 <h2 ref={headingRef}>
                     <span className="relative inline-block mx-3">
