@@ -79,7 +79,7 @@ function ServiceItem({
                             ? "8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)"
                             : "-8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)",
                 }}
-                className="hidden absolute right-8 top-1/2 -translate-y-1/2 w-81.25 h-95.25 bg-gray-100 rounded-[53px] overflow-hidden"
+                className="hidden absolute right-8 top-1/2 -translate-y-[65%] w-81.25 h-95.25 bg-gray-100 rounded-[53px] overflow-hidden"
             />
 
 
