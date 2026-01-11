@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
-/* @font-face {
-  font-family: 'QuantaGrotesk';
-  src: url('/fonts/QuantaGrotesk-Regular.woff') format('woff'),
-       url('/fonts/QuantaGrotesk-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-} */
+
 @font-face {
   font-family: 'QuantaGroteskPro';
   src: url('/fonts/QuantaGroteskPro-Black-BF6459a54a8323e.woff') format('woff'),
@@ -15,7 +9,6 @@
   font-weight: 700;
   font-style: normal;
 }
-
 
 :root {
   --background: #361e98;
