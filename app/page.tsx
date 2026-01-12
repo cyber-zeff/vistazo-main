@@ -7,6 +7,7 @@ import ProcessSection from "./components/Process";
 import OPCard from "./components/OP_Card";
 import FAQSection from "./components/FAQ";
 import Footer from "./components/Footer";
+import CTASection from "./components/CTA";
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <ProcessSection />
       <FAQSection />
       <LinkedInBrand />
+      <CTASection />
       <Footer />
     </div>
   );
