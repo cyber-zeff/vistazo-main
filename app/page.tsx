@@ -4,6 +4,8 @@ import Showcase from "./components/Showcase";
 import Specs from "./components/Specs";
 import LinkedInBrand from "./components/LinkedInBrand";
 import ProcessSection from "./components/Process";
+import OPCard from "./components/OP_Card";
+import FAQSection from "./components/FAQ";
 import Footer from "./components/Footer";
 
 
@@ -16,6 +18,8 @@ export default function Home() {
       <Services />
       <LinkedInBrand />
       <ProcessSection />
+      <OPCard />
+      <FAQSection />
       <Footer />
     </div>
   );

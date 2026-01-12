@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import NavbarBtn from "./NavbarBtn";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,16 +13,11 @@ const ProcessSection: React.FC = () => {
     const resultsRef = useRef<HTMLSpanElement>(null);
     const extraRef = useRef<HTMLSpanElement>(null);
 
-    const cardsWrapperRef = useRef<HTMLDivElement>(null);
-    const leftCardRef = useRef<HTMLDivElement>(null);
-    const centerCardRef = useRef<HTMLDivElement>(null);
-    const rightCardRef = useRef<HTMLDivElement>(null);
-
     useEffect(() => {
         if (!headingRef.current) return;
 
         const ctx = gsap.context(() => {
-            // TEXT ANIMATIONS
+            // TEXT ANIMATIONS (UNCHANGED)
             gsap.fromTo(
                 resultsRef.current,
                 { x: () => window.innerWidth + 150 },
@@ -54,145 +50,6 @@ const ProcessSection: React.FC = () => {
                     },
                 }
             );
-
-            // CARD ANIMATIONS
-            const cards = [
-                leftCardRef.current,
-                centerCardRef.current,
-                rightCardRef.current,
-            ];
-
-            // Start WELL below viewport
-            gsap.set(cards, {
-                y: 160,
-                opacity: 1,
-            });
-
-            const cardsTl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: cardsWrapperRef.current,
-                    start: "top center",
-                    end: "+=200%",
-                    scrub: 1.5,
-                    pin: true,
-                    pinSpacing: true,
-                    anticipatePin: 1,
-                    invalidateOnRefresh: true,
-                },
-            });
-
-            // Entrance
-            cardsTl.to(cards[0], {
-                y: -160,
-                rotation: -2,
-                scale: 1.02,
-                ease: "back.out(1.4)",
-                duration: 1.5,
-            });
-            cardsTl.to(cards[1], {
-                y: -160,
-                rotation: 0,
-                scale: 1.05,
-                ease: "back.out(1.4)",
-                duration: 1.5,
-            }, "-=1");
-            cardsTl.to(cards[2], {
-                y: -160,
-                rotation: 2,
-                scale: 1.02,
-                ease: "back.out(1.4)",
-                duration: 1.5,
-            }, "-=1");
-
-            // Pause at center
-            cardsTl.to(cards[0], {
-                y: "-=18",
-                ease: "sine.inOut",
-                duration: 0.5,
-            });
-            cardsTl.to(cards[0], {
-                y: "+=18",
-                ease: "sine.inOut",
-                duration: 0.5,
-            });
-
-            cardsTl.to(cards[1], {
-                y: "-=26",
-                ease: "sine.inOut",
-                duration: 0.5,
-            }, "<");
-            cardsTl.to(cards[1], {
-                y: "+=26",
-                ease: "sine.inOut",
-                duration: 0.5,
-            });
-
-            cardsTl.to(cards[2], {
-                y: "-=18",
-                ease: "sine.inOut",
-                duration: 0.5,
-            }, "<");
-            cardsTl.to(cards[2], {
-                y: "+=18",
-                ease: "sine.inOut",
-                duration: 0.5,
-            });
-
-            cardsTl.to(cards[0], {
-                y: "-=12",
-                ease: "sine.inOut",
-                duration: 0.6,
-            });
-            cardsTl.to(cards[0], {
-                y: "+=12",
-                ease: "sine.inOut",
-                duration: 0.6,
-            });
-
-            cardsTl.to(cards[1], {
-                y: "-=20",
-                ease: "sine.inOut",
-                duration: 0.6,
-            }, "<");
-            cardsTl.to(cards[1], {
-                y: "+=20",
-                ease: "sine.inOut",
-                duration: 0.6,
-            });
-
-            cardsTl.to(cards[2], {
-                y: "-=12",
-                ease: "sine.inOut",
-                duration: 0.6,
-            }, "<");
-            cardsTl.to(cards[2], {
-                y: "+=12",
-                ease: "sine.inOut",
-                duration: 0.6,
-            });
-
-            // Exit
-            cardsTl.to(cards[0], {
-                y: -680,
-                rotation: -2,
-                scale: 1.02,
-                ease: "back.in(1.4)",
-                duration: 2,
-            });
-            cardsTl.to(cards[1], {
-                y: -680,
-                rotation: 0,
-                scale: 1.05,
-                ease: "back.in(1.4)",
-                duration: 2,
-            }, "-=1.3");
-            cardsTl.to(cards[2], {
-                y: -680,
-                rotation: 2,
-                scale: 1.02,
-                ease: "back.in(1.4)",
-                duration: 2,
-            }, "-=1.3");
         });
 
         return () => ctx.revert();
@@ -200,25 +57,26 @@ const ProcessSection: React.FC = () => {
 
     return (
         <section className="relative w-full bg-[#FFFFFF] overflow-hidden pb-10">
+            {/* TEXT */}
             <div className="z-10 text-center">
                 <h2 ref={headingRef}>
                     <span className="relative inline-block mx-3">
                         <span
                             ref={andRef}
-                            className="absolute -top-5 left-20 -rotate-[5deg] w-18 h-8.25 py-0.75 px-2.5 rounded-[100px] bg-[#F95DAF] text-white text-[20px] leading-normal font-black"
+                            className="absolute -top-5 left-20 -rotate-[5deg] w-18 h-8.25 py-0.75 px-2.5 rounded-[100px] bg-[#F95DAF] text-white text-[20px] font-black"
                         >
                             And
                         </span>
                     </span>
 
-                    <span className="quantaFont text-[96px] leading-normal font-black text-black">
+                    <span className="quantaFont text-[96px] font-black text-black">
                         we keep our
                     </span>
 
                     <span className="relative inline-block ml-3">
                         <span
                             ref={resultsRef}
-                            className="absolute -top-3 right-18 rotate-3 rounded-[100px] bg-[#6755CF] px-2.5 py-1.25 w-27 h-9.5 text-white text-[20px] leading-normal font-black"
+                            className="absolute -top-3 right-18 rotate-3 rounded-[100px] bg-[#6755CF] px-2.5 py-1.25 w-27 h-9.5 text-white text-[20px] font-black"
                         >
                             Results
                         </span>
@@ -226,14 +84,14 @@ const ProcessSection: React.FC = () => {
 
                     <br />
 
-                    <span className="quantaFont text-[96px] leading-normal font-black text-black">
+                    <span className="quantaFont text-[96px] font-black text-black">
                         process simple
                     </span>
 
                     <span className="flex justify-center">
                         <span
                             ref={extraRef}
-                            className="relative bottom-9 -left-20 rounded-[100px] bg-[#F9D94D] -rotate-3 w-45.5 h-10.5 px-2.5 py-1.5 text-[#361E98] text-[20px] leading-normal font-black"
+                            className="relative bottom-9 -left-20 rounded-[100px] bg-[#F9D94D] -rotate-3 w-45.5 h-10.5 px-2.5 py-1.5 text-[#361E98] text-[20px] font-black"
                         >
                             Extraordinary!
                         </span>
@@ -241,19 +99,38 @@ const ProcessSection: React.FC = () => {
                 </h2>
             </div>
 
-            <div ref={cardsWrapperRef} className="relative z-0 mt-24 flex justify-center gap-8 px-4 -space-x-9">
-                <div
-                    ref={leftCardRef}
-                    className="h-100 w-85 rotate-2 rounded-[25px] bg-gray-200"
-                />
-                <div
-                    ref={centerCardRef}
-                    className="h-100 w-85 rotate-6 rounded-[25px] bg-gray-300 relative bottom-4"
-                />
-                <div
-                    ref={rightCardRef}
-                    className="h-100 w-85 rotate-[8deg] rounded-[25px] bg-gray-400"
-                />
+            {/* STATIC CARDS */}
+            <div className="relative mt-24 flex justify-center gap-8 px-4">
+                {/* Left Card */}
+                <div className="flex flex-col justify-end items-center gap-7.5 p-12.5 h-130 w-100 rounded-[50px] bg-gray-200 border border-[#121213] shadow-[8px_12px_2.5px_0_rgba(0,0,0,0.25)]">
+
+                </div>
+
+                {/* Center Card (Featured) */}
+                <div className="relative -top-10 flex flex-col justify-end items-center bg-[#361E98] gap-7.5 px-12.5 py-10 h-130 w-100 rounded-[50px] border border-[#121213] shadow-[8px_12px_2.5px_0_rgba(0,0,0,0.25)]">
+
+                    <span className="absolute top-6 right-6 flex justify-center items-center w-31.25 h-8.75 rounded-[25px] border border-[#121213] bg-[#F9D94D]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" fill="none">
+                            <path d="M6 7.45575C7.74975 4.97475 6.12525 1.5885 5.25 0.75C5.25 3.29625 3.57375 4.72425 2.49975 5.7795C1.42725 6.8355 0.75 8.25 0.75 9.9705C0.75 12.7485 3.1005 15 6 15C8.8995 15 11.25 12.7485 11.25 9.9705C11.25 8.6865 10.326 6.66825 9.50025 5.7795C7.93725 8.29425 7.0575 8.29425 6 7.45575Z"
+                                stroke="black"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                        <span className="text-black text-[16px] leading-normal capitalize font-medium ml-2">
+                            Popular
+                        </span>
+                    </span>
+
+                    <NavbarBtn path="#" />
+                </div>
+
+
+                {/* Right Card */}
+                <div className="flex flex-col justify-end items-center gap-7.5 px-12.5 py-10 h-130 w-100 rounded-[50px] bg-gray-200 border border-[#121213] shadow-[8px_12px_2.5px_0_rgba(0,0,0,0.25)]">
+
+                </div>
             </div>
         </section>
     );
