@@ -29,10 +29,11 @@ function ServiceItem({
 
     return (
         <motion.div
-            whileHover="hover"
             initial="rest"
             animate="rest"
-            className="group relative mt-4 md:mt-8 flex items-center justify-between px-3 py-6 md:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] rounded-[15px]"
+            whileHover="hover"
+            whileTap="hover"
+            className="group relative mt-4 md:mt-8 flex items-center justify-between px-3 py-6 md:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] active:bg-[rgba(103,85,207,0.75)] rounded-[15px]"
         >
             <div className="flex items-center gap-4 md:gap-6">
                 <motion.div
@@ -41,12 +42,12 @@ function ServiceItem({
                         hover: { rotate: 180 },
                     }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="text-white transition-colors duration-300 group-hover:text-[#F9D94D]"
+                    className="text-white transition-colors duration-300 group-hover:text-[#F9D94D] group-active:text-[#F9D94D]"
                 >
                     <DiamondStar />
                 </motion.div>
 
-                <h3 className="text-[48px] quantaFont tracking-tight transition-colors duration-300 group-hover:text-[#F9D94D]">
+                <h3 className="text-[28px] sm:text-[34px] md:text-[48px] quantaFont tracking-tight transition-colors duration-300 group-hover:text-[#F9D94D] group-active:text-[#F9D94D]">
                     {service.title}
                 </h3>
             </div>
@@ -96,7 +97,7 @@ export default function Services() {
     return (
         <section className="px-25.5 md:py-24">
             <div className="max-w-7xl mx-auto mb-12">
-                <h2 className="text-[96px] quantaFont leading-normal">
+                <h2 className="text-[62px] sm:text-[82px] md:text-[96px] mt-16 md:mt-0 quantaFont leading-normal">
                     What we serve on <br /> the <span className="text-[#F9D94D]">menu</span>
                 </h2>
                 <p className="text-[20px]">

@@ -11,6 +11,10 @@ type CardType = {
     description?: string
 }
 
+const isTouch =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(hover: none)').matches
+
 const column1: CardType[] = [
     {
         id: 1,
@@ -53,7 +57,7 @@ function Column({
     const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
     return (
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 mb-6">
             {cards.map((card, index) => {
                 const isActive = activeIndex === index
                 const isSibling =
@@ -72,7 +76,7 @@ function Column({
                             stiffness: 180,
                             damping: 15,
                         }}
-                        className="w-155 rounded-[30px] bg-[#6755CF] px-8 pt-8 overflow-hidden cursor-pointer flex justify-between"
+                        className="w-full sm:w-[90%] md:w-155 rounded-[30px] bg-[#6755CF] px-8 pt-8 overflow-hidden cursor-pointer flex justify-between"
                     >
                         {/* LEFT CONTENT */}
                         <div className="flex flex-col gap-4 max-w-86.25">
@@ -98,7 +102,6 @@ function Column({
 
                         {/* RIGHT SIDE */}
                         <div className="relative flex items-start justify-end shrink-0">
-                            {/* STEP NUMBER */}
                             <div className="text-[120px] font-black leading-normal quantaFont -tracking-[6px] z-20">
                                 {card.step}
                             </div>
@@ -112,6 +115,7 @@ function Column({
                                         width: isActive ? '350px' : '220px',
                                         opacity: 1,
                                         right: isActive ? '-50px' : '-30px',
+                                        // scale: isActive ? 1.05 : 1,
                                         aspectRatio: isActive ? '175/232' : '110/147',
                                     }}
                                     transition={{
@@ -119,7 +123,7 @@ function Column({
                                         stiffness: 120,
                                         damping: 20,
                                     }}
-                                    className="absolute -bottom-11.5 z-20 pointer-events-none origin-bottom-right">
+                                    className="sm:h-[100px] sm:w-[100px] md:h-[294px] md:w-[220px] absolute -bottom-11.5 z-20 pointer-events-none origin-bottom-right">
                                     <img
                                         src="/person.png"
                                         alt="Person illustration"
@@ -138,8 +142,8 @@ function Column({
 
 export default function OPCard() {
     return (
-        <div className="flex justify-center bg-gray-300 min-h-screen py-20">
-            <div className="grid grid-cols-2 gap-8">
+        <div className="flex justify-center bg-gray-300 py-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center w-full max-w-350">
                 <Column cards={column1} />
                 <Column cards={column2} />
             </div>

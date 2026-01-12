@@ -59,8 +59,8 @@ export default function FAQSection() {
                             }}
                         >
                             {/* LEFT CONTENT */}
-                            <div className="flex-1">
-                                <h3 className="text-[20px] font-medium leading-normal">
+                            <div className="flex-1 sm:flex-1 max-[650px]:flex-[1.4]">
+                                <h3 className="text-[18px] font-medium leading-normal">
                                     {faq.question}
                                 </h3>
 
@@ -80,8 +80,7 @@ export default function FAQSection() {
                             </div>
 
                             {/* RIGHT ICON / BUNNY */}
-                            {/* RIGHT ICON / BUNNY */}
-                            <div className="relative -top-3 w-55 h-full flex justify-end">
+                            <div className="relative -top-3 w-55 max-[650px]:w-36 h-full flex justify-end shrink-0">
                                 {/* STAR (ALWAYS VISIBLE) */}
                                 <motion.span
                                     animate={{ rotate: isOpen ? 90 : -90 }}
@@ -117,7 +116,7 @@ export default function FAQSection() {
                                                 alt="Hi Bunny"
                                                 width={200}
                                                 height={197}
-                                                className="object-contain"
+                                                className="w-25 h-27 max-[650px]:w-20 max-[650px]:h-22 sm:w-30 sm:h-32 md:w-49.25 md:h-50 object-contain"
                                             />
                                         </motion.div>
                                     )}
