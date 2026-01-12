@@ -56,27 +56,27 @@ const ProcessSection: React.FC = () => {
     }, []);
 
     return (
-        <section className="relative w-full bg-[#FFFFFF] overflow-hidden pb-10">
+        <section className="relative w-full bg-[#FFFFFF] overflow-hidden py-10">
             {/* TEXT */}
-            <div className="z-10 text-center mb-10">
+            <div className="z-10 text-center mb-10 md:mb-20 text-[#121213]">
                 <h2 ref={headingRef}>
                     <span className="relative inline-block mx-3">
                         <span
                             ref={andRef}
-                            className="absolute -top-5 left-20 -rotate-[5deg] w-18 h-8.25 py-0.75 px-2.5 rounded-[100px] bg-[#F95DAF] text-white text-[20px] font-black"
+                            className="absolute -top-2 sm:-top-5 left-20 -rotate-[5deg] w-14 h-6.25 sm:w-18 sm:h-8.25 py-0.75 px-2.5 rounded-[100px] bg-[#F95DAF] text-white text-[16px] sm:text-[20px] font-black"
                         >
                             And
                         </span>
                     </span>
 
-                    <span className="quantaFont text-[96px] font-black text-black">
+                    <span className="quantaFont text-[64px] sm:text-[84px] md:text-[96px] font-black text-black">
                         we keep our
                     </span>
 
                     <span className="relative inline-block ml-3">
                         <span
                             ref={resultsRef}
-                            className="absolute -top-3 right-18 rotate-3 rounded-[100px] bg-[#6755CF] px-2.5 py-1.25 w-27 h-9.5 text-white text-[20px] font-black"
+                            className="absolute -top-2 sm:-top-3 right-18 rotate-3 rounded-[100px] bg-[#6755CF] px-2.5 py-1.25 w-26 h-7.5 sm:w-27 sm:h-9.5 text-white text-[16px] sm:text-[20px] font-black"
                         >
                             Results
                         </span>
@@ -84,14 +84,14 @@ const ProcessSection: React.FC = () => {
 
                     <br />
 
-                    <span className="quantaFont text-[96px] font-black text-black">
+                    <span className="quantaFont text-[64px] sm:text-[84px] md:text-[96px] font-black text-black">
                         process simple
                     </span>
 
                     <span className="flex justify-center">
                         <span
                             ref={extraRef}
-                            className="relative bottom-9 -left-20 rounded-[100px] bg-[#F9D94D] -rotate-3 w-45.5 h-10.5 px-2.5 py-1.5 text-[#361E98] text-[20px] font-black"
+                            className="relative bottom-4 sm:bottom-9 -left-14 sm:-left-20 rounded-[100px] bg-[#F9D94D] -rotate-3 w-42.5 h-8.5 sm:w-45.5 sm:h-10.5 px-2.5 py-1.5 text-[#361E98] text-[16px] sm:text-[20px] font-black"
                         >
                             Extraordinary!
                         </span>

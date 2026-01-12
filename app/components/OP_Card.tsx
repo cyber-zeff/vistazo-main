@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import Image from 'next/image'
+import { section } from 'framer-motion/client'
 
 type CardType = {
     id: number
@@ -142,11 +143,14 @@ function Column({
 
 export default function OPCard() {
     return (
-        <div className="flex justify-center bg-gray-300 py-5">
-            <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center w-full max-w-350">
-                <Column cards={column1} />
-                <Column cards={column2} />
+        <section className='bg-white py-20'>
+            <h2 className='quantaFont text-[#121213] leading-normal font-black text-[64px] sm:text-[84px] md:text-[96px] uppercase text-center mb-10 md:mb-20 text-balance max-w-308.75 mx-auto'>We keep our Process Simple</h2>
+            <div className="flex justify-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center w-full max-w-350">
+                    <Column cards={column1} />
+                    <Column cards={column2} />
+                </div>
             </div>
-        </div>
+        </section>
     )
 }

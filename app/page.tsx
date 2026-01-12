@@ -16,10 +16,10 @@ export default function Home() {
       <Showcase />
       <Specs />
       <Services />
-      <LinkedInBrand />
-      <ProcessSection />
       <OPCard />
+      <ProcessSection />
       <FAQSection />
+      <LinkedInBrand />
       <Footer />
     </div>
   );
