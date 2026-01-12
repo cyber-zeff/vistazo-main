@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import GetStartedBtn from "./BookACall";
+import BookACall from "./BookACall";
 import Typewriter from "./Typewriter";
 
 export default function Showcase() {
@@ -65,7 +65,7 @@ export default function Showcase() {
               We create custom websites that make your work stand out and get you{" "}
               <span className="font-semibold italic text-white">paid.</span>
             </p>
-            <GetStartedBtn path="#" />
+            <BookACall path="#" />
           </div>
         </div>
 
@@ -122,7 +122,7 @@ export default function Showcase() {
             </p>
 
             <div className="flex justify-center">
-              <GetStartedBtn path="#" />
+              <BookACall path="#" />
             </div>
           </div>
         </div>

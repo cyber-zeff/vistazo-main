@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-interface GetStartedBtnProps {
+interface BookACallProps {
   path: string;
 }
 
-const GetStartedBtn: React.FC<GetStartedBtnProps> = ({ path }) => {
+const BookACall: React.FC<BookACallProps> = ({ path }) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
@@ -72,4 +72,4 @@ const GetStartedBtn: React.FC<GetStartedBtnProps> = ({ path }) => {
   );
 };
 
-export default GetStartedBtn;
+export default BookACall;
