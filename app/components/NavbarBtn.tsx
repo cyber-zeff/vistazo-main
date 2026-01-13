@@ -23,7 +23,7 @@ export default function NavbarBtn({ path }: NavbarBtnProps) {
             : "0px 6px 0px 0px #FFFFFF",
         }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
-        className="text-center py-4 border-2 w-39 h-14.5 border-white rounded-[100px] font-medium leading-normal text-[16px] -tracking-[0.8]"
+        className="text-center py-3 border-2 w-39 h-14.5 border-white rounded-[100px] font-medium leading-normal text-[16px] -tracking-[0.8]"
       >
         Let's Cook!
       </motion.a>
