@@ -36,7 +36,7 @@ const faqs = [
 export default function FAQSection() {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-    function useIsMobile(breakpoint = 768) {
+    function useIsMobile(breakpoint = 568) {
         const [isMobile, setIsMobile] = useState(false);
 
         useEffect(() => {
@@ -56,7 +56,7 @@ export default function FAQSection() {
                 {/* ================= LEFT COLUMN ================= */}
                 <div className="flex flex-col justify-between h-full">
                     {/* Heading */}
-                    <div className="mb-10 lg:mb-0">
+                    <div className="mb-10 lg:mb-0 mx-auto">
                         <h2 className="quantaFont text-[44px] sm:text-[54px] md:text-[64px] font-black leading-normal">
                             GOT QUESTIONS?
                             <br />
@@ -69,7 +69,7 @@ export default function FAQSection() {
                     </div>
 
                     {/* CTA Card */}
-                    <div className="bg-[#361E98] text-white rounded-[30px] p-8 md:w-131.25 md:h-56.25">
+                    <div className="bg-[#361E98] text-white rounded-[30px] p-8 lg:w-131.25 md:h-56.25">
                         <h3 className="text-[20px] font-bold mb-2 leading-normal">
                             Didn’t find what you were looking for?
                         </h3>
@@ -98,11 +98,12 @@ export default function FAQSection() {
 
                         return (
                             <motion.div key={index} layout initial={false}
-                                animate={{ height: isOpen ? isMobile ? 320 : 200 : 100, }}
+                                animate={{ height: isOpen ? isMobile ? 400 : 200 : 100, }}
                                 transition={{ type: "spring", stiffness: 160, damping: 15, }}
                                 onClick={() => setActiveIndex(isOpen ? null : index)}
-                                className="cursor-pointer bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)] px-8 py-10.5 flex items-center justify-between overflow-hidden shrink-0 border-2 border-[#121213]"
-                                style={{ width: "680px", maxWidth: "90vw", }}>
+                                className="cursor-pointer w-170 md:w-220 lg:w-170 max-w-[90vw] bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)] px-8 py-10.5 flex items-center justify-between overflow-hidden shrink-0 border-2 border-[#121213]"
+                                // style={{ width: "680px", maxWidth: "90vw", }}
+                                >
 
                                 {/* LEFT CONTENT */}
                                 <div className="flex-1 sm:flex-1 max-[650px]:flex-[1.4]">
