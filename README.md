@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# Vistazo Agency Website
+
+This repository contains the source code for the official website of Vistazo, a digital agency dedicated to helping creatives build and scale their personal brands.
+
+## About Vistazo
+
+Vistazo specializes in creating bespoke websites and brand identities for artists, influencers, and creators. Our mission is to empower creatives by providing them with the digital tools they need to get paid for their work and grow their audience. We believe in a collaborative process, working closely with our clients to deliver a product that is both beautiful and effective.
+
+## Services
+
+We offer a comprehensive suite of services to bring your digital presence to life:
+
+- **Logo & Brand Identity:** Crafting a unique and memorable brand that reflects your personal style.
+- **Website Design & Development:** Building fast, responsive, and user-friendly websites from the ground up.
+- **Website Copywriting:** Writing compelling copy that tells your story and engages your audience.
+- **SEO Optimization:** Improving your site's visibility on search engines to attract more organic traffic.
+- **LinkedIn Profile Refresh:** A complimentary service to enhance your professional presence.
+
+Upon project completion, clients receive all source files and assets.
+
+## Tech Stack
+
+The website is built with a modern and robust tech stack to ensure performance and scalability:
+
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components:** [Radix UI](https://www.radix-ui.com/) & [Lucide Icons](https://lucide.dev/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/) & [GSAP](https://greensock.com/gsap/)
+- **Forms:** [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
 
 ## Getting Started
 
-First, run the development server:
+To run the project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/vistazo-website.git
+    cd vistazo-website
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-## Learn More
+4.  **Build for production:**
+    ```bash
+    npm run build
+    ```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5.  **Start the production server:**
+    ```bash
+    npm run start
+    ```
