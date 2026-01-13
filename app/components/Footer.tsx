@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
     return (
         <footer className="bg-[#361E98] px-8 md:px-20 mt-12 md:mt-26 pt-16 pb-8">
-            <div className="max-md:place-items-center grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="max-md:place-items-center grid grid-cols-1 lg:grid-cols-2 gap-12">
 
                 {/* Left Section */}
                 <div className="space-y-6">
@@ -34,7 +34,7 @@ export default function Footer() {
                 </div>
 
                 {/* Right Section */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 justify-self-end">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-0">
 
                     {/* Socials */}
                     <div>
