@@ -9,7 +9,7 @@ export default function LinkedInBrand() {
             transition: {
                 type: "spring",
                 stiffness: 180,
-                damping: 22,
+                damping: 10,
                 mass: 0.6,
             },
         },

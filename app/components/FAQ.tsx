@@ -69,7 +69,7 @@ export default function FAQSection() {
                     </div>
 
                     {/* CTA Card */}
-                    <div className="bg-[#361E98] text-white rounded-[30px] p-8 sm:w-131.25 sm:h-56.25">
+                    <div className="bg-[#361E98] text-white rounded-[30px] p-8 flex flex-col md:w-171 md:px-18 sm:w-131.25 sm:h-56.25 xl:w-131.25 xl:h-56.25">
                         <h3 className="text-[20px] font-bold mb-2 leading-normal">
                             Didn’t find what you were looking for?
                         </h3>
@@ -103,7 +103,7 @@ export default function FAQSection() {
                                 animate={{ height: isOpen ? isMobile ? isTopCard ? 400 : 300 : 200 : 100, }}
                                 transition={{ type: "spring", stiffness: 160, damping: 15, }}
                                 onClick={() => setActiveIndex(isOpen ? null : index)}
-                                className="relative cursor-pointer w-150 md:w-220 lg:w-170 max-w-[90vw] bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)]
+                                className="relative cursor-pointer w-150 md:w-220 xl:w-170 max-w-[90vw] bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)]
                                     px-8 pt-8.5 pb-10.5 flex items-start justify-between overflow-hidden shrink-0 border-2 border-[#121213]">
                                 {/* STAR */}
                                 <motion.span
