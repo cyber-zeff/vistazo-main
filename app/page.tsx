@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="bg-main">
       <Navbar />
-      <Showcase />
+      <Showcase /> {/* Hero */}
       <Specs />
       <Services />
       <OPCard />
