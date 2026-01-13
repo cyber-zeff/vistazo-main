@@ -5,6 +5,21 @@ import { useState } from "react";
 
 export default function CTASection() {
     const [hover, setHover] = useState(false);
+    const Star = () => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="35"
+            viewBox="0 0 35 35"
+            fill="none"
+        >
+            <path
+                d="M15.908 0.000165228C21.272 13.6937 34.8666 15.9083 34.8666 15.9083C34.8666 15.9083 22.5126 20.3932 18.9585 34.867C12.945 21.2302 -0.000165228 18.9588 -0.000165228 18.9588C-0.000165228 18.9588 13.0034 14.4172 15.908 0.000165228Z"
+                fill="#F9D94D"
+            />
+        </svg>
+    );
+
     return (
         <>
             {/* Padding wrapper */}
@@ -36,7 +51,7 @@ export default function CTASection() {
 
                 <div className="flex items-center justify-center shrink-0 gap-2 self-stretch">
                     <motion.a
-                        href={"#"}
+                        href="#"
                         onMouseEnter={() => setHover(true)}
                         onMouseLeave={() => setHover(false)}
                         animate={{
@@ -46,11 +61,39 @@ export default function CTASection() {
                                 : "0px 10px 0px 0px #ffffff",
                         }}
                         transition={{ duration: 0.2, ease: "easeInOut" }}
-                        className="uppercase bg-transparent w-87.25 h-21.75 px-20 py-5 border border-[#ffffff] rounded-[500px] text-[#ffffff] text-[32px] font-medium leading-normal -tracking-[1.6] text-center"
+                        className="relative overflow-visible uppercase bg-transparent w-[350px] h-[87px] px-20 py-5 border border-white rounded-[500px] text-white text-[32px] font-medium leading-normal -tracking-[1.6px] text-center flex items-center justify-center"
                     >
-                        Lessgooo!!!
+                        {/* Text */}
+                        <span className="relative z-10">Lessgooo!!!</span>
+
+                        {/* Top-left star */}
+                        <motion.span
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={{
+                                opacity: hover ? 1 : 0,
+                                scale: hover ? 1 : 0.5,
+                            }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute left-5 -top-4 rotate-[9deg]"
+                        >
+                            <Star />
+                        </motion.span>
+
+                        {/* Bottom-right star */}
+                        <motion.span
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={{
+                                opacity: hover ? 1 : 0,
+                                scale: hover ? 1 : 0.5,
+                            }}
+                            transition={{ duration: 0.2, delay: 0.05 }}
+                            className="absolute right-6 -bottom-2"
+                        >
+                            <Star />
+                        </motion.span>
                     </motion.a>
                 </div>
+
             </section>
         </>
     );
