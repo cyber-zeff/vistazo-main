@@ -61,7 +61,7 @@ const ProcessSection: React.FC = () => {
             <h2 className='quantaFont text-[#121213] leading-normal font-black text-[64px] sm:text-[84px] md:text-[96px] uppercase text-center mb-10 md:mb-20 text-balance max-w-308.75 mx-auto'>We keep our Process Simple</h2>
 
             {/* STATIC CARDS */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-0 place-items-center max-w-350 mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-0 place-items-center max-w-320 mx-auto px-4">
                 {/* Left Card */}
                 <div className="mb-8 flex flex-col justify-end items-center gap-7.5 p-12.5 w-90 h-110 md:h-130 md:w-100 rounded-[50px] bg-gray-200 border border-[#121213] shadow-[8px_12px_2.5px_0_rgba(0,0,0,0.25)]">
                     <ProcessBtn path="#" name="Get Started" bg="#FFFEF7" />
