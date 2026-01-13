@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { section } from 'framer-motion/client'
 
@@ -12,9 +12,9 @@ type CardType = {
     description?: string
 }
 
-const isTouch =
+const isTouchDevice =
     typeof window !== 'undefined' &&
-    window.matchMedia('(hover: none)').matches
+    navigator.maxTouchPoints > 0
 
 const column1: CardType[] = [
     {
@@ -50,15 +50,33 @@ const column2: CardType[] = [
     },
 ]
 
-function Column({
-    cards,
-}: {
-    cards: CardType[]
-}) {
+function Column({ cards }: { cards: CardType[] }) {
     const [activeIndex, setActiveIndex] = useState<number | null>(null)
+    const columnRef = useRef<HTMLDivElement>(null)
+
+    // Close active card when tapping outside (mobile / tablet)
+    useEffect(() => {
+        function handleOutsideTap(e: PointerEvent) {
+            if (
+                isTouchDevice &&
+                columnRef.current &&
+                !columnRef.current.contains(e.target as Node)
+            ) {
+                setActiveIndex(null)
+            }
+        }
+
+        if (activeIndex !== null) {
+            document.addEventListener('pointerdown', handleOutsideTap)
+        }
+
+        return () => {
+            document.removeEventListener('pointerdown', handleOutsideTap)
+        }
+    }, [activeIndex])
 
     return (
-        <div className="flex flex-col gap-6 mb-6">
+        <div ref={columnRef} className="flex flex-col gap-6 mb-6">
             {cards.map((card, index) => {
                 const isActive = activeIndex === index
                 const isSibling =
@@ -67,10 +85,24 @@ function Column({
                 return (
                     <motion.div
                         key={card.id}
+
+                        /* DESKTOP HOVER */
                         onHoverStart={() => setActiveIndex(index)}
                         onHoverEnd={() => setActiveIndex(null)}
+
+                        /* MOBILE / TABLET TAP */
+                        onTap={() => {
+                            if (isTouchDevice) {
+                                setActiveIndex(isActive ? null : index)
+                            }
+                        }}
+
                         animate={{
-                            height: isActive ? 450 : isSibling ? 150 : 300,
+                            height: isActive
+                                ? 450
+                                : isSibling
+                                    ? 150
+                                    : 300,
                         }}
                         transition={{
                             type: 'spring',
@@ -107,33 +139,34 @@ function Column({
                                 {card.step}
                             </div>
 
-                            {/* PERSON IMAGE */}
                             {!isSibling && (
                                 <motion.div
                                     initial={false}
                                     animate={{
                                         height: isActive ? '464px' : '294px',
                                         width: isActive ? '350px' : '220px',
-                                        opacity: 1,
                                         right: isActive ? '-50px' : '-30px',
-                                        // scale: isActive ? 1.05 : 1,
-                                        aspectRatio: isActive ? '175/232' : '110/147',
+                                        aspectRatio: isActive
+                                            ? '175/232'
+                                            : '110/147',
                                     }}
                                     transition={{
                                         type: 'spring',
                                         stiffness: 120,
                                         damping: 20,
                                     }}
-                                    className="sm:h-[100px] sm:w-[100px] md:h-[294px] md:w-[220px] absolute -bottom-11.5 z-20 pointer-events-none origin-bottom-right">
+                                    className="absolute -bottom-11.5 z-20 pointer-events-none origin-bottom-right
+                                        sm:h-[100px] sm:w-[100px]
+                                        md:h-[294px] md:w-[220px]"
+                                >
                                     <img
                                         src="/person.png"
                                         alt="Person illustration"
-                                        className="w-full h-full object-contain" // add shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]
+                                        className="w-full h-full object-contain"
                                     />
                                 </motion.div>
                             )}
                         </div>
-
                     </motion.div>
                 )
             })}

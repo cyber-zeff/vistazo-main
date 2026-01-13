@@ -51,12 +51,12 @@ export default function FAQSection() {
 
     return (
         <section className="w-full flex justify-center items-center py-16 px-4 bg-white text-[#121213]">
-            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 place-items-center gap-12 items-start">
+            <div className="w-full max-w-7xl grid grid-cols-1 xl:grid-cols-2 place-items-center gap-12 items-start">
 
                 {/* ================= LEFT COLUMN ================= */}
                 <div className="flex flex-col justify-between h-full">
                     {/* Heading */}
-                    <div className="mb-10 lg:mb-0 mx-auto">
+                    <div className="mb-10 xl:mb-0 mx-auto">
                         <h2 className="quantaFont text-[44px] sm:text-[54px] md:text-[64px] font-black leading-normal">
                             GOT QUESTIONS?
                             <br />
@@ -69,7 +69,7 @@ export default function FAQSection() {
                     </div>
 
                     {/* CTA Card */}
-                    <div className="bg-[#361E98] text-white rounded-[30px] p-8 lg:w-131.25 md:h-56.25">
+                    <div className="bg-[#361E98] text-white rounded-[30px] p-8 sm:w-131.25 sm:h-56.25">
                         <h3 className="text-[20px] font-bold mb-2 leading-normal">
                             Didn’t find what you were looking for?
                         </h3>
@@ -95,19 +95,28 @@ export default function FAQSection() {
                     {faqs.map((faq, index) => {
                         const isOpen = activeIndex === index;
                         const isMobile = useIsMobile();
+                        const isTopCard = index === 0
 
                         return (
                             <motion.div key={index} layout initial={false}
-                                animate={{ height: isOpen ? isMobile ? 400 : 200 : 100, }}
+                                animate={{ height: isOpen ? isMobile ? isTopCard ? 400 : 300 : 200 : 100, }}
                                 transition={{ type: "spring", stiffness: 160, damping: 15, }}
                                 onClick={() => setActiveIndex(isOpen ? null : index)}
-                                className="cursor-pointer w-170 md:w-220 lg:w-170 max-w-[90vw] bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)] px-8 py-10.5 flex items-center justify-between overflow-hidden shrink-0 border-2 border-[#121213]"
-                                // style={{ width: "680px", maxWidth: "90vw", }}
-                                >
+                                className="relative cursor-pointer w-150 md:w-220 lg:w-170 max-w-[90vw] bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)]
+                                    px-8 py-10.5 flex items-center justify-between overflow-hidden shrink-0 border-2 border-[#121213]">
+                                {/* STAR (ALWAYS VISIBLE) */}
+                                <motion.span
+                                    animate={{ rotate: isOpen ? 90 : -90 }}
+                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                    className="absolute top-7.5 right-10 z-10" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none" >
+                                        <path d="M17.5 0C21.6501 14.109 35 17.5 35 17.5C35 17.5 22.3021 20.891 17.5 35C12.6979 20.891 0 17.5 0 17.5C0 17.5 13.3499 14.109 17.5 0Z" fill="#F9D94D" />
+                                    </svg>
+                                </motion.span>
 
                                 {/* LEFT CONTENT */}
                                 <div className="flex-1 sm:flex-1 max-[650px]:flex-[1.4]">
-                                    <h3 className="text-[18px] font-medium leading-normal"> {faq.question} </h3>
+                                    <h3 className={`text-[18px] font-medium leading-normal ${isTopCard ? '' : 'mr-10'}`}> {faq.question} </h3>
                                     <AnimatePresence>
                                         {isOpen && (
                                             <motion.p
@@ -123,31 +132,30 @@ export default function FAQSection() {
                                 </div>
 
                                 {/* RIGHT ICON / BUNNY */}
-                                <div className="relative -top-3 w-55 max-[650px]:w-36 h-full flex justify-end shrink-0">
-                                    {/* STAR (ALWAYS VISIBLE) */}
-                                    <motion.span
-                                        animate={{ rotate: isOpen ? 90 : -90 }}
-                                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                                        className="absolute top-0 right-0 z-10" >
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none" >
-                                            <path d="M17.5 0C21.6501 14.109 35 17.5 35 17.5C35 17.5 22.3021 20.891 17.5 35C12.6979 20.891 0 17.5 0 17.5C0 17.5 13.3499 14.109 17.5 0Z" fill="#F9D94D" />
-                                        </svg>
-                                    </motion.span>
+                                {isTopCard && (
+                                    <div className="relative -top-3 w-55 max-[650px]:w-36 h-full flex justify-end shrink-0">
 
-                                    {/* BUNNY */}
-                                    <AnimatePresence>
-                                        {isOpen && (
-                                            <motion.div
-                                                initial={{ opacity: 0, scale: 0.9, x: 10 }}
-                                                animate={{ opacity: 1, scale: 1, x: 0 }}
-                                                exit={{ opacity: 0, scale: 0.9, x: 10 }}
-                                                transition={{ duration: 0.3 }}>
-                                                <Image src="/head-bunny.png" alt="Hi Bunny" width={200} height={197}
-                                                    className="w-25 h-27 max-[650px]:w-20 max-[650px]:h-22 sm:w-30 sm:h-32 md:w-49.25 md:h-50 object-contain" />
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-                                </div>
+
+                                        {/* BUNNY */}
+                                        <AnimatePresence>
+                                            {isTopCard && isOpen && (
+                                                <motion.div
+                                                    initial={{ opacity: 0, scale: 0.9, x: 10 }}
+                                                    animate={{ opacity: 1, scale: 1, x: 0 }}
+                                                    exit={{ opacity: 0, scale: 0.9, x: 10 }}
+                                                    transition={{ duration: 0.3 }}
+                                                >
+                                                    <Image
+                                                        src="/head-bunny.png"
+                                                        alt="Hi Bunny"
+                                                        width={200}
+                                                        height={197}
+                                                        className="w-25 h-27 max-[650px]:w-20 max-[650px]:h-22 sm:w-30 sm:h-32 md:w-49.25 md:h-50 object-contain"
+                                                    />
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>)}
                             </motion.div>);
                     })}
                 </div>

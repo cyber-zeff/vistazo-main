@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useState, useRef, useEffect } from "react"
 
 const services = [
     { title: "logo & brand identity", image: "#" },
@@ -21,19 +22,44 @@ function DiamondStar() {
 function ServiceItem({
     service,
     index,
+    isActive,
+    setActiveIndex,
 }: {
     service: { title: string; image: string }
     index: number
+    isActive: boolean
+    setActiveIndex: (index: number | null) => void
 }) {
     const tilt = index % 2 === 0 ? 5 : -5
+    const ref = useRef<HTMLDivElement>(null)
+
+    // Close on outside click
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (ref.current && !ref.current.contains(event.target as Node)) {
+                setActiveIndex(null)
+            }
+        }
+
+        if (isActive) {
+            document.addEventListener("pointerdown", handleClickOutside)
+        }
+
+        return () => {
+            document.removeEventListener("pointerdown", handleClickOutside)
+        }
+    }, [isActive, setActiveIndex])
 
     return (
         <motion.div
+            ref={ref}
             initial="rest"
-            animate="rest"
+            animate={isActive ? "hover" : "rest"}
             whileHover="hover"
-            whileTap="hover"
-            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 py-6 md:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] active:bg-[rgba(103,85,207,0.75)] rounded-[15px]"
+            onTap={() =>
+                setActiveIndex(isActive ? null : index)
+            }
+            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 py-6 md:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] rounded-[15px]"
         >
             <div className="flex items-center gap-4 md:gap-6">
                 <motion.div
@@ -42,29 +68,30 @@ function ServiceItem({
                         hover: { rotate: 180 },
                     }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="text-white transition-colors duration-300 group-hover:text-[#F9D94D] group-active:text-[#F9D94D]"
+                    className="text-white group-hover:text-[#F9D94D] max-md:group-focus:text-[#F9D94D]"
                 >
                     <DiamondStar />
                 </motion.div>
 
-                <h3 className="text-[28px] sm:text-[34px] md:text-[48px] quantaFont tracking-tight transition-colors duration-300 group-hover:text-[#F9D94D] group-active:text-[#F9D94D]">
+                <h3 className="text-[28px] sm:text-[34px] md:text-[48px] quantaFont tracking-tight group-hover:text-[#F9D94D] max-md:group-focus:text-[#F9D94D]">
                     {service.title}
                 </h3>
             </div>
 
-            {/* Hover Card */}
+            {/* Hover / Tap Card */}
             <motion.div
                 variants={{
                     rest: {
                         opacity: 0,
                         scale: 0.85,
                         rotate: 0,
+                        pointerEvents: "none",
                     },
                     hover: {
                         opacity: 1,
                         scale: 1,
                         rotate: tilt,
-                        display: "block",
+                        pointerEvents: "auto",
                     },
                 }}
                 transition={{
@@ -80,20 +107,19 @@ function ServiceItem({
                             ? "8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)"
                             : "-8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)",
                 }}
-                className="hidden absolute right-8 top-1/2 -translate-y-[65%] w-81.25 h-95.25 bg-gray-100 rounded-[53px] overflow-hidden"
+                className="absolute right-8 top-1/2 -translate-y-[65%] w-81.25 h-95.25 bg-gray-100 rounded-[53px] overflow-hidden"
             />
 
-
-            {/* Bottom Divider Line */}
-            <div
-                className="absolute left-0 right-0 -bottom-3 h-[0.5px] bg-white
-                    pointer-events-none transition-opacity duration-300 group-hover:opacity-0" />
-
+            {/* Bottom Divider */}
+            <div className="absolute left-0 right-0 -bottom-3 h-[0.5px] bg-white pointer-events-none transition-opacity duration-300 group-hover:opacity-0" />
         </motion.div>
     )
 }
 
+
 export default function Services() {
+    const [activeIndex, setActiveIndex] = useState<number | null>(null)
+
     return (
         <>
             <section className="px-5 md:px-25.5 md:py-24">
@@ -108,7 +134,13 @@ export default function Services() {
 
                 <div className="max-w-7xl mx-auto">
                     {services.map((service, index) => (
-                        <ServiceItem key={index} service={service} index={index} />
+                        <ServiceItem
+                            key={index}
+                            service={service}
+                            index={index}
+                            isActive={activeIndex === index}
+                            setActiveIndex={setActiveIndex}
+                        />
                     ))}
                 </div>
             </section>
