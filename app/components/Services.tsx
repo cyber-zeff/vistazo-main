@@ -33,7 +33,7 @@ function ServiceItem({
             animate="rest"
             whileHover="hover"
             whileTap="hover"
-            className="group relative mt-4 md:mt-8 flex items-center justify-between px-3 py-6 md:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] active:bg-[rgba(103,85,207,0.75)] rounded-[15px]"
+            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 py-6 md:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] active:bg-[rgba(103,85,207,0.75)] rounded-[15px]"
         >
             <div className="flex items-center gap-4 md:gap-6">
                 <motion.div
