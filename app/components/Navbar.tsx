@@ -91,7 +91,7 @@ export default function WaveNavbar() {
             width={155}
             height={35}
             alt="Company logo"
-            className="h-auto w-auto"
+            // className=""
             priority
           />
         </div>
