@@ -15,6 +15,7 @@ const links = [
 
 export default function WaveNavbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
         <header className="w-full sticky top-0 z-50 px-10 md:px-20">
@@ -24,6 +25,11 @@ export default function WaveNavbar() {
                 viewBox="0 0 1440 120"
                 preserveAspectRatio="none"
                 className="absolute top-0 left-0 w-full h-30 -z-10"
+                style={{
+                    transform: 'translateZ(0)',
+                    backfaceVisibility: 'hidden',
+                    WebkitBackfaceVisibility: 'hidden',
+                }}
             >
                 <defs>
                     <filter
@@ -67,6 +73,7 @@ export default function WaveNavbar() {
                     <path
                         d="M0 0H1440V100C1299.13 110.751 1220 110.541 1080 100C938.643 89.3329 859.883 89.417 720 100C579.17 110.683 500.269 110.611 360 100C218.401 89.4141 139.631 89.4863 0 100V0Z"
                         fill="#361E98"
+                        shapeRendering="geometricPrecision"
                     />
                 </g>
             </svg>
@@ -102,7 +109,6 @@ export default function WaveNavbar() {
                     flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 py-4 lg:py-2
                     ${isOpen ? "flex" : "hidden"} lg:flex fixed lg:static top-[4.7rem] lg:top-auto left-0 w-screen h-[calc(100vh-4.7rem)] lg:w-auto lg:h-auto bg-main lg:bg-transparent z-40 overflow-y-auto`}>
                     {links.map((link) => {
-                        const [isHovered, setIsHovered] = useState(false);
 
                         return (
                             <a

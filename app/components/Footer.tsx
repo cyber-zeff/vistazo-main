@@ -1,3 +1,4 @@
+import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,7 +27,7 @@ export default function Footer() {
                         </span>
                     </div>
 
-                    <p className="text-[12px] max-w-95 leading-normal font-light capitalize">
+                    <p className="text-[12px] max-w-95 leading-normal font-normal italic capitalize">
                         By submitting your email, you&apos;ll receive tips on personal branding,
                         LinkedIn hacks, and updates on what we&apos;re working on.
                     </p>
@@ -75,7 +76,13 @@ export default function Footer() {
                 </p>
 
                 <p className="text-[14px] text-center leading-normal font-medium">
-                    Made with 🩷 By Design Team at Vistazo <br /> (The design team made us add this)
+                    Made with{" "}
+                    <span className="inline-flex align-middle">
+                        <Heart fill="#FF5A8A" color="#FF5A8A" className="w-4 h-4 mx-1 inline" />
+                    </span>
+                    {" "}by The Design Team at Vistazo
+                    <br />
+                    <span className="italic text-xs opacity-80">(The Design Team made us add this)</span>
                 </p>
 
                 {/* Logo */}
