@@ -27,7 +27,7 @@
 }
 
 .quantaFont {
-  font-family: "QuantaGroteskPro";
+  font-family: "QuantaGroteskPro", "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
   line-height: 1;
