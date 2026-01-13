@@ -92,7 +92,7 @@ export default function FAQSection() {
                 </div>
 
                 {/* ================= RIGHT COLUMN ================= */}
-                <div className="grid gap-8 text-white overflow-visible">
+                <div className="grid gap-8 text-white">
                     {faqs.map((faq, index) => {
                         const isOpen = activeIndex === index;
                         const isMobile = useIsMobile();
