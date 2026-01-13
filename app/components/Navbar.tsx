@@ -18,13 +18,13 @@ export default function WaveNavbar() {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
-        <header className="w-full sticky top-0 z-50 px-10 md:px-20">
+        <header className="w-full sticky top-0 z-50 px-10 md:px-20 bg-main">
             {/* Wave Background with drop shadow */}
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1440 120"
                 preserveAspectRatio="none"
-                className="absolute top-0 left-0 w-full h-30 -z-10"
+                className="absolute top-0 left-0 w-full h-30 pointer-events-none"
                 style={{
                     transform: 'translateZ(0)',
                     backfaceVisibility: 'hidden',
@@ -79,7 +79,7 @@ export default function WaveNavbar() {
             </svg>
 
             {/* Navbar content */}
-            <nav className="text-white md:px-12 py-3 md:py-2 lg:py-2 flex flex-nowrap justify-between items-center w-full sticky top-0 h-26.75">
+            <nav className="text-white md:px-12 py-3 md:py-2 lg:py-2 flex flex-nowrap justify-between items-center w-full relative z-10 h-26.75">
 
                 {/* Logo */}
                 <div className="flex items-center">

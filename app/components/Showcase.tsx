@@ -9,7 +9,7 @@ export default function Showcase() {
     <section className="relative bg-main text-white md:min-h-[89vh] min-h-screen h-full w-full flex flex-col items-center overflow-hidden">
 
       {/* Showcase Container */}
-      <div className="relative w-full max-w-360 px-6 md:px-16 py-12 md:pt-16 md:pb-2 flex justify-center">
+      <div className="relative w-full max-w-360 px-6 md:px-16 py-12 md:pt-12 md:pb-20 flex justify-center">
 
         {/* DESKTOP / LAPTOP VERSION */}
         <div className="hidden md:block relative z-10 w-full">
