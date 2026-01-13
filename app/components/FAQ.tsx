@@ -120,14 +120,7 @@ export default function FAQSection() {
                                     <h3 className={`text-[18px] font-medium leading-normal ${isTopCard ? '' : 'mr-10'}`}> {faq.question} </h3>
                                     <AnimatePresence>
                                         {isOpen && (
-                                            <motion.p
-                                                initial={{ opacity: 0, y: 10 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                exit={{ opacity: 0, y: 10 }}
-                                                transition={{ duration: 0.3 }}
-                                                className="mt-4 text-[16px] leading-5.5 font-medium whitespace-pre-line capitalize">
-                                                {faq.answer}
-                                            </motion.p>
+                                            <p className={`mt-4 text-[16px] leading-5.5 font-medium whitespace-pre-line capitalize ${isTopCard ? '' : 'max-w-[80%]'}`}>{faq.answer}</p>
                                         )}
                                     </AnimatePresence>
                                 </div>
