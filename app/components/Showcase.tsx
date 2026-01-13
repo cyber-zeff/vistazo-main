@@ -6,10 +6,10 @@ import Typewriter from "./Typewriter";
 
 export default function Showcase() {
   return (
-    <section className="relative bg-main text-white min-h-screen w-full flex flex-col items-center overflow-hidden">
+    <section className="relative bg-main text-white md:min-h-[89vh] min-h-screen h-full w-full flex flex-col items-center overflow-hidden">
 
       {/* Showcase Container */}
-      <div className="relative w-full max-w-360 px-6 md:px-16 py-12 md:py-16 flex justify-center">
+      <div className="relative w-full max-w-360 px-6 md:px-16 py-12 md:pt-12 md:pb-20 flex justify-center">
 
         {/* DESKTOP / LAPTOP VERSION */}
         <div className="hidden md:block relative z-10 w-full">
@@ -60,7 +60,7 @@ export default function Showcase() {
           </div>
 
           {/* Text + CTA */}
-          <div className="mt-16 max-w-md">
+          <div className="mt-2 max-w-md">
             <p className="text-gray-200 text-lg mb-6">
               We create custom websites that make your work stand out and get you{" "}
               <span className="font-semibold italic text-white">paid.</span>
