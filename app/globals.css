@@ -8,6 +8,7 @@
        url('/fonts/QuantaGroteskPro-Black-BF6459a54c2cd19.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
+  font-display: block;
 }
 
 :root {

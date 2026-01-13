@@ -68,12 +68,12 @@ function ServiceItem({
                         hover: { rotate: 180 },
                     }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="text-white group-hover:text-[#F9D94D] max-md:group-focus:text-[#F9D94D]"
+                    className="text-white group-hover:text-[#F9D94D]]"
                 >
                     <DiamondStar />
                 </motion.div>
 
-                <h3 className="text-[28px] sm:text-[34px] md:text-[48px] quantaFont tracking-tight group-hover:text-[#F9D94D] max-md:group-focus:text-[#F9D94D]">
+                <h3 className="text-[28px] sm:text-[34px] md:text-[48px] quantaFont tracking-tight group-hover:text-[#F9D94D]">
                     {service.title}
                 </h3>
             </div>
@@ -107,7 +107,7 @@ function ServiceItem({
                             ? "8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)"
                             : "-8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)",
                 }}
-                className="absolute right-8 top-1/2 -translate-y-[65%] w-81.25 h-95.25 bg-gray-100 rounded-[53px] overflow-hidden"
+                className="absolute right-8 top-1/2 -translate-y-[65%] w-70 h-85 md:w-81.25 md:h-95.25 bg-gray-100 rounded-[53px] overflow-hidden"
             />
 
             {/* Bottom Divider */}
@@ -122,7 +122,7 @@ export default function Services() {
 
     return (
         <>
-            <section className="px-5 md:px-25.5 md:py-24">
+            <section className="px-5 md:px-20 md:py-24">
                 <div className="max-w-7xl mx-auto mb-12">
                     <h2 className="text-[62px] sm:text-[82px] md:text-[96px] mt-16 md:mt-0 quantaFont leading-normal">
                         What we serve on <br /> the <span className="text-[#F9D94D]">menu</span>

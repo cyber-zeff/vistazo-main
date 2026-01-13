@@ -17,7 +17,7 @@ export default function WaveNavbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="w-full sticky top-0 z-50 px-10 md:px-25">
+        <header className="w-full sticky top-0 z-50 px-10 md:px-20">
             {/* Wave Background with drop shadow */}
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +108,7 @@ export default function WaveNavbar() {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="relative text-white text-[20px] transition-colors px-4 py-2 md:p-0"
+                                className="relative text-white text-[20px] font-medium transition-colors px-4 py-2 md:p-0"
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}
                             >
