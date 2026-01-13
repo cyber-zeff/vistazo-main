@@ -72,11 +72,11 @@ export default function Showcase() {
         {/* MOBILE / TABLET VERSION */}
         <div className="block md:hidden relative z-10 w-full text-center">
 
-          <h1 className="font-extrabold text-[40px] sm:text-[48px] leading-[1.1] tracking-tight">
+          <h1 className="font-extrabold text-[40px] sm:text-[48px] leading-[1.1] tracking-tight quantaFont">
             DESIGNED FOR
           </h1>
 
-          <div className="font-extrabold text-[40px] sm:text-[48px] leading-[1.1] tracking-tight text-[#F9D94D]">
+          <div className="font-extrabold text-[40px] sm:text-[48px] leading-[1.1] tracking-tight text-[#F9D94D] quantaFont">
             <Typewriter />
           </div>
 
@@ -94,7 +94,7 @@ export default function Showcase() {
               />
             </div>
 
-            <h1 className="font-extrabold text-[40px] sm:text-[48px] leading-[1.1] tracking-tight">
+            <h1 className="font-extrabold text-[40px] sm:text-[48px] leading-[1.1] tracking-tight quantaFont">
               BUILT TO SCALE.
             </h1>
           </div>

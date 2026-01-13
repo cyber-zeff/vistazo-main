@@ -2,7 +2,8 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 
 const faqs = [
     {
@@ -34,6 +35,19 @@ const faqs = [
 
 export default function FAQSection() {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+    function useIsMobile(breakpoint = 768) {
+        const [isMobile, setIsMobile] = useState(false);
+
+        useEffect(() => {
+            const check = () => setIsMobile(window.innerWidth < breakpoint);
+            check();
+            window.addEventListener("resize", check);
+            return () => window.removeEventListener("resize", check);
+        }, [breakpoint]);
+
+        return isMobile;
+    }
 
     return (
         <section className="w-full flex justify-center items-center py-16 px-4 bg-white text-[#121213]">
@@ -80,9 +94,11 @@ export default function FAQSection() {
                 <div className="grid gap-8 text-white">
                     {faqs.map((faq, index) => {
                         const isOpen = activeIndex === index;
+                        const isMobile = useIsMobile();
+
                         return (
                             <motion.div key={index} layout initial={false}
-                                animate={{ height: isOpen ? 200 : 100, }}
+                                animate={{ height: isOpen ? isMobile ? 320 : 200 : 100, }}
                                 transition={{ type: "spring", stiffness: 160, damping: 15, }}
                                 onClick={() => setActiveIndex(isOpen ? null : index)}
                                 className="cursor-pointer bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)] px-8 py-10.5 flex items-center justify-between overflow-hidden shrink-0 border-2 border-[#121213]"

@@ -128,7 +128,7 @@ function Column({
                                     <img
                                         src="/person.png"
                                         alt="Person illustration"
-                                        className="w-full h-full object-contain shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]"
+                                        className="w-full h-full object-contain" // add shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]
                                     />
                                 </motion.div>
                             )}
