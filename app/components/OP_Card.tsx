@@ -108,6 +108,7 @@ function Column({ cards }: { cards: CardType[] }) {
                             type: 'spring',
                             stiffness: 180,
                             damping: 15,
+                            mass: 0.8,
                         }}
                         className="w-full sm:w-[90%] md:w-155 rounded-[30px] bg-[#6755CF] px-8 pt-8 overflow-hidden cursor-pointer flex justify-between"
                     >
@@ -153,7 +154,7 @@ function Column({ cards }: { cards: CardType[] }) {
                                     transition={{
                                         type: 'spring',
                                         stiffness: 120,
-                                        damping: 40,
+                                        damping: 15,
                                         mass: 0.3,
                                     }}
                                     className="absolute -bottom-11.5 z-20 pointer-events-none origin-bottom-right

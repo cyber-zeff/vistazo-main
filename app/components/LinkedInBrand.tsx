@@ -53,14 +53,25 @@ export default function LinkedInBrand() {
                                 <svg width="50" height="50"><circle cx="25" cy="25" r="25" fill="#F9D94D" /></svg>
                             </div>
 
-                            <button className="bg-white text-[#361E98] w-full sm:w-45 h-12.5 lg:ml-9 py-3 md:pl-3 rounded-[100px] inline-flex items-center justify-center whitespace-nowrap hover:border-2 hover:border-white  hover:bg-transparent hover:text-white hover:transition-[0.3s]">
-                                <p className="font-bold text-[16px] leading-normal -tracking-[0.8px]">Claim Yours!</p>
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                                        <path d="M20.371 12.1842L13.4413 12.1842C13.1585 12.1842 12.9256 12.087 12.7427 11.8928C12.5598 11.6986 12.4686 11.4598 12.469 11.1765C12.4808 10.9055 12.5779 10.6726 12.7604 10.4779C12.9428 10.2832 13.1757 10.1861 13.459 10.1866L22.7928 10.1866C22.9342 10.1866 23.061 10.213 23.1732 10.2658C23.2854 10.3186 23.3882 10.3926 23.4815 10.4878C23.5749 10.583 23.6484 10.6863 23.7021 10.7975C23.7559 10.9088 23.7825 11.0353 23.782 11.1772L23.782 20.511C23.782 20.7703 23.6847 20.9973 23.49 21.192C23.2953 21.3867 23.0627 21.4897 22.7921 21.501C22.5092 21.501 22.2705 21.4037 22.0758 21.209C21.8811 21.0143 21.784 20.7757 21.7845 20.4934L21.7852 13.5984L13.8832 21.5003C13.6829 21.7006 13.447 21.8008 13.1754 21.8008C12.9039 21.8008 12.6684 21.7006 12.469 21.5003C12.2696 21.2999 12.1695 21.064 12.1685 20.7925C12.1676 20.5209 12.2677 20.2855 12.469 20.0861L20.371 12.1842Z" fill="#361E98" />
-                                    </svg>
-                                </div>
+                            <button
+                                className="group bg-white text-[#361E98] w-full sm:w-45 h-12.5 lg:ml-9 py-3 md:pl-3 rounded-[100px] inline-flex items-center justify-center gap-2 whitespace-nowrap
+                                    border-2 border-transparent transition-all duration-300 ease-out hover:bg-transparent hover:border-white hover:text-white">
+                                <p className="font-bold text-[16px] leading-normal -tracking-[0.8px]">
+                                    Claim Yours!
+                                </p>
+
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="34"
+                                    height="34"
+                                    viewBox="0 0 34 34"
+                                    className="transition-colors duration-300"
+                                    fill="currentColor"
+                                >
+                                    <path d="M20.371 12.1842L13.4413 12.1842C13.1585 12.1842 12.9256 12.087 12.7427 11.8928C12.5598 11.6986 12.4686 11.4598 12.469 11.1765C12.4808 10.9055 12.5779 10.6726 12.7604 10.4779C12.9428 10.2832 13.1757 10.1861 13.459 10.1866L22.7928 10.1866C22.9342 10.1866 23.061 10.213 23.1732 10.2658C23.2854 10.3186 23.3882 10.3926 23.4815 10.4878C23.5749 10.583 23.6484 10.6863 23.7021 10.7975C23.7559 10.9088 23.7825 11.0353 23.782 11.1772L23.782 20.511C23.782 20.7703 23.6847 20.9973 23.49 21.192C23.2953 21.3867 23.0627 21.4897 22.7921 21.501C22.5092 21.501 22.2705 21.4037 22.0758 21.209C21.8811 21.0143 21.784 20.7757 21.7845 20.4934L21.7852 13.5984L13.8832 21.5003C13.6829 21.7006 13.447 21.8008 13.1754 21.8008C12.9039 21.8008 12.6684 21.7006 12.469 21.5003C12.2696 21.2999 12.1695 21.064 12.1685 20.7925C12.1676 20.5209 12.2677 20.2855 12.469 20.0861L20.371 12.1842Z" />
+                                </svg>
                             </button>
+
                         </div>
                     </div>
 

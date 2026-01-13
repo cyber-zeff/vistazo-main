@@ -9,27 +9,27 @@ const faqs = [
     {
         question: "What exactly do I get at the end?",
         answer:
-            "Complete Visual Identity (Logo, Color Palette, Fonts), A Fully Built Custom Website, All The Copywriting, SEO Optimization, And A Free LinkedIn Profile Refresh. Plus All The Source Files — You Own Everything.",
+            "Complete visual identity (logo, color palette, fonts), a fully built custom website, all the copywriting, SEO optimization, and a free LinkedIn profile refresh. Plus all the source files. you own everything.",
     },
     {
-        question: "What exactly do I get at the end?",
+        question: "How long does a typical project take?",
         answer:
-            "Complete Visual Identity (Logo, Color Palette, Fonts), A Fully Built Custom Website, All The Copywriting, SEO Optimization, And A Free LinkedIn Profile Refresh. Plus All The Source Files — You Own Everything.",
+            "Project timelines vary depending on scope. A landing page may take 1–2 weeks, while full websites or branding projects can take 4–8 weeks. We’ll provide a detailed timeline after the initial discovery call.",
     },
     {
-        question: "What exactly do I get at the end?",
+        question: "Can you help with just one part of the project?",
         answer:
-            "Complete Visual Identity (Logo, Color Palette, Fonts), A Fully Built Custom Website, All The Copywriting, SEO Optimization, And A Free LinkedIn Profile Refresh. Plus All The Source Files — You Own Everything.",
+            "Absolutely. we’re happy to collaborate in the way that best complements your team’s workflow. We can jump in as creative partners, support your internal team, or handle everything from concept to execution.",
     },
     {
-        question: "What exactly do I get at the end?",
+        question: "Do you offer payment plans?",
         answer:
-            "Complete Visual Identity (Logo, Color Palette, Fonts), A Fully Built Custom Website, All The Copywriting, SEO Optimization, And A Free LinkedIn Profile Refresh. Plus All The Source Files — You Own Everything.",
+            "Yes, we do. Not everyone has the full budget sitting around, and we get that. Ask us about payment options and we'll figure something out that works.",
     },
     {
-        question: "What exactly do I get at the end?",
+        question: "What About ongoing Support After Launch?",
         answer:
-            "Complete Visual Identity (Logo, Color Palette, Fonts), A Fully Built Custom Website, All The Copywriting, SEO Optimization, And A Free LinkedIn Profile Refresh. Plus All The Source Files — You Own Everything.",
+            "Yes, We provide ongoing maintenance, performance monitoring, and retainer-based support to ensure your website stays optimized, secure, and aligned with your business goals.",
     },
 ];
 
@@ -73,17 +73,18 @@ export default function FAQSection() {
                         <h3 className="text-[20px] font-bold mb-2 leading-normal">
                             Didn’t find what you were looking for?
                         </h3>
-                        <p className="text-[16px] leading-normal font-normal mb-4">
+                        <p className="text-[16px] leading-normal font-normal mb-4 max-w-105.75">
                             Jump on a <span className="font-bold">free call</span> with our team.
                             We’ll talk about what you need, figure out if we’re a
                             good fit, and map out how we’d actually execute your brand.
                         </p>
 
-                        <button className="flex items-center gap-2 py-1.75 pr-6.25 pl-7.75 rounded-[83px] w-45 h-10.5 bg-white text-[#361E98] text-[16px] font-bold leading-normal -tracking-[0.8]">
+                        <button className="flex items-center gap-2 py-1.75 pr-6.25 pl-7.75 rounded-[83px] w-45 h-10.5 bg-white text-[#361E98] text-[16px] font-bold leading-normal -tracking-[0.8] border-2 border-transparent
+                            transition-all duration-300 ease-out hover:bg-transparent hover:border-white hover:text-white">
                             Claim Yours!
                             <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
-                                    <path d="M7.51891 1.83109L1.16674 1.83109C0.907464 1.83109 0.693996 1.74207 0.526333 1.56404C0.358671 1.386 0.275056 1.16714 0.275488 0.907431C0.286291 0.658961 0.375307 0.445494 0.542538 0.267028C0.709769 0.0885617 0.923236 -0.00045478 1.18294 -2.25222e-05L9.73893 -2.2733e-05C9.86857 -2.27119e-05 9.98481 0.0241759 10.0877 0.0725735C10.1905 0.120971 10.2847 0.188814 10.3703 0.276102C10.4558 0.363391 10.5232 0.458025 10.5725 0.560006C10.6218 0.661986 10.6462 0.778011 10.6457 0.908079L10.6457 9.46407C10.6457 9.70174 10.5565 9.9098 10.378 10.0883C10.1996 10.2667 9.98632 10.3612 9.73828 10.3715C9.47901 10.3715 9.26014 10.2823 9.08168 10.1038C8.90321 9.92536 8.81419 9.70671 8.81463 9.44787L8.81527 3.12745L1.57185 10.3709C1.3882 10.5545 1.17192 10.6464 0.923021 10.6464C0.674119 10.6464 0.458274 10.5545 0.275488 10.3709C0.0927003 10.1872 0.000874152 9.97095 1.03101e-05 9.72205C-0.000853869 9.47314 0.0909716 9.2573 0.275488 9.07451L7.51891 1.83109Z" fill="#361E98" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="currentColor" className="transition-colors duration-300">
+                                    <path d="M7.51891 1.83109L1.16674 1.83109C0.907464 1.83109 0.693996 1.74207 0.526333 1.56404C0.358671 1.386 0.275056 1.16714 0.275488 0.907431C0.286291 0.658961 0.375307 0.445494 0.542538 0.267028C0.709769 0.0885617 0.923236 -0.00045478 1.18294 -2.25222e-05L9.73893 -2.2733e-05C9.86857 -2.27119e-05 9.98481 0.0241759 10.0877 0.0725735C10.1905 0.120971 10.2847 0.188814 10.3703 0.276102C10.4558 0.363391 10.5232 0.458025 10.5725 0.560006C10.6218 0.661986 10.6462 0.778011 10.6457 0.908079L10.6457 9.46407C10.6457 9.70174 10.5565 9.9098 10.378 10.0883C10.1996 10.2667 9.98632 10.3612 9.73828 10.3715C9.47901 10.3715 9.26014 10.2823 9.08168 10.1038C8.90321 9.92536 8.81419 9.70671 8.81463 9.44787L8.81527 3.12745L1.57185 10.3709C1.3882 10.5545 1.17192 10.6464 0.923021 10.6464C0.674119 10.6464 0.458274 10.5545 0.275488 10.3709C0.0927003 10.1872 0.000874152 9.97095 1.03101e-05 9.72205C-0.000853869 9.47314 0.0909716 9.2573 0.275488 9.07451L7.51891 1.83109Z" />
                                 </svg>
                             </span>
                         </button>
