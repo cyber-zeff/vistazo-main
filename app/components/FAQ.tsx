@@ -69,7 +69,7 @@ export default function FAQSection() {
                     </div>
 
                     {/* CTA Card */}
-                    <div className="bg-[#361E98] text-white rounded-[30px] p-8 flex flex-col md:w-171 md:px-18 sm:w-131.25 sm:h-56.25 xl:w-131.25 xl:h-56.25">
+                    <div className="bg-[#361E98] text-white rounded-[30px] p-8 flex flex-col md:w-171 md:px-18 xl:px-8 px-8 sm:w-131.25 sm:h-56.25 xl:w-131.25 xl:h-56.25">
                         <h3 className="text-[20px] font-bold mb-2 leading-normal">
                             Didn’t find what you were looking for?
                         </h3>
@@ -92,7 +92,7 @@ export default function FAQSection() {
                 </div>
 
                 {/* ================= RIGHT COLUMN ================= */}
-                <div className="grid gap-8 text-white">
+                <div className="grid gap-8 text-white overflow-visible">
                     {faqs.map((faq, index) => {
                         const isOpen = activeIndex === index;
                         const isMobile = useIsMobile();
