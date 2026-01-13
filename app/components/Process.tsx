@@ -61,14 +61,14 @@ const ProcessSection: React.FC = () => {
             <h2 className='quantaFont text-[#121213] leading-normal font-black text-[64px] sm:text-[84px] md:text-[96px] uppercase text-center mb-10 md:mb-20 text-balance max-w-308.75 mx-auto'>We keep our Process Simple</h2>
 
             {/* STATIC CARDS */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-0 place-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-0 place-items-center md:px-0">
                 {/* Left Card */}
-                <div className="mb-8 flex flex-col justify-end items-center gap-7.5 p-12.5 h-130 w-100 rounded-[50px] bg-gray-200 border border-[#121213] shadow-[8px_12px_2.5px_0_rgba(0,0,0,0.25)]">
+                <div className="mb-8 flex flex-col justify-end items-center gap-7.5 p-12.5 w-90 h-110 md:h-130 md:w-100 rounded-[50px] bg-gray-200 border border-[#121213] shadow-[8px_12px_2.5px_0_rgba(0,0,0,0.25)]">
                     <ProcessBtn path="#" name="Get Started" bg="#FFFEF7" />
                 </div>
 
                 {/* Center Card (Featured) */}
-                <div className="mb-8 relative lg:-top-10 md:top-0 top-0 flex flex-col justify-end items-center bg-[#361E98] gap-7.5 px-12.5 py-10 h-130 w-100 rounded-[50px] border border-[#121213] shadow-[8px_12px_2.5px_0_rgba(0,0,0,0.25)]">
+                <div className="mb-8 relative lg:-top-10 md:top-0 top-0 flex flex-col justify-end items-center bg-[#361E98] gap-7.5 px-12.5 py-10 w-90 h-110 md:h-130 md:w-100 rounded-[50px] border border-[#121213] shadow-[8px_12px_2.5px_0_rgba(0,0,0,0.25)]">
 
                     <span className="absolute top-6 right-6 flex justify-center items-center w-31.25 h-8.75 rounded-[25px] border border-[#121213] bg-[#F9D94D]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" fill="none">
@@ -89,7 +89,7 @@ const ProcessSection: React.FC = () => {
 
 
                 {/* Right Card */}
-                <div className="mb-8 flex flex-col justify-end items-center gap-7.5 px-12.5 py-10 h-130 w-100 rounded-[50px] bg-gray-200 border border-[#121213] shadow-[8px_12px_2.5px_0_rgba(0,0,0,0.25)]">
+                <div className="mb-8 flex flex-col justify-end items-center gap-7.5 px-12.5 py-10 w-90 h-110 md:h-130 md:w-100 rounded-[50px] bg-gray-200 border border-[#121213] shadow-[8px_12px_2.5px_0_rgba(0,0,0,0.25)]">
                     <ProcessBtn path="#" name="Get Started" bg="#FFFEF7" />
                 </div>
             </div>
