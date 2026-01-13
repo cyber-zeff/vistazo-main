@@ -71,7 +71,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
 
                 <p className="text-[14px] text-center md:text-left leading-normal font-medium">
-                    © 2026 Vistazo. All Rights Reserved
+                    &copy; 2026 Vistazo. All Rights Reserved
                 </p>
 
                 <p className="text-[14px] text-center leading-normal font-medium">

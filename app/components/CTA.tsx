@@ -61,7 +61,7 @@ export default function CTASection() {
                                 : "0px 10px 0px 0px #ffffff",
                         }}
                         transition={{ duration: 0.2, ease: "easeInOut" }}
-                        className="relative overflow-visible uppercase bg-transparent w-[350px] h-[87px] px-20 py-5 border border-white rounded-[500px] text-white text-[32px] font-medium leading-normal -tracking-[1.6px] text-center flex items-center justify-center"
+                        className="relative overflow-visible uppercase bg-transparent w-87.5 h-21.75 px-20 py-5 border border-white rounded-[500px] text-white text-[32px] font-medium leading-normal -tracking-[1.6px] text-center flex items-center justify-center"
                     >
                         {/* Text */}
                         <span className="relative z-10">Lessgooo!!!</span>
