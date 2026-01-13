@@ -68,7 +68,7 @@ function ServiceItem({
                         hover: { rotate: 180 },
                     }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="text-white group-hover:text-[#F9D94D]]"
+                    className="text-white group-hover:text-[#F9D94D]"
                 >
                     <DiamondStar />
                 </motion.div>

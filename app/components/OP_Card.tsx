@@ -158,8 +158,8 @@ function Column({ cards }: { cards: CardType[] }) {
                                         mass: 0.3,
                                     }}
                                     className="absolute -bottom-11.5 z-20 pointer-events-none origin-bottom-right
-                                        sm:h-[100px] sm:w-[100px]
-                                        md:h-[294px] md:w-[220px]"
+                                        sm:h-25 sm:w-25
+                                        md:h-73.5 md:w-55"
                                 >
                                     <img
                                         src="/person.png"
@@ -178,7 +178,7 @@ function Column({ cards }: { cards: CardType[] }) {
 
 export default function OPCard() {
     return (
-        <section className='bg-white py-20'>
+        <section className='bg-[#FFFEF7] py-20'>
             <h2 className='quantaFont text-[#121213] leading-normal font-black text-[64px] sm:text-[84px] md:text-[96px] uppercase text-center mb-10 md:mb-20 text-balance max-w-308.75 mx-auto'>We keep our Process Simple</h2>
             <div className="flex justify-center">
                 <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center w-full max-w-350">

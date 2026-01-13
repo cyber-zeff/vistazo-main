@@ -22,7 +22,7 @@ export default function WaveNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full sticky top-0 z-50 px-10 md:px-20 bg-main">
+    <header className="w-full sticky top-0 z-50 px-10 md:px-20">
       {/* Wave Background with drop shadow */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +83,7 @@ export default function WaveNavbar() {
       </svg>
 
       {/* Navbar content */}
-      <nav className="text-white md:px-12 py-3 md:py-2 lg:py-2 flex flex-nowrap justify-between items-center w-full relative z-10 h-26.75">
+      <nav className="text-white py-3 md:py-2 lg:py-2 flex flex-nowrap justify-between items-center w-full relative z-10 h-26.75">
         {/* Logo */}
         <div className="flex items-center">
           <Image
@@ -109,10 +109,9 @@ export default function WaveNavbar() {
         {/* Navigation Links + CTA */}
         <section
           className={`
-                    flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 py-4 lg:py-2
-                    ${
-                      isOpen ? "flex" : "hidden"
-                    } lg:flex fixed lg:static top-[4.7rem] lg:top-auto left-0 w-screen h-[calc(100vh-4.7rem)] lg:w-auto lg:h-auto bg-main lg:bg-transparent z-40 overflow-y-auto`}
+                    flex flex-col lg:flex-row items-center justify-start xl:justify-center gap-4 lg:gap-8 py-14 lg:py-2
+                    ${isOpen ? "flex" : "hidden"
+            } lg:flex fixed lg:static top-[4.7rem] lg:top-auto left-0 w-screen h-[calc(100vh-4.7rem)] lg:w-auto lg:h-auto bg-main lg:bg-transparent z-40 overflow-y-auto`}
         >
           {links.map((link) => {
             return (

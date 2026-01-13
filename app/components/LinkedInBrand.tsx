@@ -16,7 +16,7 @@ export default function LinkedInBrand() {
     }
 
     return (
-        <section className="bg-white py-16 md:py-33.75">
+        <section className="bg-[#FFFEF7] py-16 md:py-33.75">
             <section
                 className="w-full max-w-full md:max-w-[90%] lg:w-337.5 h-auto lg:h-100 mx-auto bg-main rounded-[25px] overflow-hidden py-5 px-5 lg:pl-10 lg:pr-5">
                 <div className="flex justify-between">
