@@ -5,11 +5,11 @@ import { motion, type MotionProps } from "framer-motion"
 export default function LinkedInBrand() {
     const hoverStandUp: MotionProps = {
         whileHover: {
-            y: -40,
+            y: -30,
             transition: {
                 type: "spring",
-                stiffness: 300,
-                damping: 18,
+                stiffness: 180,
+                damping: 22,
                 mass: 0.6,
             },
         },
@@ -53,7 +53,7 @@ export default function LinkedInBrand() {
                                 <svg width="50" height="50"><circle cx="25" cy="25" r="25" fill="#F9D94D" /></svg>
                             </div>
 
-                            <button className="bg-white text-[#361E98] w-full sm:w-45 h-12.5 lg:ml-9 py-3 md:pl-3 rounded-[100px] inline-flex items-center justify-center whitespace-nowrap">
+                            <button className="bg-white text-[#361E98] w-full sm:w-45 h-12.5 lg:ml-9 py-3 md:pl-3 rounded-[100px] inline-flex items-center justify-center whitespace-nowrap hover:border-2 hover:border-white  hover:bg-transparent hover:text-white hover:transition-[0.3s]">
                                 <p className="font-bold text-[16px] leading-normal -tracking-[0.8px]">Claim Yours!</p>
                                 <div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">

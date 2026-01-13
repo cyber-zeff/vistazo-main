@@ -54,7 +54,7 @@ export default function FAQSection() {
             <div className="w-full max-w-7xl grid grid-cols-1 xl:grid-cols-2 place-items-center gap-12 items-start">
 
                 {/* ================= LEFT COLUMN ================= */}
-                <div className="flex flex-col justify-between h-full">
+                <div className="flex flex-col justify-between self-start xl:h-158.75">
                     {/* Heading */}
                     <div className="mb-10 xl:mb-0 mx-auto">
                         <h2 className="quantaFont text-[44px] sm:text-[54px] md:text-[64px] font-black leading-normal">
@@ -103,8 +103,8 @@ export default function FAQSection() {
                                 transition={{ type: "spring", stiffness: 160, damping: 15, }}
                                 onClick={() => setActiveIndex(isOpen ? null : index)}
                                 className="relative cursor-pointer w-150 md:w-220 lg:w-170 max-w-[90vw] bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)]
-                                    px-8 py-10.5 flex items-center justify-between overflow-hidden shrink-0 border-2 border-[#121213]">
-                                {/* STAR (ALWAYS VISIBLE) */}
+                                    px-8 pt-8.5 pb-10.5 flex items-start justify-between overflow-hidden shrink-0 border-2 border-[#121213]">
+                                {/* STAR */}
                                 <motion.span
                                     animate={{ rotate: isOpen ? 90 : -90 }}
                                     transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -131,11 +131,9 @@ export default function FAQSection() {
                                     </AnimatePresence>
                                 </div>
 
-                                {/* RIGHT ICON / BUNNY */}
+                                {/* BUNNY */}
                                 {isTopCard && (
                                     <div className="relative -top-3 w-55 max-[650px]:w-36 h-full flex justify-end shrink-0">
-
-
                                         {/* BUNNY */}
                                         <AnimatePresence>
                                             {isTopCard && isOpen && (

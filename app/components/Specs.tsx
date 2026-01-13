@@ -13,7 +13,7 @@ export default function Specs() {
                 className="flex items-center gap-8 whitespace-nowrap"
                 animate={{ x: [0, -1920] }}
                 transition={{
-                    duration: 35,
+                    duration: 20,
                     repeat: Number.POSITIVE_INFINITY,
                     ease: "linear",
                 }}
@@ -23,7 +23,7 @@ export default function Specs() {
                         <motion.div
                             animate={{ rotate: [0, -360] }}
                             transition={{
-                                duration: 35,
+                                duration: 25,
                                 repeat: Number.POSITIVE_INFINITY,
                                 ease: "linear",
                             }}
