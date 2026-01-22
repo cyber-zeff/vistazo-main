@@ -28,7 +28,7 @@ export default function WaveNavbar() {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 120"
         preserveAspectRatio="none"
-        className="absolute top-0 left-0 w-full h-30 pointer-events-none"
+        className="absolute top-0 left-0 w-full h-27 pointer-events-none"
         style={{
           transform: "translateZ(0)",
           backfaceVisibility: "hidden",
@@ -83,7 +83,7 @@ export default function WaveNavbar() {
       </svg>
 
       {/* Navbar content */}
-      <nav className="text-white py-3 md:py-2 lg:py-2 flex flex-nowrap justify-between items-center w-full relative z-10 h-26.75">
+      <nav className="text-white py-3 md:py-2 lg:py-2 flex flex-nowrap justify-between items-center w-full relative z-10 h-22">
         {/* Logo */}
         <div className="flex items-center">
           <Image
