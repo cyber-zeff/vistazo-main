@@ -110,7 +110,7 @@ function Column({ cards }: { cards: CardType[] }) {
                             damping: 15,
                             mass: 0.8,
                         }}
-                        className="w-full sm:w-[90%] md:w-155 rounded-[30px] bg-[#6755CF] px-8 pt-8 overflow-hidden cursor-pointer flex justify-between"
+                        className="w-full rounded-[30px] bg-[#6755CF] px-8 pt-8 overflow-hidden cursor-pointer flex justify-between"
                     >
                         {/* LEFT CONTENT */}
                         <div className="flex flex-col gap-4 max-w-86.25">
@@ -181,7 +181,7 @@ export default function OPCard() {
         <section className='bg-[#FFFEF7] py-20'>
             <h2 className='quantaFont text-[#121213] leading-normal font-black text-[64px] sm:text-[84px] md:text-[96px] uppercase text-center mb-10 md:mb-20 text-balance max-w-308.75 mx-auto'>We keep our Process Simple</h2>
             <div className="flex justify-center">
-                <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center w-full max-w-325">
+                <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center w-full max-w-295">
                     <Column cards={column1} />
                     <Column cards={column2} />
                 </div>
