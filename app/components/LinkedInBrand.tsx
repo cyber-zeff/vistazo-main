@@ -16,9 +16,9 @@ export default function LinkedInBrand() {
     }
 
     return (
-        <section className="bg-[#FFFEF7] py-16 md:py-33.75">
+        <section className="bg-[#FFFEF7] max-md:px-20 py-16 md:py-33.75">
             <section
-                className="w-full max-w-full md:max-w-[90%] lg:w-337.5 h-auto lg:h-100 mx-auto bg-main rounded-[25px] overflow-hidden py-5 px-5 lg:pl-10 lg:pr-5">
+                className="w-full max-w-full md:max-w-[90%] lg:w-337.5 h-auto mx-auto bg-main rounded-[25px] overflow-hidden py-5 px-5 lg:pl-10 lg:pr-5">
                 <div className="flex justify-between">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" viewBox="0 0 28 25" fill="none">
@@ -76,7 +76,7 @@ export default function LinkedInBrand() {
                     </div>
 
                     {/* Right side */}
-                    <div className="flex-1 hidden md:flex items-end justify-center h-96 shrink-0 -space-x-12">
+                    <div className="flex-1 hidden md:flex items-end justify-center h-96 relative top-20 shrink-0 -space-x-12">
                         <motion.div {...hoverStandUp} className="w-55 h-75 -rotate-[5deg] bg-gray-300 rounded-[25px] cursor-pointer" />
                         <motion.div {...hoverStandUp} className="w-55 h-75 bg-gray-400 rounded-[25px] z-10 relative -top-10 cursor-pointer" />
                         <motion.div {...hoverStandUp} className="w-55 h-75 rotate-[5deg] bg-gray-500 rounded-[25px] z-20 cursor-pointer" />
