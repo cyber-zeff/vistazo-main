@@ -50,8 +50,8 @@ export default function FAQSection() {
     }
 
     return (
-        <section className="w-full flex justify-center items-center py-16 px-4 bg-[#FFFEF7] text-[#121213]">
-            <div className="w-full max-w-7xl grid grid-cols-1 xl:grid-cols-2 place-items-center gap-12 items-start">
+        <section className="w-full flex justify-center items-center py-16 bg-[#FFFEF7] text-[#121213]">
+            <div className="max-w-310 mx-auto grid grid-cols-1 xl:grid-cols-2 gap-6 items-start justify-items-center">
 
                 {/* ================= LEFT COLUMN ================= */}
                 <div className="flex flex-col justify-between self-start xl:h-158.75">
