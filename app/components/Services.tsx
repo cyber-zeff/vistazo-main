@@ -68,12 +68,12 @@ function ServiceItem({
                         hover: { rotate: 180 },
                     }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="text-white group-hover:text-[#F9D94D]"
+                    className="text-white group-hover:text-[#F9D94D] group-focus:text-[#F9D94D]"
                 >
                     <DiamondStar />
                 </motion.div>
 
-                <h3 className="text-[28px] sm:text-[34px] md:text-[48px] quantaFont tracking-tight group-hover:text-[#F9D94D]">
+                <h3 className="text-[28px] sm:text-[34px] md:text-[48px] quantaFont tracking-tight group-hover:text-[#F9D94D] group-focus:text-[#F9D94D]">
                     {service.title}
                 </h3>
             </div>
