@@ -8,8 +8,8 @@ export default function Footer() {
             <div className="max-md:place-items-center grid grid-cols-1 lg:grid-cols-2 gap-12">
 
                 {/* Left Section */}
-                <div className="space-y-6">
-                    <h2 className="text-[40px] md:text-[48px] font-bold leading-normal quantaFont uppercase max-w-129.25">
+                <div className="space-y-6 max-md:mb-5 max-md:place-items-center">
+                    <h2 className="text-[40px] md:text-[48px] font-bold leading-normal quantaFont uppercase max-w-129.25 max-md:text-center">
                         DON&apos;T MISS THE GOOD STUFF
                     </h2>
 
@@ -57,7 +57,7 @@ export default function Footer() {
                     </div>
 
                     {/* Legal */}
-                    <div>
+                    <div className="max-sm:mt-8">
                         <h4 className="font-bold text-[20px] leading-normal mb-4">For Nerds</h4>
                         <ul className="space-y-3 text-[16px] leading-normal font-medium">
                             <li><Link href="#" className="hover:text-[#F9D94D]">Privacy Policy</Link></li>
@@ -69,7 +69,7 @@ export default function Footer() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="mt-10 md:mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
 
                 <p className="text-[14px] text-center md:text-left leading-normal font-medium">
                     &copy; 2026 Vistazo. All Rights Reserved
