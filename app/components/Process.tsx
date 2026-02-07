@@ -25,7 +25,6 @@ const ProcessSection = () => {
 
     return (
         <section className="w-full bg-[#FFFEF7] overflow-hidden py-[clamp(3rem,8vh,8rem)]">
-            {/* Heading */}
             <h2 className="quantaFont text-[#121213] font-black uppercase text-center mb-[clamp(2rem,6vh,6rem)] text-[clamp(42px,8vw,128px)]">
                 Find What Fits
             </h2>
@@ -77,7 +76,7 @@ const ProcessSection = () => {
                                         if (Math.abs(info.offset.x) > SWIPE_THRESHOLD) {
                                             setCards((prev) => {
                                                 const [top, ...rest] = prev;
-                                                return [...rest, top]; // infinite loop
+                                                return [...rest, top];
                                             });
                                         }
                                     }}
@@ -109,7 +108,7 @@ const ProcessSection = () => {
                     </AnimatePresence>
                 </div>
 
-                {/* DASHED BOX (UNCHANGED + FIXED) */}
+                {/* DASHED BOX */}
                 <div className="w-[70vw] h-[22vh] rounded-[28px] border-2 border-dashed border-[#3A259F]" />
             </div>
 
