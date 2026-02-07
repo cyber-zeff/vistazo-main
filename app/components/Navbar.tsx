@@ -30,7 +30,7 @@ export default function WaveNavbar() {
           transform: "translateZ(0)",
           backfaceVisibility: "hidden",
           WebkitBackfaceVisibility: "hidden",
-          filter: "drop-shadow(0 12px 8px rgba(0,0,0,0.32))"
+          filter: "drop-shadow(0 8px 4px rgba(0,0,0,0.25))"
         }}
       >
         <g>
