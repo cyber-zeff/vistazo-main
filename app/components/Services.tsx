@@ -13,7 +13,7 @@ const services = [
 
 function DiamondStar() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="max-sm:w-6 max-sm:h-6" width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
             <path d="M20 0C24.743 16.1245 40 20 40 20C40 20 25.4881 23.8755 20 40C14.5119 23.8755 0 20 0 20C0 20 15.257 16.1245 20 0Z" />
         </svg>
     )
@@ -73,7 +73,7 @@ function ServiceItem({
                     <DiamondStar />
                 </motion.div>
 
-                <h3 className="text-[28px] sm:text-[34px] md:text-[48px] quantaFont tracking-tight group-hover:text-[#F9D94D] group-focus:text-[#F9D94D]">
+                <h3 className="text-[clamp(20px,6vw,48px)] quantaFont tracking-tight group-hover:text-[#F9D94D] group-focus:text-[#F9D94D]">
                     {service.title}
                 </h3>
             </div>
@@ -107,7 +107,7 @@ function ServiceItem({
                             ? "8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)"
                             : "-8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)",
                 }}
-                className="absolute right-8 top-1/2 -translate-y-[65%] w-70 h-85 md:w-81.25 md:h-95.25 bg-gray-100 rounded-[53px] overflow-hidden"
+                className="absolute right-8 top-1/2 -translate-y-[65%] w-40 h-45 md:w-81.25 md:h-95.25 bg-gray-100 rounded-[20px] md:rounded-[53px] overflow-hidden"
             />
 
             {/* Bottom Divider */}
@@ -122,12 +122,12 @@ export default function Services() {
 
     return (
         <>
-            <section className="px-5 md:px-20 md:py-24">
+            <section className="px-10 md:px-20 md:py-24">
                 <div className="max-w-7xl mx-auto mb-12">
-                    <h2 className="text-[62px] sm:text-[82px] md:text-[96px] mt-16 md:mt-0 quantaFont leading-normal">
+                    <h2 className="text-[clamp(30px,8vw,96px)] mt-16 md:mt-0 quantaFont leading-normal">
                         What we serve on <br /> the <span className="text-[#F9D94D]">menu</span>
                     </h2>
-                    <p className="text-[20px]">
+                    <p className="text-[clamp(12,8vw,20px)]">
                         Just everything you actually need to build a personal brand that pays.
                     </p>
                 </div>
@@ -144,7 +144,8 @@ export default function Services() {
                     ))}
                 </div>
             </section>
-            <div className="bg-[#FFFEF7] w-full m-0 p-0 overflow-hidden pb-10 md:pb-20 lg:pb-20">
+            
+            <div className="bg-[#FFFEF7] w-full m-0 p-0 overflow-hidden pb-10 md:pb-20">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="175" viewBox="0 0 1440 175" fill="none" className="w-full h-auto">
                     <path d="M-144 0V174.661C-108.583 171.493 -81.339 147.058 -76.3442 112.217C-64.0845 195.474 55.7888 195.474 68.0486 112.217C81.2164 195.474 200.182 196.379 211.987 112.217C223.793 195.927 344.12 195.474 355.926 112.217C368.186 195.927 488.513 195.022 500.319 112.217C513.033 196.832 633.814 194.57 644.258 112.217C649.252 194.117 781.385 196.832 788.196 112.217C800.91 195.475 919.875 195.927 932.589 112.217C945.303 195.927 1064.96 195.415 1076.53 112.217C1088.79 195.928 1206.39 195.928 1220.47 112.217C1234.54 195.928 1351.69 195.475 1364.86 112.217C1375.76 194.57 1497.45 196.38 1508.8 112.217C1513.34 144.796 1539.22 171.493 1576 174.661V0L-144 0Z" fill="#361E98" />
                 </svg>
