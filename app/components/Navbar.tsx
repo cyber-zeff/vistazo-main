@@ -30,47 +30,10 @@ export default function WaveNavbar() {
           transform: "translateZ(0)",
           backfaceVisibility: "hidden",
           WebkitBackfaceVisibility: "hidden",
+          filter: "drop-shadow(0 8px 4px rgba(0,0,0,0.25))"
         }}
       >
-        <defs>
-          <filter
-            id="dropShadow"
-            x="-4"
-            y="0"
-            width="1448"
-            height="119.985"
-            filterUnits="userSpaceOnUse"
-            colorInterpolationFilters="sRGB"
-          >
-            <feFlood floodOpacity="0" result="BackgroundImageFix" />
-            <feColorMatrix
-              in="SourceAlpha"
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha"
-            />
-            <feOffset dy="8" />
-            <feGaussianBlur stdDeviation="2" />
-            <feComposite in2="hardAlpha" operator="out" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow"
-              result="shape"
-            />
-          </filter>
-        </defs>
-
-        <g filter="url(#dropShadow)">
+        <g>
           <path
             d="M0 0H1440V100C1299.13 110.751 1220 110.541 1080 100C938.643 89.3329 859.883 89.417 720 100C579.17 110.683 500.269 110.611 360 100C218.401 89.4141 139.631 89.4863 0 100V0Z"
             fill="#361E98"
