@@ -1,98 +1,119 @@
 "use client";
 
-import ProcessBtn from "./ProcessBtns";
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-gsap.registerPlugin(ScrollTrigger);
+const DesktopCard = ({
+    className,
+}: {
+    className?: string;
+}) => (
+    <div
+        className={`rounded-4xl shadow-[0px_6px_8px_0px_rgba(0,0,0,0.25)] ${className}`}
+    />
+);
+const MOBILE_CARDS = [
+    { id: 1, color: "#361E98" },
+    { id: 2, color: "#3A259F" },
+    { id: 3, color: "#6A5ACD" },
+];
 
-const ProcessSection: React.FC = () => {
-    const headingRef = useRef<HTMLHeadingElement>(null);
-    const andRef = useRef<HTMLSpanElement>(null);
-    const resultsRef = useRef<HTMLSpanElement>(null);
-    const extraRef = useRef<HTMLSpanElement>(null);
+const SWIPE_THRESHOLD = 120;
 
-    useEffect(() => {
-        if (!headingRef.current) return;
-
-        const ctx = gsap.context(() => {
-            // TEXT ANIMATIONS (UNCHANGED)
-            gsap.fromTo(
-                resultsRef.current,
-                { x: () => window.innerWidth + 150 },
-                {
-                    x: 0,
-                    ease: "back.out(0.6)",
-                    scrollTrigger: {
-                        trigger: headingRef.current,
-                        start: "top 85%",
-                        end: "top 25%",
-                        scrub: 3,
-                        invalidateOnRefresh: true,
-                    },
-                }
-            );
-
-            gsap.fromTo(
-                [andRef.current, extraRef.current],
-                { x: () => -(window.innerWidth + 150) },
-                {
-                    x: 0,
-                    ease: "back.out(0.6)",
-                    stagger: 0.15,
-                    scrollTrigger: {
-                        trigger: headingRef.current,
-                        start: "top 85%",
-                        end: "top 25%",
-                        scrub: 3,
-                        invalidateOnRefresh: true,
-                    },
-                }
-            );
-        });
-
-        return () => ctx.revert();
-    }, []);
+const ProcessSection = () => {
+    const [cards, setCards] = useState(MOBILE_CARDS);
 
     return (
-        <section className="relative w-full bg-[#FFFEF7] overflow-hidden py-10">
-            {/* TEXT */}
-            <h2 className='quantaFont text-[#121213] leading-normal font-black text-[64px] sm:text-[84px] md:text-[96px] uppercase text-center mb-10 md:mb-20 text-balance max-w-308.75 mx-auto'>We keep our Process Simple</h2>
+        <section className="w-full bg-[#FFFEF7] overflow-hidden py-[clamp(3rem,8vh,8rem)]">
+            {/* Heading */}
+            <h2 className="quantaFont text-[#121213] font-black uppercase text-center mb-[clamp(2rem,6vh,6rem)] text-[clamp(42px,8vw,128px)]">
+                Find What Fits
+            </h2>
 
-            {/* STATIC CARDS */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-0 place-items-center max-w-7xl mx-auto px-4">
-                {/* Left Card */}
-                <div className="mb-8 flex flex-col justify-end items-center gap-7.5 p-12.5 w-90 h-110 md:h-130 md:w-100 rounded-[50px] bg-gray-200 border border-[#121213] shadow-[8px_12px_2.5px_0_rgba(0,0,0,0.25)]">
-                    <ProcessBtn path="#" name="Get Started" bg="#FFFEF7" />
+            {/* ================= DESKTOP ================= */}
+            <div className="hidden md:grid max-w-7xl mx-auto px-6 md:px-12 grid-cols-3 gap-x-8 lg:gap-x-12">
+
+                {/* LEFT COLUMN */}
+                <div className="flex flex-col gap-8 items-center">
+                    <DesktopCard
+                        className="bg-[#3A259F] w-[clamp(260px,28svw,350px)] h-[clamp(420px,60svh,530px)] rounded-3xl "/>
+
+                    <div
+                        className="w-[clamp(260px,28svw,350px)] h-[clamp(150px,22svh,186px)] rounded-[30px] border-2 border-dashed border-[#3A259F]"/>
                 </div>
 
-                {/* Center Card (Featured) */}
-                <div className="mb-8 relative lg:-top-10 md:top-0 top-0 flex flex-col justify-end items-center bg-[#361E98] gap-7.5 px-12.5 py-10 w-90 h-110 md:h-130 md:w-100 rounded-[50px] border border-[#121213] shadow-[8px_12px_2.5px_0_rgba(0,0,0,0.25)]">
-
-                    <span className="absolute top-6 right-6 flex justify-center items-center w-31.25 h-8.75 rounded-[25px] border border-[#121213] bg-[#F9D94D]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" fill="none">
-                            <path d="M6 7.45575C7.74975 4.97475 6.12525 1.5885 5.25 0.75C5.25 3.29625 3.57375 4.72425 2.49975 5.7795C1.42725 6.8355 0.75 8.25 0.75 9.9705C0.75 12.7485 3.1005 15 6 15C8.8995 15 11.25 12.7485 11.25 9.9705C11.25 8.6865 10.326 6.66825 9.50025 5.7795C7.93725 8.29425 7.0575 8.29425 6 7.45575Z"
-                                stroke="black"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                        </svg>
-                        <span className="text-black text-[16px] leading-normal capitalize font-medium ml-2">
-                            Popular
-                        </span>
-                    </span>
-
-                    <ProcessBtn path="#" name="Let's Talk" bg="#F9D94D" />
+                {/* CENTER BIG CARD */}
+                <div className="flex justify-center">
+                    <DesktopCard
+                        className="bg-[#361E98] w-[clamp(260px,28svw,350px)] h-[clamp(500px,70svh,620px)] rounded-3xl"/>
                 </div>
 
-
-                {/* Right Card */}
-                <div className="mb-8 flex flex-col justify-end items-center gap-7.5 px-12.5 py-10 w-90 h-110 md:h-130 md:w-100 rounded-[50px] bg-gray-200 border border-[#121213] shadow-[8px_12px_2.5px_0_rgba(0,0,0,0.25)]">
-                    <ProcessBtn path="#" name="Get Started" bg="#FFFEF7" />
+                {/* RIGHT COLUMN */}
+                <div className="flex flex-col gap-8 items-center">
+                    <DesktopCard
+                        className="bg-[#6A5ACD] w-[clamp(260px,28svw,350px)] h-[clamp(420px,60svh,531px)] rounded-3xl"/>
+                    <DesktopCard
+                        className="bg-[#6A5ACD] w-[clamp(260px,28svw,350px)] h-[clamp(150px,22svh,186px)] rounded-3xl"/>
                 </div>
+
             </div>
+
+
+            {/* ================= MOBILE (DRAG STACK) ================= */}
+            <div className="md:hidden relative flex flex-col items-center gap-10">
+                {/* CARD STACK */}
+                <div className="relative h-[70vh] w-full flex justify-center overflow-hidden">
+                    <AnimatePresence initial={false}>
+                        {cards.map((card, index) => {
+                            const isTop = index === 0;
+
+                            return (
+                                <motion.div
+                                    key={card.id}
+                                    layout
+                                    drag={isTop ? "x" : false}
+                                    dragElastic={0.25}
+                                    onDragEnd={(_, info) => {
+                                        if (Math.abs(info.offset.x) > SWIPE_THRESHOLD) {
+                                            setCards((prev) => {
+                                                const [top, ...rest] = prev;
+                                                return [...rest, top]; // infinite loop
+                                            });
+                                        }
+                                    }}
+                                    initial={{ opacity: 0, scale: 0.96 }}
+                                    animate={{
+                                        opacity: 1,
+                                        scale: 1 - index * 0.05,
+                                        y: index * 14,
+                                        x: 0,
+                                    }}
+                                    exit={{
+                                        x: isTop ? (Math.random() > 0.5 ? 600 : -600) : 0,
+                                        opacity: 0,
+                                    }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 260,
+                                        damping: 28,
+                                    }}
+                                    className="absolute w-[70vw] h-[66vh] rounded-[40px]
+                       shadow-[0px_6px_8px_0px_rgba(0,0,0,0.25)]"
+                                    style={{
+                                        backgroundColor: card.color,
+                                        zIndex: 10 - index,
+                                    }}
+                                />
+                            );
+                        })}
+                    </AnimatePresence>
+                </div>
+
+                {/* DASHED BOX (UNCHANGED + FIXED) */}
+                <div className="w-[70vw] h-[22vh] rounded-[28px] border-2 border-dashed border-[#3A259F]" />
+            </div>
+
+
         </section>
     );
 };
