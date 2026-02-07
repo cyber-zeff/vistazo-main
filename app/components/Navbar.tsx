@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { FiMenu, FiX } from "react-icons/fi";
 import { motion } from "framer-motion";
 import NavbarBtn from "./NavbarBtn";
 import { useState } from "react";
@@ -19,8 +18,6 @@ const links: LinkProps[] = [
 ];
 
 export default function WaveNavbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <header className="w-full sticky top-0 z-50 px-10 md:px-20">
       {/* Wave Background with drop shadow */}
@@ -91,42 +88,23 @@ export default function WaveNavbar() {
             width={155}
             height={35}
             alt="Company logo"
-            // className=""
+            className="max-sm:w-36 max-sm:h-8"
             priority
           />
         </div>
 
-        {/* Hamburger button for mobile */}
-        <div className="lg:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none"
-          >
-            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
-        </div>
-
         {/* Navigation Links + CTA */}
         <section
-          className={`
-                    flex flex-col lg:flex-row items-center justify-start xl:justify-center gap-4 lg:gap-8 py-14 lg:py-2
-                    ${isOpen ? "flex" : "hidden"
-            } lg:flex fixed lg:static top-[4.7rem] lg:top-auto left-0 w-screen h-[calc(100vh-4.7rem)] lg:w-auto lg:h-auto bg-main lg:bg-transparent z-40 overflow-y-auto`}
-        >
+          className="hidden lg:flex flex-col lg:flex-row items-center justify-start gap-4 lg:gap-8 py-14 lg:py-2 static lg:static w-auto bg-transparent z-40">
           {links.map((link) => {
             return (
-              <NavBarButton key={link.name} name={link.name} href={link.href} />
+              <NavbarLinkBtn key={link.name} name={link.name} href={link.href} />
             );
           })}
-
-          {/* CTA Button in mobile dropdown */}
-          <div className="lg:hidden mt-2 w-full flex justify-center">
-            <NavbarBtn path="#" />
-          </div>
         </section>
 
         {/* CTA Button for desktop */}
-        <div className="hidden lg:block mt-0">
+        <div className="block mt-0">
           <NavbarBtn path="#" />
         </div>
       </nav>
@@ -134,7 +112,7 @@ export default function WaveNavbar() {
   );
 }
 
-const NavBarButton: React.FC<LinkProps> = ({ name, href }) => {
+const NavbarLinkBtn: React.FC<LinkProps> = ({ name, href }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
