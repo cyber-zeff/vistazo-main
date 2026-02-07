@@ -13,7 +13,7 @@ const services = [
 
 function DiamondStar() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" className="max-sm:w-6 max-sm:h-6" width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="hidden sm:block" width="40" height="40" viewBox="0 0 40 40" fill="currentColor">
             <path d="M20 0C24.743 16.1245 40 20 40 20C40 20 25.4881 23.8755 20 40C14.5119 23.8755 0 20 0 20C0 20 15.257 16.1245 20 0Z" />
         </svg>
     )
@@ -59,9 +59,9 @@ function ServiceItem({
             onTap={() =>
                 setActiveIndex(isActive ? null : index)
             }
-            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 py-6 md:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] rounded-[15px]"
+            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 py-6 md:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] focus:bg-[rgba(103,85,207,0.75)] rounded-[15px]"
         >
-            <div className="flex items-center gap-4 md:gap-6">
+            <div className="sm:flex sm:items-center sm:gap-4 md:gap-6 max-sm:mx-auto">
                 <motion.div
                     variants={{
                         rest: { rotate: 0 },
@@ -107,11 +107,43 @@ function ServiceItem({
                             ? "8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)"
                             : "-8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)",
                 }}
-                className="absolute right-8 top-1/2 -translate-y-[65%] w-40 h-45 md:w-81.25 md:h-95.25 bg-gray-100 rounded-[20px] md:rounded-[53px] overflow-hidden"
+                className="hidden sm:block absolute right-8 top-1/2 -translate-y-[65%] w-73.75 h-89.5 bg-gray-100 z-10 rounded-[53px] md:rounded-[53px] overflow-hidden"
             />
 
+            <motion.div
+                variants={{
+                    rest: {
+                        opacity: 0,
+                        scale: 0.85,
+                        rotate: 0,
+                        pointerEvents: "none",
+                    },
+                    hover: {
+                        opacity: 1,
+                        scale: 1,
+                        rotate: tilt,
+                        pointerEvents: "auto",
+                    },
+                }}
+                transition={{
+                    type: "spring",
+                    stiffness: 120,
+                    damping: 18,
+                    mass: 0.8,
+                }}
+                style={{
+                    transformOrigin: "90% 50%",
+                    boxShadow:
+                        tilt === 5
+                            ? "8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)"
+                            : "-8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)",
+                }}
+                className={`block sm:hidden absolute top-1/2 ${(tilt == 5) ? "right-0" : "left-0"} -translate-y-[65%] w-[clamp(200px,4vw,230px)] h-[clamp(250px,4vw,270px)] bg-gray-100 z-10 rounded-[53px] md:rounded-[53px] overflow-hidden`}
+            />
+
+
             {/* Bottom Divider */}
-            <div className="absolute left-0 right-0 -bottom-3 h-[0.5px] bg-white pointer-events-none transition-opacity duration-300 group-hover:opacity-0" />
+            <div className="absolute left-0 right-0 -bottom-3 h-[0.5px] bg-white pointer-events-none transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0" />
         </motion.div>
     )
 }
@@ -122,12 +154,12 @@ export default function Services() {
 
     return (
         <>
-            <section className="px-10 md:px-20 md:py-24">
-                <div className="max-w-7xl mx-auto mb-12">
+            <section className="px-0 sm:px-10 md:px-20 md:py-24">
+                <div className="max-w-7xl mx-auto mb-12 max-sm:px-10 max-sm:text-center">
                     <h2 className="text-[clamp(30px,8vw,96px)] mt-16 md:mt-0 quantaFont leading-normal">
-                        What we serve on <br /> the <span className="text-[#F9D94D]">menu</span>
+                        What we serve <br className="block sm:hidden" /> on <br className="hidden sm:block" /> the <span className="text-[#F9D94D]">menu</span>
                     </h2>
-                    <p className="text-[clamp(12,8vw,20px)]">
+                    <p className="text-[14px] sm:text-[clamp(14px,6vw,20px)]">
                         Just everything you actually need to build a personal brand that pays.
                     </p>
                 </div>
