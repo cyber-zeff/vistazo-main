@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const words: string[] = ["Artists.", "Influencers.", "Creators."];
+const words: string[] = ["Artists.", "Designers.", "Creators."];
 
 const Typewriter: React.FC = () => {
   const [text, setText] = useState<string>("");
