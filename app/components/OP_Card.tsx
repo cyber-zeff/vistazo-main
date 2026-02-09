@@ -76,7 +76,7 @@ function Column({ cards }: { cards: CardType[] }) {
     }, [activeIndex])
 
     return (
-        <div ref={columnRef} className="flex flex-col gap-6 mb-6">
+        <div ref={columnRef} className="flex flex-col gap-6 mb-1">
             {cards.map((card, index) => {
                 const isActive = activeIndex === index
                 const isSibling =
@@ -110,15 +110,15 @@ function Column({ cards }: { cards: CardType[] }) {
                             damping: 15,
                             mass: 0.8,
                         }}
-                        className="w-full rounded-[30px] bg-[#6755CF] px-8 pt-8 overflow-hidden cursor-pointer flex justify-between"
+                        className="w-[clamp(520px, 6vw -1rem, 620px)] h-75 rounded-[30px] bg-[#6755CF] px-8 pt-8 overflow-hidden cursor-pointer flex justify-between"
                     >
                         {/* LEFT CONTENT */}
                         <div className="flex flex-col gap-4 max-w-86.25">
-                            <h3 className="text-[48px] font-black leading-normal quantaFont -tracking-[2.4px] capitalize">
+                            <h3 className="text-[clamp(26px,8vw,48px)] font-black leading-normal quantaFont -tracking-[2.4px] capitalize">
                                 {card.title}
                             </h3>
 
-                            <p className="text-[20px] font-medium leading-normal -tracking-[1px] mb-4">
+                            <p className="text-[clamp(14px,8vw,20px)] font-medium leading-normal -tracking-[1px] mb-4">
                                 Understanding your work and goals
                             </p>
 
@@ -127,7 +127,7 @@ function Column({ cards }: { cards: CardType[] }) {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.1 }}
-                                    className="text-[16px] leading-normal font-normal -tracking-[0.8px] whitespace-pre-line"
+                                    className="text-[20px] md:text-[clamp(12px,8vw,16px)] leading-normal font-normal -tracking-[0.8px] whitespace-pre-line"
                                 >
                                     {card.description}
                                 </motion.p>
@@ -136,7 +136,7 @@ function Column({ cards }: { cards: CardType[] }) {
 
                         {/* RIGHT SIDE */}
                         <div className="relative flex items-start justify-end shrink-0">
-                            <div className="text-[120px] font-black leading-normal quantaFont -tracking-[6px] z-20">
+                            <div className="text-[clamp(64px,8vw,120px)] font-black leading-normal quantaFont -tracking-[6px] z-20">
                                 {card.step}
                             </div>
 
@@ -178,10 +178,10 @@ function Column({ cards }: { cards: CardType[] }) {
 
 export default function OPCard() {
     return (
-        <section className='bg-[#FFFEF7] py-20'>
-            <h2 className='quantaFont text-[#121213] leading-normal font-black text-[64px] sm:text-[84px] md:text-[96px] uppercase text-center mb-10 md:mb-20 text-balance max-w-308.75 mx-auto'>We keep our Process Simple</h2>
+        <section className='bg-[#FFFEF7] px-10 md:px-20 py-20'>
+            <h2 className='quantaFont text-[#121213] leading-normal font-black text-[clamp(42px,8vw,96px)] uppercase text-center mb-10 md:mb-20 text-balance max-w-308.75 mx-auto'>We keep our Process Simple</h2>
             <div className="flex justify-center">
-                <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center w-full max-w-295">
+                <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-6">
                     <Column cards={column1} />
                     <Column cards={column2} />
                 </div>
