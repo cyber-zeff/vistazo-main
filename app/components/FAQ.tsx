@@ -51,25 +51,24 @@ export default function FAQSection() {
 
     return (
         <section className="w-full flex justify-center items-center py-16 bg-[#FFFEF7] text-[#121213]">
-            <div className="max-w-310 mx-auto grid grid-cols-1 xl:grid-cols-2 gap-6 items-start justify-items-center">
+            <div className="max-w-310 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-[clamp(35px, 8vw,40px)] gap-16 max-w-120 items-start justify-items-center">
 
                 {/* ================= LEFT COLUMN ================= */}
-                <div className="flex flex-col justify-between self-start xl:h-158.75">
+                <div className="flex flex-col justify-between self-start lg:h-158.75">
                     {/* Heading */}
-                    <div className="mb-10 xl:mb-0 mx-auto">
-                        <h2 className="quantaFont text-[44px] sm:text-[54px] md:text-[64px] font-black leading-normal">
+                    <div className="mb-[clamp(22px,2vw,48px)] mx-auto max-lg:text-center">
+                        <h2 className="quantaFont text-[clamp(30px,8vw,64px)] lg:text-[clamp(45px,5vw,64px)] font-black leading-normal">
                             GOT QUESTIONS?
                             <br />
                             BET YOU DO.
                         </h2>
-                        <p className="mt-4 text-[20px] max-w-md font-medium leading-normal">
-                            What We Do, How We Do It, And What You Actually Get
-                            At The End.
+                        <p className="max-lg:mx-auto mt-4 text-[clamp(14px,4vw,24px)] md:text-[clamp(14px,2vw,20px)] lg:text-[20px] max-w-md font-medium leading-normal">
+                            What We Do, How We Do It, And What <br className="block lg:hidden" /> You Actually Get At The End.
                         </p>
                     </div>
 
                     {/* CTA Card */}
-                    <div className="bg-[#361E98] text-white rounded-[30px] p-8 flex flex-col md:w-171 md:px-18 xl:px-8 px-8 sm:w-131.25 sm:h-56.25 xl:w-131.25 xl:h-56.25">
+                    <div className="max-lg:hidden bg-[#361E98] text-white rounded-[30px] p-8 flex flex-col px-8 w-[clamp(300px, 8vw, 525px)] h-63 xl:w-131.25 xl:h-56.25">
                         <h3 className="text-[20px] font-bold mb-2 leading-normal">
                             Didn’t find what you were looking for?
                         </h3>
@@ -96,20 +95,19 @@ export default function FAQSection() {
                     {faqs.map((faq, index) => {
                         const isOpen = activeIndex === index;
                         const isMobile = useIsMobile();
-                        const isTopCard = index === 0
 
                         return (
                             <motion.div key={index} layout initial={false}
-                                animate={{ height: isOpen ? isMobile ? isTopCard ? 400 : 300 : 200 : 100, }}
+                                animate={{ height: isOpen ? (isMobile ? 240 : 200) : 100, }}
                                 transition={{ type: "spring", stiffness: 160, damping: 15, }}
                                 onClick={() => setActiveIndex(isOpen ? null : index)}
-                                className="relative cursor-pointer w-150 md:w-220 xl:w-170 max-w-[90vw] bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)]
+                                className="relative cursor-pointer w-150 md:w-220 lg:w-[45vw] xl:w-[680px] max-w-[90vw] bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)]
                                     px-8 pt-8.5 pb-10.5 flex items-start justify-between overflow-hidden shrink-0 border-2 border-[#121213]">
                                 {/* STAR */}
                                 <motion.span
                                     animate={{ rotate: isOpen ? 90 : -90 }}
                                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                                    className="absolute top-7.5 right-10 z-10" >
+                                    className="absolute top-7.5 right-6 sm:right-10 z-10" >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none" >
                                         <path d="M17.5 0C21.6501 14.109 35 17.5 35 17.5C35 17.5 22.3021 20.891 17.5 35C12.6979 20.891 0 17.5 0 17.5C0 17.5 13.3499 14.109 17.5 0Z" fill="#F9D94D" />
                                     </svg>
@@ -117,38 +115,15 @@ export default function FAQSection() {
 
                                 {/* LEFT CONTENT */}
                                 <div className="flex-1 sm:flex-1 max-[650px]:flex-[1.4]">
-                                    <h3 className={`text-[18px] font-medium leading-normal ${isTopCard ? '' : 'mr-10'}`}> {faq.question} </h3>
+                                    <h3 className="text-[clamp(12px,3vw,18px)] sm:text-[18px] font-medium leading-normal mr-10"> {faq.question} </h3>
                                     <AnimatePresence>
                                         {isOpen && (
-                                            <p className={`mt-4 text-[16px] leading-5.5 font-medium whitespace-pre-line capitalize ${isTopCard ? '' : 'max-w-[80%]'}`}>{faq.answer}</p>
+                                            <p className="mt-4 text-[clamp(12px,3vw,16px)] leading-5.5 font-medium whitespace-pre-line capitalize max-w-[90%]">{faq.answer}</p>
                                         )}
                                     </AnimatePresence>
                                 </div>
-
-                                {/* BUNNY */}
-                                {isTopCard && (
-                                    <div className="relative -top-3 w-55 max-[650px]:w-36 h-full flex justify-end shrink-0">
-                                        {/* BUNNY */}
-                                        <AnimatePresence>
-                                            {isTopCard && isOpen && (
-                                                <motion.div
-                                                    initial={{ opacity: 0, scale: 0.9, x: 10 }}
-                                                    animate={{ opacity: 1, scale: 1, x: 0 }}
-                                                    exit={{ opacity: 0, scale: 0.9, x: 10 }}
-                                                    transition={{ duration: 0.3 }}
-                                                >
-                                                    <Image
-                                                        src="/head-bunny.png"
-                                                        alt="Hi Bunny"
-                                                        width={200}
-                                                        height={197}
-                                                        className="w-25 h-27 max-[650px]:w-20 max-[650px]:h-22 sm:w-30 sm:h-32 md:w-49.25 md:h-50 object-contain"
-                                                    />
-                                                </motion.div>
-                                            )}
-                                        </AnimatePresence>
-                                    </div>)}
-                            </motion.div>);
+                            </motion.div>
+                        );
                     })}
                 </div>
             </div>
