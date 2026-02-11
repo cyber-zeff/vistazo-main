@@ -1,8 +1,8 @@
 "use client";
 
+import { useIsMobile } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 const faqs = [
@@ -35,19 +35,7 @@ const faqs = [
 
 export default function FAQSection() {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-    function useIsMobile(breakpoint = 568) {
-        const [isMobile, setIsMobile] = useState(false);
-
-        useEffect(() => {
-            const check = () => setIsMobile(window.innerWidth < breakpoint);
-            check();
-            window.addEventListener("resize", check);
-            return () => window.removeEventListener("resize", check);
-        }, [breakpoint]);
-
-        return isMobile;
-    }
+    const isMobile = useIsMobile();
 
     return (
         <section id="faqs" className="w-full flex justify-center items-center py-16 bg-[#FFFEF7] text-[#121213]">
@@ -94,7 +82,6 @@ export default function FAQSection() {
                 <div className="grid gap-8 text-white">
                     {faqs.map((faq, index) => {
                         const isOpen = activeIndex === index;
-                        const isMobile = useIsMobile();
 
                         return (
                             <motion.div key={index} layout initial={false}

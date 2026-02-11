@@ -1,118 +1,160 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useCallback, useRef } from "react";
+import { motion, PanInfo } from "framer-motion";
 
-const DesktopCard = ({
-    className,
-}: {
-    className?: string;
-}) => (
-    <div
-        className={`rounded-4xl shadow-[0px_6px_8px_0px_rgba(0,0,0,0.25)] ${className}`}
-    />
-);
-const MOBILE_CARDS = [
-    { id: 1, color: "#361E98" },
-    { id: 2, color: "#3A259F" },
-    { id: 3, color: "#6A5ACD" },
+// Card data for infinite cycling
+const CARD_VARIANTS = [
+    { id: "card-1", color: "#FFFEF7" }, // White
+    { id: "card-2", color: "#6755CF" }, // Purple
+    { id: "card-3", color: "#FFFEF7" }, // White
+    { id: "card-4", color: "#6755CF" }, // Purple
 ];
 
-const SWIPE_THRESHOLD = 120;
+const SWIPE_CONFIDENCE_THRESHOLD = 5000;
+const SWIPE_VELOCITY_THRESHOLD = 500;
 
 const ProcessSection = () => {
-    const [cards, setCards] = useState(MOBILE_CARDS);
+    // State for mobile infinite carousel
+    const [[currentIndex, direction], setCurrentIndex] = useState([0, 0]);
+    
+    // Track if we're currently animating
+    const isAnimating = useRef(false);
+
+    // Paginate function for infinite loop
+    const paginate = useCallback((newDirection: number) => {
+        if (isAnimating.current) return;
+        
+        isAnimating.current = true;
+        setCurrentIndex(([prevIndex]) => {
+            const nextIndex = (prevIndex + newDirection + CARD_VARIANTS.length) % CARD_VARIANTS.length;
+            return [nextIndex, newDirection];
+        });
+
+        // Reset animation lock after transition
+        setTimeout(() => {
+            isAnimating.current = false;
+        }, 300);
+    }, []);
+
+    // Calculate swipe power for gesture detection
+    const swipePower = (offset: number, velocity: number) => {
+        return Math.abs(offset) * velocity;
+    };
+
+    // Handle drag end
+    const handleDragEnd = useCallback(
+        (_event: MouseEvent | TouchEvent | PointerEvent, { offset, velocity }: PanInfo) => {
+            const swipe = swipePower(offset.x, velocity.x);
+
+            if (swipe < -SWIPE_CONFIDENCE_THRESHOLD || velocity.x < -SWIPE_VELOCITY_THRESHOLD) {
+                paginate(1); // Swipe left
+            } else if (swipe > SWIPE_CONFIDENCE_THRESHOLD || velocity.x > SWIPE_VELOCITY_THRESHOLD) {
+                paginate(-1); // Swipe right
+            }
+        },
+        [paginate]
+    );
+
+    // Get visible cards (current + next 2 for stacking effect)
+    const getVisibleCards = () => {
+        const cards = [];
+        for (let i = 0; i < 3; i++) {
+            const index = (currentIndex + i) % CARD_VARIANTS.length;
+            cards.push({ ...CARD_VARIANTS[index], stackIndex: i });
+        }
+        return cards;
+    };
+
+    const visibleCards = getVisibleCards();
 
     return (
-        <section className="w-full bg-[#FFFEF7] overflow-hidden py-[clamp(3rem,8vh,8rem)]">
-            <h2 className="quantaFont text-[#121213] font-black uppercase text-center mb-[clamp(2rem,6vh,6rem)] text-[clamp(42px,8vw,128px)]">
+        <section className="w-full bg-[#361E98] overflow-hidden py-16 md:py-20 px-8 md:px-12">
+            {/* Title */}
+            <h2 className="quantaFont text-[#F9D94D] font-black uppercase text-center mb-12 md:mb-16 text-[clamp(48px,10vw,128px)] leading-none">
                 Find What Fits
             </h2>
 
-            {/* ================= DESKTOP ================= */}
-            <div className="hidden md:grid max-w-7xl mx-auto px-6 md:px-12 grid-cols-3 gap-x-8 lg:gap-x-12">
+            {/* ================= DESKTOP LAYOUT ================= */}
+            <div className="hidden md:block max-w-[1280px] mx-auto">
+                <div className="relative h-[750px]">
+                    {/* Left Column */}
+                    <div className="absolute left-0 top-0 flex flex-col gap-8">
+                        <div className="bg-[#FFFEF7] w-[clamp(280px,24vw,354px)] h-[clamp(450px,36vw,532px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]" />
+                        <div className="w-[clamp(280px,24vw,354px)] h-[clamp(140px,12vw,186px)] rounded-[32px] border-2 border-dashed border-[#FFFEF7]" />
+                    </div>
 
-                {/* LEFT COLUMN */}
-                <div className="flex flex-col gap-8 items-center">
-                    <DesktopCard
-                        className="bg-[#3A259F] w-[clamp(260px,28svw,350px)] h-[clamp(420px,60svh,530px)] rounded-3xl "/>
+                    {/* Center Column (Tallest) */}
+                    <div className="absolute left-1/2 top-0 -translate-x-1/2">
+                        <div className="bg-[#FFFEF7] w-[clamp(280px,24vw,354px)] h-[clamp(520px,42vw,620px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]" />
+                    </div>
 
-                    <div
-                        className="w-[clamp(260px,28svw,350px)] h-[clamp(150px,22svh,186px)] rounded-[30px] border-2 border-dashed border-[#3A259F]"/>
+                    {/* Right Column */}
+                    <div className="absolute right-0 top-0 flex flex-col gap-8">
+                        <div className="bg-[#6755CF] w-[clamp(280px,24vw,354px)] h-[clamp(450px,36vw,532px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]" />
+                        <div className="bg-[#6755CF] w-[clamp(280px,24vw,354px)] h-[clamp(140px,12vw,186px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]" />
+                    </div>
                 </div>
-
-                {/* CENTER BIG CARD */}
-                <div className="flex justify-center">
-                    <DesktopCard
-                        className="bg-[#361E98] w-[clamp(260px,28svw,350px)] h-[clamp(500px,70svh,620px)] rounded-3xl"/>
-                </div>
-
-                {/* RIGHT COLUMN */}
-                <div className="flex flex-col gap-8 items-center">
-                    <DesktopCard
-                        className="bg-[#6A5ACD] w-[clamp(260px,28svw,350px)] h-[clamp(420px,60svh,531px)] rounded-3xl"/>
-                    <DesktopCard
-                        className="bg-[#6A5ACD] w-[clamp(260px,28svw,350px)] h-[clamp(150px,22svh,186px)] rounded-3xl"/>
-                </div>
-
             </div>
 
+            {/* ================= MOBILE CAROUSEL (INFINITE) ================= */}
+            <div className="md:hidden relative flex flex-col items-center gap-8">
+                {/* Card Stack Container */}
+                <div className="relative w-full h-[65vh] min-h-[500px] flex items-start justify-center pt-8">
+                    {visibleCards.map((card) => {
+                        const isTopCard = card.stackIndex === 0;
+                        const zIndex = 10 - card.stackIndex;
+                        const scale = 1 - card.stackIndex * 0.05;
+                        const yOffset = card.stackIndex * 16;
 
-            {/* ================= MOBILE (DRAG STACK) ================= */}
-            <div className="md:hidden relative flex flex-col items-center gap-10">
-                {/* CARD STACK */}
-                <div className="relative h-[70vh] w-full flex justify-center overflow-hidden">
-                    <AnimatePresence initial={false}>
-                        {cards.map((card, index) => {
-                            const isTop = index === 0;
-
-                            return (
-                                <motion.div
-                                    key={card.id}
-                                    layout
-                                    drag={isTop ? "x" : false}
-                                    dragElastic={0.25}
-                                    onDragEnd={(_, info) => {
-                                        if (Math.abs(info.offset.x) > SWIPE_THRESHOLD) {
-                                            setCards((prev) => {
-                                                const [top, ...rest] = prev;
-                                                return [...rest, top];
-                                            });
-                                        }
-                                    }}
-                                    initial={{ opacity: 0, scale: 0.96 }}
-                                    animate={{
-                                        opacity: 1,
-                                        scale: 1 - index * 0.05,
-                                        y: index * 14,
-                                        x: 0,
-                                    }}
-                                    exit={{
-                                        x: isTop ? (Math.random() > 0.5 ? 600 : -600) : 0,
-                                        opacity: 0,
-                                    }}
-                                    transition={{
-                                        type: "spring",
-                                        stiffness: 260,
-                                        damping: 28,
-                                    }}
-                                    className="absolute w-[70vw] h-[66vh] rounded-[40px]
-                       shadow-[0px_6px_8px_0px_rgba(0,0,0,0.25)]"
-                                    style={{
-                                        backgroundColor: card.color,
-                                        zIndex: 10 - index,
-                                    }}
-                                />
-                            );
-                        })}
-                    </AnimatePresence>
+                        return (
+                            <motion.div
+                                key={`${card.id}-${card.stackIndex}`}
+                                className="absolute w-[75vw] max-w-[340px] h-[56vh] min-h-[450px] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]"
+                                style={{
+                                    backgroundColor: card.color,
+                                    zIndex,
+                                }}
+                                drag={isTopCard ? "x" : false}
+                                dragConstraints={{ left: 0, right: 0 }}
+                                dragElastic={0.7}
+                                onDragEnd={isTopCard ? handleDragEnd : undefined}
+                                animate={{
+                                    scale,
+                                    y: yOffset,
+                                    x: 0,
+                                    opacity: 1,
+                                }}
+                                initial={{
+                                    scale,
+                                    y: yOffset,
+                                    x: 0,
+                                    opacity: 1,
+                                }}
+                                exit={{
+                                    x: direction > 0 ? 400 : -400,
+                                    opacity: 0,
+                                    transition: { duration: 0.3 },
+                                }}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 300,
+                                    damping: 30,
+                                }}
+                                whileTap={isTopCard ? { cursor: "grabbing" } : {}}
+                            />
+                        );
+                    })}
                 </div>
 
-                {/* DASHED BOX */}
-                <div className="w-[70vw] h-[22vh] rounded-[28px] border-2 border-dashed border-[#3A259F]" />
+                {/* Bottom Dashed Box */}
+                <div className="w-[75vw] max-w-[340px] h-[20vh] min-h-[140px] max-h-[186px] rounded-[32px] border-2 border-dashed border-[#FFFEF7]" />
+
+                {/* Swipe Indicator (Optional) */}
+                <p className="text-[#FFFEF7] text-sm opacity-60 text-center">
+                    Swipe to explore
+                </p>
             </div>
-
-
         </section>
     );
 };

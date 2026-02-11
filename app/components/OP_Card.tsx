@@ -2,8 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { useState, useRef, useEffect } from 'react'
-import Image from 'next/image'
-import { section } from 'framer-motion/client'
 
 type CardType = {
     id: number
@@ -106,9 +104,9 @@ function Column({ cards }: { cards: CardType[] }) {
                         }}
                         transition={{
                             type: 'spring',
-                            stiffness: 180,
-                            damping: 15,
-                            mass: 0.8,
+                            stiffness: 200,
+                            damping: 25,
+                            mass: 0.6,
                         }}
                         className="w-[clamp(520px, 6vw -1rem, 620px)] h-75 rounded-[30px] bg-[#6755CF] px-8 pt-8 overflow-hidden cursor-pointer flex justify-between"
                     >
@@ -122,16 +120,32 @@ function Column({ cards }: { cards: CardType[] }) {
                                 Understanding your work and goals
                             </p>
 
-                            {isActive && card.description && (
-                                <motion.p
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.1 }}
-                                    className="text-[20px] md:text-[clamp(12px,8vw,16px)] leading-normal font-normal -tracking-[0.8px] whitespace-pre-line"
-                                >
-                                    {card.description}
-                                </motion.p>
-                            )}
+                            <motion.div
+                                initial={false}
+                                animate={{
+                                    height: isActive ? 'auto' : 0,
+                                    opacity: isActive ? 1 : 0,
+                                }}
+                                transition={{
+                                    height: {
+                                        type: 'spring',
+                                        stiffness: 200,
+                                        damping: 25,
+                                        mass: 0.6,
+                                    },
+                                    opacity: {
+                                        duration: 0.25,
+                                        ease: 'easeInOut',
+                                    },
+                                }}
+                                className="overflow-hidden"
+                            >
+                                {card.description && (
+                                    <p className="text-[20px] md:text-[clamp(12px,8vw,16px)] leading-normal font-normal -tracking-[0.8px] whitespace-pre-line">
+                                        {card.description}
+                                    </p>
+                                )}
+                            </motion.div>
                         </div>
 
                         {/* RIGHT SIDE */}
@@ -140,34 +154,35 @@ function Column({ cards }: { cards: CardType[] }) {
                                 {card.step}
                             </div>
 
-                            {!isSibling && (
-                                <motion.div
-                                    initial={false}
-                                    animate={{
-                                        height: isActive ? '464px' : '294px',
-                                        width: isActive ? '350px' : '220px',
-                                        right: isActive ? '-50px' : '-30px',
-                                        aspectRatio: isActive
-                                            ? '175/232'
-                                            : '110/147',
-                                    }}
-                                    transition={{
-                                        type: 'spring',
-                                        stiffness: 120,
-                                        damping: 15,
-                                        mass: 0.3,
-                                    }}
-                                    className="absolute -bottom-11.5 z-20 pointer-events-none origin-bottom-right
-                                        sm:h-25 sm:w-25
-                                        md:h-73.5 md:w-55"
-                                >
-                                    <img
-                                        src="/person.png"
-                                        alt="Person illustration"
-                                        className="w-full h-full object-contain"
-                                    />
-                                </motion.div>
-                            )}
+                            <motion.div
+                                initial={false}
+                                animate={{
+                                    height: isActive ? '464px' : '294px',
+                                    width: isActive ? '350px' : '220px',
+                                    right: isActive ? '-50px' : '-30px',
+                                    opacity: isSibling ? 0 : 1,
+                                    scale: isSibling ? 0.8 : 1,
+                                }}
+                                transition={{
+                                    type: 'spring',
+                                    stiffness: 200,
+                                    damping: 25,
+                                    mass: 0.5,
+                                    opacity: {
+                                        duration: 0.3,
+                                        ease: 'easeInOut',
+                                    },
+                                }}
+                                className="absolute -bottom-11.5 z-20 pointer-events-none origin-bottom-right
+                                    sm:h-25 sm:w-25
+                                    md:h-73.5 md:w-55"
+                            >
+                                <img
+                                    src="/person.png"
+                                    alt="Person illustration"
+                                    className="w-full h-full object-contain"
+                                />
+                            </motion.div>
                         </div>
                     </motion.div>
                 )

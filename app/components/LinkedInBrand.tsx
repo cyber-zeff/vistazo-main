@@ -42,8 +42,7 @@ export default function LinkedInBrand() {
                         </h1>
 
                         <p className="text-[16px] sm:text-[18px] lg:text-[20px] leading-normal font-medium w-full lg:w-123 mb-8 lg:mb-11">
-                            We'll refresh your linkedin pfp and cover to match your new visual identity. on the house. because
-                            consistency matters.
+                            We&apos;ll refresh your linkedin pfp and cover to match your new visual identity. <strong>On the house.</strong> because consistency matters.
                         </p>
 
                         <div className="flex flex-wrap items-center gap-4">

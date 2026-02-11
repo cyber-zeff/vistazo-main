@@ -3,23 +3,23 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
+const Star = () => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="35"
+        height="35"
+        viewBox="0 0 35 35"
+        fill="none"
+    >
+        <path
+            d="M15.908 0.000165228C21.272 13.6937 34.8666 15.9083 34.8666 15.9083C34.8666 15.9083 22.5126 20.3932 18.9585 34.867C12.945 21.2302 -0.000165228 18.9588 -0.000165228 18.9588C-0.000165228 18.9588 13.0034 14.4172 15.908 0.000165228Z"
+            fill="#F9D94D"
+        />
+    </svg>
+);
+
 export default function CTASection() {
     const [hover, setHover] = useState(false);
-    const Star = () => (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="35"
-            height="35"
-            viewBox="0 0 35 35"
-            fill="none"
-        >
-            <path
-                d="M15.908 0.000165228C21.272 13.6937 34.8666 15.9083 34.8666 15.9083C34.8666 15.9083 22.5126 20.3932 18.9585 34.867C12.945 21.2302 -0.000165228 18.9588 -0.000165228 18.9588C-0.000165228 18.9588 13.0034 14.4172 15.908 0.000165228Z"
-                fill="#F9D94D"
-            />
-        </svg>
-    );
-
     return (
         <>
             {/* Padding wrapper */}
@@ -45,8 +45,8 @@ export default function CTASection() {
                     Decided to build with us?
                 </h2>
 
-                <h2 className="quantaFont leading-normal font-black text-[clamp(48px,8vw,96px)] uppercase text-center mb-10 md:mb-16 text-balance max-w-232.75 mx-auto">
-                    Let's Get Cooking <span className="text-[#F9D94D]">Good Looking!</span>
+                <h2 className="quantaFont leading-normal font-black text-[64px] sm:text-[84px] md:text-[96px] uppercase text-center mb-10 md:mb-16 text-balance max-w-232.75 mx-auto">
+                    Let&apos;s Get Cooking <span className="text-[#F9D94D]">Good Looking!</span>
                 </h2>
 
                 <div className="flex items-center justify-center shrink-0 gap-2 self-stretch">
