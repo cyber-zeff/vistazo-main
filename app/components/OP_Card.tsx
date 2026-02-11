@@ -108,10 +108,10 @@ function Column({ cards }: { cards: CardType[] }) {
                             damping: 25,
                             mass: 0.6,
                         }}
-                        className="w-[clamp(520px, 6vw -1rem, 620px)] h-75 rounded-[30px] bg-[#6755CF] px-8 pt-8 overflow-hidden cursor-pointer flex justify-between"
+                        className="w-full max-w-[620px] min-w-[320px] h-75 rounded-[30px] bg-[#6755CF] px-6 md:px-8 pt-8 overflow-hidden cursor-pointer flex justify-between"
                     >
                         {/* LEFT CONTENT */}
-                        <div className="flex flex-col gap-4 max-w-86.25">
+                        <div className="flex flex-col gap-4 max-w-[280px] md:max-w-86.25 flex-1">
                             <h3 className="text-[clamp(26px,8vw,48px)] font-black leading-normal quantaFont -tracking-[2.4px] capitalize">
                                 {card.title}
                             </h3>
@@ -157,9 +157,9 @@ function Column({ cards }: { cards: CardType[] }) {
                             <motion.div
                                 initial={false}
                                 animate={{
-                                    height: isActive ? '464px' : '294px',
-                                    width: isActive ? '350px' : '220px',
-                                    right: isActive ? '-50px' : '-30px',
+                                    height: isActive ? 'clamp(240px, 28vw, 464px)' : 'clamp(160px, 18vw, 294px)',
+                                    width: isActive ? 'clamp(180px, 21vw, 350px)' : 'clamp(120px, 13.5vw, 220px)',
+                                    right: isActive ? 'clamp(10px, 1vw, -50px)' : 'clamp(5px, 0.5vw, -30px)',
                                     opacity: isSibling ? 0 : 1,
                                     scale: isSibling ? 0.8 : 1,
                                 }}
@@ -173,9 +173,7 @@ function Column({ cards }: { cards: CardType[] }) {
                                         ease: 'easeInOut',
                                     },
                                 }}
-                                className="absolute -bottom-11.5 z-20 pointer-events-none origin-bottom-right
-                                    sm:h-25 sm:w-25
-                                    md:h-73.5 md:w-55"
+                                className="absolute -bottom-11.5 z-10 pointer-events-none origin-bottom-right"
                             >
                                 <img
                                     src="/person.png"
@@ -193,10 +191,10 @@ function Column({ cards }: { cards: CardType[] }) {
 
 export default function OPCard() {
     return (
-        <section className='bg-[#FFFEF7] px-10 md:px-20 py-20'>
+        <section className='bg-[#FFFEF7] px-4 md:px-10 lg:px-20 py-20'>
             <h2 className='quantaFont text-[#121213] leading-normal font-black text-[clamp(42px,8vw,96px)] uppercase text-center mb-10 md:mb-20 text-balance max-w-308.75 mx-auto'>We keep our Process Simple</h2>
             <div className="flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-6">
                     <Column cards={column1} />
                     <Column cards={column2} />
                 </div>

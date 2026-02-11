@@ -69,14 +69,14 @@ const ProcessSection = () => {
     const visibleCards = getVisibleCards();
 
     return (
-        <section className="w-full bg-[#361E98] overflow-hidden py-16 md:py-20 px-8 md:px-12">
+        <section className="w-full bg-[#361E98] overflow-hidden py-16 lg:py-20 px-8 lg:px-12">
             {/* Title */}
-            <h2 className="quantaFont text-[#F9D94D] font-black uppercase text-center mb-12 md:mb-16 text-[clamp(48px,10vw,128px)] leading-none">
+            <h2 className="quantaFont text-[#F9D94D] font-black uppercase text-center mb-12 lg:mb-16 text-[clamp(48px,10vw,128px)] leading-none">
                 Find What Fits
             </h2>
 
             {/* ================= DESKTOP LAYOUT ================= */}
-            <div className="hidden md:block max-w-[1280px] mx-auto">
+            <div className="hidden lg:block max-w-[1280px] mx-auto">
                 <div className="relative h-[750px]">
                     {/* Left Column */}
                     <div className="absolute left-0 top-0 flex flex-col gap-8">
@@ -98,7 +98,7 @@ const ProcessSection = () => {
             </div>
 
             {/* ================= MOBILE CAROUSEL (INFINITE) ================= */}
-            <div className="md:hidden relative flex flex-col items-center gap-8">
+            <div className="lg:hidden relative flex flex-col items-center gap-8">
                 {/* Card Stack Container */}
                 <div className="relative w-full h-[65vh] min-h-[500px] flex items-start justify-center pt-8">
                     {visibleCards.map((card) => {
