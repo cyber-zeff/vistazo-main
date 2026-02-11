@@ -11,10 +11,10 @@ interface LinkProps {
 }
 
 const links: LinkProps[] = [
-  { name: "Featured", href: "#" },
-  { name: "Testimonial", href: "#" },
-  { name: "FAQ", href: "#" },
-  { name: "About", href: "#" },
+  { name: "Services", href: "#services" },
+  { name: "Our Process", href: "#processes" },
+  { name: "Pricing", href: "#pricing" },
+  { name: "FAQ", href: "#faqs" },
 ];
 
 export default function WaveNavbar() {
