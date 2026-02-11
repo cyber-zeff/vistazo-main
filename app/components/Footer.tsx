@@ -4,12 +4,12 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#361E98] px-8 md:px-20 mt-12 md:mt-26 pt-16 pb-8">
+        <footer className="bg-[#361E98] px-8 md:px-20 mt-2 sm:mt-6 md:mt-16 lg:mt-26 pt-16 pb-8">
             <div className="max-md:place-items-center grid grid-cols-1 lg:grid-cols-2 gap-12">
 
                 {/* Left Section */}
                 <div className="space-y-6 max-md:mb-5 max-md:place-items-center">
-                    <h2 className="text-[40px] md:text-[48px] font-bold leading-normal quantaFont uppercase max-w-129.25 max-md:text-center">
+                    <h2 className="text-[32px] md:text-[48px] font-bold leading-normal quantaFont uppercase max-w-129.25 max-md:text-center">
                         DON&apos;T MISS THE GOOD STUFF
                     </h2>
 
