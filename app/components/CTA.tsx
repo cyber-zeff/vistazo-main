@@ -45,7 +45,7 @@ export default function CTASection() {
                     Decided to build with us?
                 </h2>
 
-                <h2 className="quantaFont leading-normal font-black text-[64px] sm:text-[84px] md:text-[96px] uppercase text-center mb-10 md:mb-16 text-balance max-w-232.75 mx-auto">
+                <h2 className="quantaFont leading-normal font-black text-[clamp(48px,8vw,96px)] uppercase text-center mb-10 md:mb-16 text-balance max-w-232.75 mx-auto">
                     Let's Get Cooking <span className="text-[#F9D94D]">Good Looking!</span>
                 </h2>
 
@@ -61,7 +61,7 @@ export default function CTASection() {
                                 : "0px 10px 0px 0px #ffffff",
                         }}
                         transition={{ duration: 0.2, ease: "easeInOut" }}
-                        className="relative overflow-visible uppercase bg-transparent w-87.5 h-21.75 px-20 py-5 border border-white rounded-[500px] text-white text-[32px] font-medium leading-normal -tracking-[1.6px] text-center flex items-center justify-center"
+                        className="relative overflow-visible uppercase bg-transparent w-64 h-18 md:w-87.5 md:h-21.75 px-20 py-5 border border-white rounded-[500px] text-white text-[24px] md:text-[32px] font-medium leading-normal -tracking-[1.6px] text-center flex items-center justify-center"
                     >
                         {/* Text */}
                         <span className="relative z-10">Lessgooo!!!</span>
