@@ -6,7 +6,7 @@ import Typewriter from "./Typewriter";
 
 export default function Showcase() {
   return (
-    <section className="relative bg-main text-white md:min-h-[89vh] sm:min-h-screen h-full w-full flex flex-col items-center overflow-hidden mt-10">
+    <section className="relative bg-main text-white md:min-h-[89vh] sm:min-h-screen h-full w-full flex flex-col items-center overflow-hidden mt-3 md:mt-8">
 
       {/* Showcase Container */}
       <div className="relative w-full max-w-360 px-6 md:px-16 py-12 md:pt-12 md:pb-20 flex justify-center">
@@ -75,10 +75,10 @@ export default function Showcase() {
           <h1 className="font-extrabold text-[clamp(48px,13vw,118px)] leading-[1.1] tracking-tight quantaFont">
             DESIGNED
           </h1>
-          <div className="flex items-center gap-10">
+          <div className="flex items-center max-[450px]:gap-5 gap-10">
             <h1 className="font-extrabold text-[clamp(48px,13vw,118px)] leading-[1.1] tracking-tight quantaFont">FOR</h1>
-            <div className="mt-2 flex justify-center">
-              <div className="rounded-full overflow-hidden w-[clamp(230px,13vw,327px)] h-[clamp(96px,13vw,104px)] max-w-full bg-gray-400">
+            <div className="flex justify-center">
+              <div className="rounded-full overflow-hidden w-[clamp(230px,13vw,327px)] h-[clamp(76px,13vw,104px)] max-w-full bg-gray-400">
                 {/* IMAGE TO COME */}
               </div>
             </div>
@@ -96,7 +96,7 @@ export default function Showcase() {
                 alt="bunny mascot"
                 width={339}
                 height={333}
-                className="max-sm:w-[200px] max-sm:h-[140px]"
+                className="max-sm:w-[200px] max-sm:h-[120px]"
                 priority
                 sizes="100px"
               />
