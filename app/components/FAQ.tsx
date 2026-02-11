@@ -50,7 +50,7 @@ export default function FAQSection() {
     }
 
     return (
-        <section className="w-full flex justify-center items-center py-16 bg-[#FFFEF7] text-[#121213]">
+        <section id="faqs" className="w-full flex justify-center items-center py-16 bg-[#FFFEF7] text-[#121213]">
             <div className="max-w-310 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-[clamp(35px, 8vw,40px)] gap-16 max-w-120 items-start justify-items-center">
 
                 {/* ================= LEFT COLUMN ================= */}

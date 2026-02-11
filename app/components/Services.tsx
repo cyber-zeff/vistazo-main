@@ -154,7 +154,7 @@ export default function Services() {
 
     return (
         <>
-            <section className="px-0 sm:px-10 md:px-20 md:py-24">
+            <section id="services" className="px-0 sm:px-10 md:px-20 md:py-24">
                 <div className="max-w-7xl mx-auto mb-12 max-sm:px-10 max-sm:text-center">
                     <h2 className="text-[clamp(30px,8vw,96px)] mt-16 md:mt-0 quantaFont leading-normal">
                         What we serve <br className="block sm:hidden" /> on <br className="hidden sm:block" /> the <span className="text-[#F9D94D]">menu</span>
