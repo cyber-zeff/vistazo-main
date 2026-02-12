@@ -58,12 +58,12 @@ export default function FAQSection() {
                     {/* CTA Card */}
                     <div className="max-lg:hidden bg-[#361E98] text-white rounded-[30px] p-8 flex flex-col px-8 w-[clamp(300px, 8vw, 525px)] h-63 xl:w-131.25 xl:h-56.25">
                         <h3 className="text-[20px] font-bold mb-2 leading-normal">
-                            Didn’t find what you were looking for?
+                            Didn&apos;t find what you were looking for?
                         </h3>
                         <p className="text-[16px] leading-normal font-medium mb-4 max-w-105.75">
                             Jump on a <span className="font-bold">free call</span> with our team.
-                            We’ll talk about what you need, figure out if we’re a
-                            good fit, and map out how we’d actually execute your brand.
+                            We&apos;ll talk about what you need, figure out if we&apos;re a
+                            good fit, and map out how we&apos;d actually execute your brand.
                         </p>
 
                         <button className="flex items-center gap-2 py-1.75 pr-6.25 pl-7.75 rounded-[83px] w-45 h-10.5 bg-white text-[#361E98] text-[16px] font-bold leading-normal -tracking-[0.8] border-2 border-transparent
