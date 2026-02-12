@@ -159,7 +159,7 @@ export default function Services() {
                     <h2 className="text-[clamp(30px,8vw,96px)] mt-16 md:mt-0 quantaFont leading-normal">
                         What we serve <br className="block sm:hidden" /> on <br className="hidden sm:block" /> the <span className="text-[#F9D94D]">menu</span>
                     </h2>
-                    <p className="text-[14px] sm:text-[clamp(14px,6vw,20px)]">
+                    <p className="text-[14px] sm:text-[clamp(14px,6vw,20px)] font-medium">
                         Just everything you actually need to build a personal brand that pays.
                     </p>
                 </div>

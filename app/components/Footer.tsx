@@ -4,12 +4,12 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#361E98] px-8 md:px-20 mt-2 sm:mt-6 md:mt-16 lg:mt-26 pt-16 pb-8">
-            <div className="max-md:place-items-center grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <footer className="bg-[#361E98] px-8 md:px-20 mt-2 sm:mt-6 md:mt-16 lg:mt-26 pt-16 md:pt-20 lg:pt-24 pb-8 md:pb-10 lg:pb-12">
+            <div className="max-md:place-items-center grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32">
 
                 {/* Left Section */}
-                <div className="space-y-6 max-md:mb-5 max-md:place-items-center">
-                    <h2 className="text-[24px] min-[500px]:text-[32px] md:text-[48px] font-bold leading-normal quantaFont uppercase max-w-129.25 max-md:text-center">
+                <div className="space-y-6 md:space-y-8 lg:space-y-10 max-md:mb-8 lg:mb-0 max-md:place-items-center">
+                    <h2 className="text-[24px] min-[500px]:text-[32px] md:text-[48px] leading-[1.2] quantaFont uppercase max-w-129.25 max-md:text-center">
                         DON&apos;T MISS THE GOOD STUFF
                     </h2>
 
@@ -18,7 +18,7 @@ export default function Footer() {
                         <input
                             type="email"
                             placeholder="Your email"
-                            className="w-full bg-transparent text-[20px] leading-normal font-medium border-b border-white/50 py-3 pr-10 outline-none placeholder:text-white/70 focus:border-white"
+                            className="w-full bg-transparent text-[20px] leading-normal font-medium border-b border-white/50 py-3 pr-10 outline-none placeholder:text-white focus:border-white"
                         />
                         <span className="absolute right-0 top-1/2 -translate-y-1/2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
@@ -27,19 +27,19 @@ export default function Footer() {
                         </span>
                     </div>
 
-                    <p className="text-[12px] max-w-95 leading-normal font-normal italic capitalize">
+                    <p className="text-[12px] text-[#FFFEF7] max-w-95 leading-normal font-[310]">
                         By submitting your email, you&apos;ll receive tips on personal branding,
                         LinkedIn hacks, and updates on what we&apos;re working on.
                     </p>
                 </div>
 
                 {/* Right Section */}
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-3 gap-6 md:gap-10 lg:gap-12 xl:gap-16 max-md:gap-8">
 
                     {/* Socials */}
                     <div>
-                        <h4 className="font-bold text-[20px] leading-normal mb-4">Socials</h4>
-                        <ul className="space-y-3 text-[16px] leading-normal font-medium">
+                        <h4 className="font-bold text-[20px] leading-normal mb-4 md:mb-5 lg:mb-6">Socials</h4>
+                        <ul className="space-y-3 md:space-y-3.5 lg:space-y-4 text-[16px] leading-normal font-medium">
                             {/* <li><Link href="#" target="_blank" className="hover:text-[#F9D94D]">X (Twitter)</Link></li> */}
                             <li><Link href="https://www.instagram.com/vistazo.studio/" target="_blank" className="hover:text-[#F9D94D]">Instagram</Link></li>
                             <li><Link href="https://www.linkedin.com/company/vistazo-studio/" target="_blank" className="hover:text-[#F9D94D]">LinkedIn</Link></li>
@@ -48,8 +48,8 @@ export default function Footer() {
 
                     {/* Pages */}
                     <div>
-                        <h4 className="font-bold text-[20px] leading-normal mb-4">Pages</h4>
-                        <ul className="space-y-3 text-[16px] leading-normal font-medium">
+                        <h4 className="font-bold text-[20px] leading-normal mb-4 md:mb-5 lg:mb-6">Pages</h4>
+                        <ul className="space-y-3 md:space-y-3.5 lg:space-y-4 text-[16px] leading-normal font-medium">
                             <li><Link href="#services" className="hover:text-[#F9D94D]">Services</Link></li>
                             <li><Link href="#processes" className="hover:text-[#F9D94D]">Our Process</Link></li>
                             <li><Link href="#pricing" className="hover:text-[#F9D94D]">Pricing</Link></li>
@@ -58,8 +58,8 @@ export default function Footer() {
 
                     {/* Legal */}
                     <div>
-                        <h4 className="font-bold text-[20px] leading-normal mb-4">For Nerds</h4>
-                        <ul className="space-y-3 text-[16px] leading-normal font-medium">
+                        <h4 className="font-bold text-[20px] leading-normal mb-4 md:mb-5 lg:mb-6">For Nerds</h4>
+                        <ul className="space-y-3 md:space-y-3.5 lg:space-y-4 text-[16px] leading-normal font-medium">
                             <li><Link href="#" className="hover:text-[#F9D94D]">Privacy Policy</Link></li>
                             <li><Link href="#" className="hover:text-[#F9D94D]">Terms Of Service</Link></li>
                         </ul>
@@ -69,7 +69,7 @@ export default function Footer() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="mt-10 md:mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="mt-12 md:mt-16 lg:mt-20 xl:mt-24 pt-8 md:pt-10 lg:pt-12 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 lg:gap-10">
 
                 <p className="text-[14px] text-center md:text-left leading-normal font-medium">
                     &copy; 2026 Vistazo. All Rights Reserved

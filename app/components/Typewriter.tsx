@@ -14,6 +14,7 @@ const Typewriter: React.FC = () => {
     let timeout: ReturnType<typeof setTimeout>;
 
     if (!isDeleting && text === words[wordIndex]) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsPaused(true);
       timeout = setTimeout(() => {
         setIsPaused(false);

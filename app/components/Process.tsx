@@ -151,7 +151,7 @@ function Column({ cards }: { cards: CardType[] }) {
                                 className="overflow-hidden"
                             >
                                 {card.description && (
-                                    <p className="text-[20px] md:text-[clamp(12px,8vw,16px)] leading-normal font-normal -tracking-[0.8px] whitespace-pre-line">
+                                    <p className="text-[20px] md:text-[clamp(12px,8vw,16px)] leading-normal font-medium -tracking-[0.8px] whitespace-pre-line">
                                         {card.description}
                                     </p>
                                 )}
@@ -185,6 +185,7 @@ function Column({ cards }: { cards: CardType[] }) {
                                 }}
                                 className={`absolute -bottom-11.5 -left-10 ${card.id == 1 ? '-left-20' : ' '} ${card.id == 3 ? '-left-15 top-7' : ' '} ${card.id == 4 ? 'left-8' : ' '} z-20 pointer-events-none origin-bottom-right`}
                             >
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={card.image}
                                     alt="Person illustration"

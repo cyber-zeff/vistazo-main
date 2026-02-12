@@ -61,7 +61,7 @@ export default function Showcase() {
 
           {/* Text + CTA */}
           <div className="mt-2 max-w-md">
-            <p className="text-gray-200 text-lg mb-6">
+            <p className="text-gray-200 text-lg mb-6 font-medium">
               We create custom websites that make your work stand out and get you{" "}
               <span className="font-semibold italic text-white">paid.</span>
             </p>

@@ -60,7 +60,7 @@ export default function FAQSection() {
                         <h3 className="text-[20px] font-bold mb-2 leading-normal">
                             Didn’t find what you were looking for?
                         </h3>
-                        <p className="text-[16px] leading-normal font-normal mb-4 max-w-105.75">
+                        <p className="text-[16px] leading-normal font-medium mb-4 max-w-105.75">
                             Jump on a <span className="font-bold">free call</span> with our team.
                             We’ll talk about what you need, figure out if we’re a
                             good fit, and map out how we’d actually execute your brand.

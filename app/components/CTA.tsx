@@ -41,7 +41,7 @@ export default function CTASection() {
             </div>
 
             <section className="bg-main relative -top-2">
-                <h2 className="capitalize text-center text-[20px] leading-normal font-normal text-balance max-w-90.25 mx-auto mb-14 lg:mb-22 pt-2">
+                <h2 className="capitalize text-center text-[20px] leading-normal font-medium text-balance max-w-90.25 mx-auto mb-14 lg:mb-22 pt-2">
                     Decided to build with us?
                 </h2>
 
