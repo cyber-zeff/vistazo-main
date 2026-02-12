@@ -2,6 +2,10 @@
 
 import React, { useState, useCallback, useRef } from "react";
 import { motion, PanInfo } from "framer-motion";
+import PricingBtn from "./PricingBtns";
+import { FileHeart, SparkleIcon, Sparkles, TimerIcon, TrendingUp } from "lucide-react";
+import BookACall from "./BookACall";
+import Link from "next/link";
 
 // Card data for infinite cycling
 const CARD_VARIANTS = [
@@ -17,14 +21,14 @@ const SWIPE_VELOCITY_THRESHOLD = 500;
 const ProcessSection = () => {
     // State for mobile infinite carousel
     const [[currentIndex, direction], setCurrentIndex] = useState([0, 0]);
-    
+
     // Track if we're currently animating
     const isAnimating = useRef(false);
 
     // Paginate function for infinite loop
     const paginate = useCallback((newDirection: number) => {
         if (isAnimating.current) return;
-        
+
         isAnimating.current = true;
         setCurrentIndex(([prevIndex]) => {
             const nextIndex = (prevIndex + newDirection + CARD_VARIANTS.length) % CARD_VARIANTS.length;
@@ -69,9 +73,9 @@ const ProcessSection = () => {
     const visibleCards = getVisibleCards();
 
     return (
-        <section id="pricing" className="w-full bg-[#361E98] overflow-hidden py-16 lg:py-20 px-8 lg:px-12">
+        <section id="pricing" className="w-full bg-white text-black overflow-hidden py-16 lg:py-20 px-8 lg:px-12">
             {/* Title */}
-            <h2 className="quantaFont text-[#F9D94D] font-black uppercase text-center mb-12 lg:mb-16 text-[clamp(48px,10vw,128px)] leading-none">
+            <h2 className="quantaFont font-black uppercase text-center mb-12 lg:mb-16 text-[clamp(48px,10vw,128px)] leading-none">
                 Find What Fits
             </h2>
 
@@ -80,19 +84,110 @@ const ProcessSection = () => {
                 <div className="relative h-[750px]">
                     {/* Left Column */}
                     <div className="absolute left-0 top-0 flex flex-col gap-8">
-                        <div className="bg-[#FFFEF7] w-[clamp(280px,24vw,354px)] h-[clamp(450px,36vw,532px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]" />
-                        <div className="w-[clamp(280px,24vw,354px)] h-[clamp(140px,12vw,186px)] rounded-[32px] border-2 border-dashed border-[#FFFEF7]" />
+                        <div className="py-8 flex flex-col justify-between bg-[#FFF] w-[clamp(280px,24vw,354px)] h-[clamp(450px,36vw,532px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]">
+                            <div className="mx-4 ">
+                                {/* <FileHeart size={25} /> */}
+                                <h2 className="quantaFont text-[30px] lg:text-[26px] xl:[36px] leading-normal">Landing Page</h2>
+                                <p className="mt-2 text-[18px] leading-tight">Ideal for designing or redesigning a website to increase your conversion rates</p>
+                            </div>
+
+                            <div className="mx-4 pt-6 pl-3 border-t border-gray-300">
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <TimerIcon />
+                                    <p className="text-[16px]">04–07 day turnaround</p>
+                                </div>
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <Sparkles />
+                                    <p className="text-[16px]">Custom layout tailored for conversions</p>
+                                </div>
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <TrendingUp />
+                                    <p className="text-[16px]">SEO-friendly structure</p>
+                                </div>
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <FileHeart />
+                                    <p className="text-[16px]">50/50 secure payment process</p>
+                                </div>
+                            </div>
+
+                            <PricingBtn path="#" name="Get Started" bg="black" />
+                        </div>
+
+                        <div className="px-4 flex flex-col justify-around w-[clamp(280px,24vw,354px)] h-[clamp(140px,12vw,186px)] rounded-[32px] border-2 border-dashed border-[#123123]">
+                            <div className="mt-1">
+                                <h2 className="quantaFont text-[30px] lg:text-[24px] xl:[32px] leading-normal">No-Code Dev</h2>
+                                <p className="mt-1 text-[16px] leading-tight">We will build your website in framer for an additional fee.</p>
+                            </div>
+                            <Link href={"#"} className="bg-black w-full rounded-full text-white text-center text-[18px] py-2">Add</Link>
+                        </div>
                     </div>
 
                     {/* Center Column (Tallest) */}
                     <div className="absolute left-1/2 top-0 -translate-x-1/2">
-                        <div className="bg-[#FFFEF7] w-[clamp(280px,24vw,354px)] h-[clamp(520px,42vw,620px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]" />
+                        <div className="py-8 flex flex-col justify-between bg-[#FFF] w-[clamp(280px,24vw,354px)] h-[clamp(520px,42vw,620px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]">
+                            <div className="mx-4 ">
+                                {/* <FileHeart size={25} /> */}
+                                <h2 className="quantaFont text-[30px] lg:text-[26px] xl:[36px] leading-normal">Landing Page</h2>
+                                <p className="mt-2 text-[18px] leading-tight">Ideal for designing or redesigning a website to increase your conversion rates</p>
+                            </div>
+
+                            <div className="mx-4 pt-6 pl-3 border-t border-gray-300">
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <TimerIcon />
+                                    <p className="text-[16px]">04–07 day turnaround</p>
+                                </div>
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <Sparkles />
+                                    <p className="text-[16px]">Custom layout tailored for conversions</p>
+                                </div>
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <TrendingUp />
+                                    <p className="text-[16px]">SEO-friendly structure</p>
+                                </div>
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <FileHeart />
+                                    <p className="text-[16px]">50/50 secure payment process</p>
+                                </div>
+                            </div>
+
+                            <PricingBtn path="#" name="Get Started" bg="black" />
+                        </div>
                     </div>
 
                     {/* Right Column */}
                     <div className="absolute right-0 top-0 flex flex-col gap-8">
-                        <div className="bg-[#6755CF] w-[clamp(280px,24vw,354px)] h-[clamp(450px,36vw,532px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]" />
-                        <div className="bg-[#6755CF] w-[clamp(280px,24vw,354px)] h-[clamp(140px,12vw,186px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]" />
+                        <div className="py-8 flex flex-col justify-between text-white bg-[#6755CF] w-[clamp(280px,24vw,354px)] h-[clamp(450px,36vw,532px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]">
+                            <div className="mx-4 ">
+                                {/* <FileHeart size={25} /> */}
+                                <h2 className="quantaFont text-[30px] lg:text-[26px] xl:[36px] leading-normal">Landing Page</h2>
+                                <p className="mt-2 text-[18px] leading-tight">Ideal for designing or redesigning a website to increase your conversion rates</p>
+                            </div>
+
+                            <div className="mx-4 pt-6 pl-3 border-t border-gray-300">
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <TimerIcon />
+                                    <p className="text-[16px]">04–07 day turnaround</p>
+                                </div>
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <Sparkles />
+                                    <p className="text-[16px]">Custom layout tailored for conversions</p>
+                                </div>
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <TrendingUp />
+                                    <p className="text-[16px]">SEO-friendly structure</p>
+                                </div>
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <FileHeart />
+                                    <p className="text-[16px]">50/50 secure payment process</p>
+                                </div>
+                            </div>
+
+                            <PricingBtn path="#" name="Get Started" bg="#FFF" />
+                        </div>
+                        <div className="bg-[#6755CF] p-4 text-white w-[clamp(280px,24vw,354px)] h-[clamp(140px,12vw,186px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]">
+                            <h2 className="quantaFont text-[30px] lg:text-[26px] xl:[36px] leading-normal mb-3 text-center">Can't Decide?</h2>
+                            <PricingBtn path="#" name="Book a Call" bg="#FFF" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -148,10 +243,10 @@ const ProcessSection = () => {
                 </div>
 
                 {/* Bottom Dashed Box */}
-                <div className="w-[75vw] max-w-[340px] h-[20vh] min-h-[140px] max-h-[186px] rounded-[32px] border-2 border-dashed border-[#FFFEF7]" />
+                <div className="w-[75vw] max-w-[340px] h-[20vh] min-h-[140px] max-h-[186px] rounded-[32px] border-2 border-dashed border-[#123123]" />
 
                 {/* Swipe Indicator (Optional) */}
-                <p className="text-[#FFFEF7] text-sm opacity-60 text-center">
+                <p className="text-sm opacity-60 text-center">
                     Swipe to explore
                 </p>
             </div>

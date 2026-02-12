@@ -3,13 +3,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-interface ProcessBtnProps {
+interface PricingBtnProps {
   path: string;
   name: string;
   bg: string;
 }
 
-export default function ProcessBtn({ path, name, bg }: ProcessBtnProps) {
+export default function PricingBtn({ path, name, bg }: PricingBtnProps) {
   const [hover, setHover] = useState(false);
 
   return (
@@ -25,7 +25,7 @@ export default function ProcessBtn({ path, name, bg }: ProcessBtnProps) {
             : "0px 6px 0px 0px #121213",
         }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
-        className={`bg-[${bg}] w-71.25 h-17.25 px-20 py-5 border-2 border-[#121213] rounded-[100px] text-center text-[#121213] text-[20px] font-medium leading-normal -tracking-[1.2]`}
+        className={`bg-[${bg}] lg:w-58 h-16.25 xl:w-71.25 xl:h-17.25 Text-center py-4 border-2 border-[#121213] rounded-[100px] text-center text-[#121213] text-[20px] font-medium leading-normal -tracking-[1.2]`}
       >
         {name}
       </motion.a>
