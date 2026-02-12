@@ -3,7 +3,7 @@
 import React, { useState, useCallback, useRef } from "react";
 import { motion, PanInfo } from "framer-motion";
 import PricingBtn from "./PricingBtns";
-import { FileHeart, SparkleIcon, Sparkles, TimerIcon, TrendingUp } from "lucide-react";
+import { ChartSpline, FileCheck, FileHeart, Infinity, SparkleIcon, Sparkles, TimerIcon, TrendingUp } from "lucide-react";
 import BookACall from "./BookACall";
 import Link from "next/link";
 
@@ -127,18 +127,22 @@ const ProcessSection = () => {
                         <div className="py-8 flex flex-col justify-between bg-[#FFF] w-[clamp(280px,24vw,354px)] h-[clamp(520px,42vw,620px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]">
                             <div className="mx-4 ">
                                 {/* <FileHeart size={25} /> */}
-                                <h2 className="quantaFont text-[30px] lg:text-[26px] xl:[36px] leading-normal">Landing Page</h2>
-                                <p className="mt-2 text-[18px] leading-tight">Ideal for designing or redesigning a website to increase your conversion rates</p>
+                                <h2 className="quantaFont text-[30px] lg:text-[26px] xl:[36px] leading-normal">Partnership</h2>
+                                <p className="mt-2 text-[18px] leading-tight">Tailored for businesses with ongoing design</p>
                             </div>
 
                             <div className="mx-4 pt-6 pl-3 border-t border-gray-300">
                                 <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
                                     <TimerIcon />
-                                    <p className="text-[16px]">04–07 day turnaround</p>
+                                    <p className="text-[16px]">5-7 Days turnaround time</p>
                                 </div>
                                 <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
-                                    <Sparkles />
-                                    <p className="text-[16px]">Custom layout tailored for conversions</p>
+                                    <Infinity />
+                                    <p className="text-[16px]">Unlimited Requests</p>
+                                </div>
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <ChartSpline />
+                                    <p className="text-[16px]">Monthly CRO & Growth Strategy</p>
                                 </div>
                                 <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
                                     <TrendingUp />
@@ -159,22 +163,26 @@ const ProcessSection = () => {
                         <div className="py-8 flex flex-col justify-between text-white bg-[#6755CF] w-[clamp(280px,24vw,354px)] h-[clamp(450px,36vw,532px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]">
                             <div className="mx-4 ">
                                 {/* <FileHeart size={25} /> */}
-                                <h2 className="quantaFont text-[30px] lg:text-[26px] xl:[36px] leading-normal">Landing Page</h2>
-                                <p className="mt-2 text-[18px] leading-tight">Ideal for designing or redesigning a website to increase your conversion rates</p>
+                                <h2 className="quantaFont text-[30px] lg:text-[26px] xl:[36px] leading-normal">Custom</h2>
+                                <p className="mt-2 text-[18px] leading-tight">Tailored digital experiences built for unique business needs</p>
                             </div>
 
                             <div className="mx-4 pt-6 pl-3 border-t border-gray-300">
                                 <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
                                     <TimerIcon />
-                                    <p className="text-[16px]">04–07 day turnaround</p>
+                                    <p className="text-[16px]">Fully Custom Timeline & Scope</p>
                                 </div>
                                 <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
-                                    <Sparkles />
-                                    <p className="text-[16px]">Custom layout tailored for conversions</p>
+                                    <Infinity />
+                                    <p className="text-[16px]">Unlimited Requests</p>
+                                </div>
+                                <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+                                    <FileCheck />
+                                    <p className="text-[16px]">End-to-End Web Dev</p>
                                 </div>
                                 <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
                                     <TrendingUp />
-                                    <p className="text-[16px]">SEO-friendly structure</p>
+                                    <p className="text-[16px]">Advanced SEO & Marketing</p>
                                 </div>
                                 <div className="flex items-center gap-8 lg:mb-2 xl:mb-4">
                                     <FileHeart />
@@ -243,7 +251,13 @@ const ProcessSection = () => {
                 </div>
 
                 {/* Bottom Dashed Box */}
-                <div className="w-[75vw] max-w-[340px] h-[20vh] min-h-[140px] max-h-[186px] rounded-[32px] border-2 border-dashed border-[#123123]" />
+                <div className="px-4 flex flex-col justify-around w-[75vw] max-w-[340px] h-[20vh] min-h-[140px] max-h-[186px] rounded-[32px] border-2 border-dashed border-[#123123]">
+                    <div className="mt-1">
+                        <h2 className="quantaFont text-[30px] lg:text-[24px] xl:[32px] leading-normal">No-Code Dev</h2>
+                        <p className="mt-1 text-[16px] leading-tight">We will build your website in framer for an additional fee.</p>
+                    </div>
+                    <Link href={"#"} className="bg-black w-full rounded-full text-white text-center text-[18px] py-2">Add</Link>
+                </div>
 
                 {/* Swipe Indicator (Optional) */}
                 <p className="text-sm opacity-60 text-center">
