@@ -1,162 +1,204 @@
-"use client";
+'use client'
 
-import React, { useState, useCallback, useRef } from "react";
-import { motion, PanInfo } from "framer-motion";
+import { motion } from 'framer-motion'
+import { useState, useRef, useEffect } from 'react'
 
-// Card data for infinite cycling
-const CARD_VARIANTS = [
-    { id: "card-1", color: "#FFFEF7" }, // White
-    { id: "card-2", color: "#6755CF" }, // Purple
-    { id: "card-3", color: "#FFFEF7" }, // White
-    { id: "card-4", color: "#6755CF" }, // Purple
-];
+type CardType = {
+    id: number
+    step: string
+    title: string
+    description?: string
+}
 
-const SWIPE_CONFIDENCE_THRESHOLD = 5000;
-const SWIPE_VELOCITY_THRESHOLD = 500;
+const isTouchDevice =
+    typeof window !== 'undefined' &&
+    navigator.maxTouchPoints > 0
 
-const ProcessSection = () => {
-    // State for mobile infinite carousel
-    const [[currentIndex, direction], setCurrentIndex] = useState([0, 0]);
-    
-    // Track if we're currently animating
-    const isAnimating = useRef(false);
+const column1: CardType[] = [
+    {
+        id: 1,
+        step: '01',
+        title: 'The Deep Dive',
+        description:
+            "We don't start designing until we actually understand you.\n\nYour work, your goals, your competition, what makes you different.We dig into your industry, study what's working, and uncover the unique angle that'll make your brand stand out.",
+    },
+    {
+        id: 2,
+        step: '02',
+        title: 'The Deep Dive',
+        description:
+            "We don't start designing until we actually understand you.\n\nYour work, your goals, your competition, what makes you different.We dig into your industry, study what's working, and uncover the unique angle that'll make your brand stand out.",
+    },
+]
 
-    // Paginate function for infinite loop
-    const paginate = useCallback((newDirection: number) => {
-        if (isAnimating.current) return;
-        
-        isAnimating.current = true;
-        setCurrentIndex(([prevIndex]) => {
-            const nextIndex = (prevIndex + newDirection + CARD_VARIANTS.length) % CARD_VARIANTS.length;
-            return [nextIndex, newDirection];
-        });
+const column2: CardType[] = [
+    {
+        id: 3,
+        step: '03',
+        title: 'The Deep Dive',
+        description:
+            "We don't start designing until we actually understand you.\n\nYour work, your goals, your competition, what makes you different.We dig into your industry, study what's working, and uncover the unique angle that'll make your brand stand out.",
+    },
+    {
+        id: 4,
+        step: '04',
+        title: 'The Deep Dive',
+        description:
+            "We don't start designing until we actually understand you.\n\nYour work, your goals, your competition, what makes you different.We dig into your industry, study what's working, and uncover the unique angle that'll make your brand stand out.",
+    },
+]
 
-        // Reset animation lock after transition
-        setTimeout(() => {
-            isAnimating.current = false;
-        }, 300);
-    }, []);
+function Column({ cards }: { cards: CardType[] }) {
+    const [activeIndex, setActiveIndex] = useState<number | null>(null)
+    const columnRef = useRef<HTMLDivElement>(null)
 
-    // Calculate swipe power for gesture detection
-    const swipePower = (offset: number, velocity: number) => {
-        return Math.abs(offset) * velocity;
-    };
-
-    // Handle drag end
-    const handleDragEnd = useCallback(
-        (_event: MouseEvent | TouchEvent | PointerEvent, { offset, velocity }: PanInfo) => {
-            const swipe = swipePower(offset.x, velocity.x);
-
-            if (swipe < -SWIPE_CONFIDENCE_THRESHOLD || velocity.x < -SWIPE_VELOCITY_THRESHOLD) {
-                paginate(1); // Swipe left
-            } else if (swipe > SWIPE_CONFIDENCE_THRESHOLD || velocity.x > SWIPE_VELOCITY_THRESHOLD) {
-                paginate(-1); // Swipe right
+    // Close active card when tapping outside (mobile / tablet)
+    useEffect(() => {
+        function handleOutsideTap(e: PointerEvent) {
+            if (
+                isTouchDevice &&
+                columnRef.current &&
+                !columnRef.current.contains(e.target as Node)
+            ) {
+                setActiveIndex(null)
             }
-        },
-        [paginate]
-    );
-
-    // Get visible cards (current + next 2 for stacking effect)
-    const getVisibleCards = () => {
-        const cards = [];
-        for (let i = 0; i < 3; i++) {
-            const index = (currentIndex + i) % CARD_VARIANTS.length;
-            cards.push({ ...CARD_VARIANTS[index], stackIndex: i });
         }
-        return cards;
-    };
 
-    const visibleCards = getVisibleCards();
+        if (activeIndex !== null) {
+            document.addEventListener('pointerdown', handleOutsideTap)
+        }
+
+        return () => {
+            document.removeEventListener('pointerdown', handleOutsideTap)
+        }
+    }, [activeIndex])
 
     return (
-        <section id="pricing" className="w-full bg-[#361E98] overflow-hidden py-16 lg:py-20 px-8 lg:px-12">
-            {/* Title */}
-            <h2 className="quantaFont text-[#F9D94D] font-black uppercase text-center mb-12 lg:mb-16 text-[clamp(48px,10vw,128px)] leading-none">
-                Find What Fits
-            </h2>
+        <div ref={columnRef} className="flex flex-col gap-6 mb-1">
+            {cards.map((card, index) => {
+                const isActive = activeIndex === index
+                const isSibling =
+                    activeIndex !== null && activeIndex !== index
 
-            {/* ================= DESKTOP LAYOUT ================= */}
-            <div className="hidden lg:block max-w-[1280px] mx-auto">
-                <div className="relative h-[750px]">
-                    {/* Left Column */}
-                    <div className="absolute left-0 top-0 flex flex-col gap-8">
-                        <div className="bg-[#FFFEF7] w-[clamp(280px,24vw,354px)] h-[clamp(450px,36vw,532px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]" />
-                        <div className="w-[clamp(280px,24vw,354px)] h-[clamp(140px,12vw,186px)] rounded-[32px] border-2 border-dashed border-[#FFFEF7]" />
-                    </div>
+                return (
+                    <motion.div
+                        key={card.id}
 
-                    {/* Center Column (Tallest) */}
-                    <div className="absolute left-1/2 top-0 -translate-x-1/2">
-                        <div className="bg-[#FFFEF7] w-[clamp(280px,24vw,354px)] h-[clamp(520px,42vw,620px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]" />
-                    </div>
+                        /* DESKTOP HOVER */
+                        onHoverStart={() => setActiveIndex(index)}
+                        onHoverEnd={() => setActiveIndex(null)}
 
-                    {/* Right Column */}
-                    <div className="absolute right-0 top-0 flex flex-col gap-8">
-                        <div className="bg-[#6755CF] w-[clamp(280px,24vw,354px)] h-[clamp(450px,36vw,532px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]" />
-                        <div className="bg-[#6755CF] w-[clamp(280px,24vw,354px)] h-[clamp(140px,12vw,186px)] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]" />
-                    </div>
-                </div>
-            </div>
+                        /* MOBILE / TABLET TAP */
+                        onTap={() => {
+                            if (isTouchDevice) {
+                                setActiveIndex(isActive ? null : index)
+                            }
+                        }}
 
-            {/* ================= MOBILE CAROUSEL (INFINITE) ================= */}
-            <div className="lg:hidden relative flex flex-col items-center gap-8">
-                {/* Card Stack Container */}
-                <div className="relative w-full h-[65vh] min-h-[500px] flex items-start justify-center pt-8">
-                    {visibleCards.map((card) => {
-                        const isTopCard = card.stackIndex === 0;
-                        const zIndex = 10 - card.stackIndex;
-                        const scale = 1 - card.stackIndex * 0.05;
-                        const yOffset = card.stackIndex * 16;
+                        animate={{
+                            height: isActive
+                                ? 450
+                                : isSibling
+                                    ? 150
+                                    : 300,
+                        }}
+                        transition={{
+                            type: 'spring',
+                            stiffness: 200,
+                            damping: 25,
+                            mass: 0.6,
+                        }}
+                        className="w-full max-w-[620px] min-w-[320px] h-75 rounded-[30px] bg-[#6755CF] px-6 md:px-8 pt-8 overflow-hidden cursor-pointer flex justify-between"
+                    >
+                        {/* LEFT CONTENT */}
+                        <div className="flex flex-col gap-4 max-w-[280px] md:max-w-86.25 flex-1">
+                            <h3 className="text-[clamp(26px,8vw,48px)] font-black leading-normal quantaFont -tracking-[2.4px] capitalize">
+                                {card.title}
+                            </h3>
 
-                        return (
+                            <p className="text-[clamp(14px,8vw,20px)] font-medium leading-normal -tracking-[1px] mb-4">
+                                Understanding your work and goals
+                            </p>
+
                             <motion.div
-                                key={`${card.id}-${card.stackIndex}`}
-                                className="absolute w-[75vw] max-w-[340px] h-[56vh] min-h-[450px] rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)]"
-                                style={{
-                                    backgroundColor: card.color,
-                                    zIndex,
-                                }}
-                                drag={isTopCard ? "x" : false}
-                                dragConstraints={{ left: 0, right: 0 }}
-                                dragElastic={0.7}
-                                onDragEnd={isTopCard ? handleDragEnd : undefined}
+                                initial={false}
                                 animate={{
-                                    scale,
-                                    y: yOffset,
-                                    x: 0,
-                                    opacity: 1,
-                                }}
-                                initial={{
-                                    scale,
-                                    y: yOffset,
-                                    x: 0,
-                                    opacity: 1,
-                                }}
-                                exit={{
-                                    x: direction > 0 ? 400 : -400,
-                                    opacity: 0,
-                                    transition: { duration: 0.3 },
+                                    height: isActive ? 'auto' : 0,
+                                    opacity: isActive ? 1 : 0,
                                 }}
                                 transition={{
-                                    type: "spring",
-                                    stiffness: 300,
-                                    damping: 30,
+                                    height: {
+                                        type: 'spring',
+                                        stiffness: 200,
+                                        damping: 25,
+                                        mass: 0.6,
+                                    },
+                                    opacity: {
+                                        duration: 0.25,
+                                        ease: 'easeInOut',
+                                    },
                                 }}
-                                whileTap={isTopCard ? { cursor: "grabbing" } : {}}
-                            />
-                        );
-                    })}
+                                className="overflow-hidden"
+                            >
+                                {card.description && (
+                                    <p className="text-[20px] md:text-[clamp(12px,8vw,16px)] leading-normal font-normal -tracking-[0.8px] whitespace-pre-line">
+                                        {card.description}
+                                    </p>
+                                )}
+                            </motion.div>
+                        </div>
+
+                        {/* RIGHT SIDE */}
+                        <div className="relative flex items-start justify-end shrink-0">
+                            <div className="text-[clamp(64px,8vw,120px)] font-black leading-normal quantaFont -tracking-[6px] z-20">
+                                {card.step}
+                            </div>
+
+                            <motion.div
+                                initial={false}
+                                animate={{
+                                    height: isActive ? 'clamp(240px, 28vw, 464px)' : 'clamp(160px, 18vw, 294px)',
+                                    width: isActive ? 'clamp(180px, 21vw, 350px)' : 'clamp(120px, 13.5vw, 220px)',
+                                    right: isActive ? 'clamp(10px, 1vw, -50px)' : 'clamp(5px, 0.5vw, -30px)',
+                                    opacity: isSibling ? 0 : 1,
+                                    scale: isSibling ? 0.8 : 1,
+                                }}
+                                transition={{
+                                    type: 'spring',
+                                    stiffness: 200,
+                                    damping: 25,
+                                    mass: 0.5,
+                                    opacity: {
+                                        duration: 0.3,
+                                        ease: 'easeInOut',
+                                    },
+                                }}
+                                className="absolute -bottom-11.5 z-10 pointer-events-none origin-bottom-right"
+                            >
+                                <img
+                                    src="/person.png"
+                                    alt="Person illustration"
+                                    className="w-full h-full object-contain"
+                                />
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                )
+            })}
+        </div>
+    )
+}
+
+export default function OPCard() {
+    return (
+        <section id='processes' className='bg-[#FFFEF7] px-4 md:px-10 lg:px-20 py-20'>
+            <h2 className='quantaFont text-[#121213] leading-normal font-black text-[clamp(42px,8vw,96px)] uppercase text-center mb-10 md:mb-20 text-balance max-w-308.75 mx-auto'>We keep our Process Simple</h2>
+            <div className="flex justify-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-6">
+                    <Column cards={column1} />
+                    <Column cards={column2} />
                 </div>
-
-                {/* Bottom Dashed Box */}
-                <div className="w-[75vw] max-w-[340px] h-[20vh] min-h-[140px] max-h-[186px] rounded-[32px] border-2 border-dashed border-[#FFFEF7]" />
-
-                {/* Swipe Indicator (Optional) */}
-                <p className="text-[#FFFEF7] text-sm opacity-60 text-center">
-                    Swipe to explore
-                </p>
             </div>
         </section>
-    );
-};
-
-export default ProcessSection;
+    )
+}
