@@ -61,9 +61,12 @@ export default function Showcase() {
 
           {/* Text + CTA */}
           <div className="mt-2 max-w-md">
-            <p className="text-gray-200 text-lg mb-6 font-medium">
-              We create custom websites that make your work stand out and get you{" "}
-              <span className="font-semibold italic text-white">paid.</span>
+            <p className="text-white text-lg mb-6 font-medium leading-normal">
+              We help creators and mavericks build
+              <br />
+              personal brands that scream confidence.
+              <br />
+              Don&apos;t just be seen, be <span className="text-[#FFE400] italic font-bold">remembered.</span>
             </p>
             <BookACall path="#" />
           </div>
