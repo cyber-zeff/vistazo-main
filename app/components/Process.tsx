@@ -201,7 +201,7 @@ function Column({ cards }: { cards: CardType[] }) {
 
 export default function OPCard() {
     return (
-        <section id='processes' className='bg-[#FFFEF7] px-4 md:px-10 lg:px-20 py-20'>
+        <section id='processes' className='bg-[#FFFFFF] px-4 md:px-10 lg:px-20 py-20'>
             <h2 className='quantaFont text-[#121213] leading-normal font-black text-[clamp(42px,8vw,96px)] uppercase text-center mb-10 md:mb-20 text-balance max-w-308.75 mx-auto'>We keep our Process Simple</h2>
             <div className="flex justify-center">
                 <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-6">
