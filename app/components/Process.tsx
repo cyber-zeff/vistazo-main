@@ -7,7 +7,9 @@ type CardType = {
     id: number
     step: string
     title: string
+    subTitle: string
     description?: string
+    image: string
 }
 
 const isTouchDevice =
@@ -18,16 +20,20 @@ const column1: CardType[] = [
     {
         id: 1,
         step: '01',
-        title: 'The Deep Dive',
+        title: 'Deep Dive',
+        subTitle: 'Understanding your work and goals',
         description:
-            "We don't start designing until we actually understand you.\n\nYour work, your goals, your competition, what makes you different.We dig into your industry, study what's working, and uncover the unique angle that'll make your brand stand out.",
+            "We don't start designing until we actually understand you.\n\nYour work, your goals, your competition, what makes you different. We dig into your industry, study what's working, and uncover the unique angle that'll make your brand stand out.",
+        image: "/illustrations/illustration-1.png"
     },
     {
         id: 2,
         step: '02',
-        title: 'The Deep Dive',
+        title: 'Strategy Session',
+        subTitle: 'Deciding how your brand will look like',
         description:
-            "We don't start designing until we actually understand you.\n\nYour work, your goals, your competition, what makes you different.We dig into your industry, study what's working, and uncover the unique angle that'll make your brand stand out.",
+            "We get on a call and plan out everything before creating anything.\n\nWe align on your brand direction,messaging, and aesthetic so when we start designing, we're not guessing—we're executing a plan.",
+        image: "/illustrations/illustration-2.png"
     },
 ]
 
@@ -35,16 +41,20 @@ const column2: CardType[] = [
     {
         id: 3,
         step: '03',
-        title: 'The Deep Dive',
+        title: 'The Build',
+        subTitle: 'Creating your full brand',
         description:
-            "We don't start designing until we actually understand you.\n\nYour work, your goals, your competition, what makes you different.We dig into your industry, study what's working, and uncover the unique angle that'll make your brand stand out.",
+            "Our team designs your complete visual identity, builds your website, and writes all the copy.\n\nDesigners create your logo and brand look. Copywriters write every page. Developers code it to work fast on all devices. Everything gets built in sync so it all works together perfectly",
+        image: "/illustrations/illustration-3.png"
     },
     {
         id: 4,
         step: '04',
-        title: 'The Deep Dive',
+        title: 'Go Live',
+        subTitle: 'Your site goes live + we stay available',
         description:
-            "We don't start designing until we actually understand you.\n\nYour work, your goals, your competition, what makes you different.We dig into your industry, study what's working, and uncover the unique angle that'll make your brand stand out.",
+            "Your new brand launches, you get all the files, and we're here for 30 days after.\n\nWe walk you through how to use everything, handle any bugs or tweaks, and make sure you're comfortable. The relationship doesn't end at launch.",
+        image: "/illustrations/illustration-4.png"
     },
 ]
 
@@ -117,7 +127,7 @@ function Column({ cards }: { cards: CardType[] }) {
                             </h3>
 
                             <p className="text-[clamp(14px,8vw,20px)] font-medium leading-normal -tracking-[1px] mb-4">
-                                Understanding your work and goals
+                                {card.subTitle}
                             </p>
 
                             <motion.div
@@ -173,12 +183,12 @@ function Column({ cards }: { cards: CardType[] }) {
                                         ease: 'easeInOut',
                                     },
                                 }}
-                                className="absolute -bottom-11.5 z-10 pointer-events-none origin-bottom-right"
+                                className={`absolute -bottom-11.5 -left-10 ${card.id == 1 ? '-left-20' : ' '} ${card.id == 3 ? '-left-15 top-7' : ' '} ${card.id == 4 ? 'left-8' : ' '} z-20 pointer-events-none origin-bottom-right`}
                             >
                                 <img
-                                    src="/person.png"
+                                    src={card.image}
                                     alt="Person illustration"
-                                    className="w-full h-full object-contain"
+                                    className={`w-full h-full object-contain ${card.id == 4 ? 'scale-x-[-1]' : ' '}`}
                                 />
                             </motion.div>
                         </div>
