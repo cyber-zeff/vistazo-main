@@ -69,7 +69,7 @@ const ProcessSection = () => {
     const visibleCards = getVisibleCards();
 
     return (
-        <section className="w-full bg-[#361E98] overflow-hidden py-16 lg:py-20 px-8 lg:px-12">
+        <section id="pricing" className="w-full bg-[#361E98] overflow-hidden py-16 lg:py-20 px-8 lg:px-12">
             {/* Title */}
             <h2 className="quantaFont text-[#F9D94D] font-black uppercase text-center mb-12 lg:mb-16 text-[clamp(48px,10vw,128px)] leading-none">
                 Find What Fits
