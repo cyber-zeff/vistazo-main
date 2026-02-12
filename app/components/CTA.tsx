@@ -23,7 +23,7 @@ export default function CTASection() {
     return (
         <>
             {/* Padding wrapper */}
-            <div className="bg-[#FFFEF7] w-full pt-10 md:pt-20 lg:pt-20">
+            <div className="bg-[#FFF] w-full pt-10 md:pt-20 lg:pt-20">
 
                 <div className="w-full m-0 p-0 overflow-hidden">
                     <svg
