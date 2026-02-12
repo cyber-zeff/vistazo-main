@@ -9,7 +9,7 @@ export default function Footer() {
 
                 {/* Left Section */}
                 <div className="space-y-6 max-md:mb-5 max-md:place-items-center">
-                    <h2 className="text-[32px] md:text-[48px] font-bold leading-normal quantaFont uppercase max-w-129.25 max-md:text-center">
+                    <h2 className="text-[24px] min-[500px]:text-[32px] md:text-[48px] font-bold leading-normal quantaFont uppercase max-w-129.25 max-md:text-center">
                         DON&apos;T MISS THE GOOD STUFF
                     </h2>
 
@@ -34,15 +34,15 @@ export default function Footer() {
                 </div>
 
                 {/* Right Section */}
-                <div className="grid grid-cols-2 sm:grid-cols-3">
+                <div className="grid grid-cols-3">
 
                     {/* Socials */}
                     <div>
                         <h4 className="font-bold text-[20px] leading-normal mb-4">Socials</h4>
                         <ul className="space-y-3 text-[16px] leading-normal font-medium">
-                            <li><Link href="#" className="hover:text-[#F9D94D]">X (Twitter)</Link></li>
-                            <li><Link href="#" className="hover:text-[#F9D94D]">Instagram</Link></li>
-                            <li><Link href="#" className="hover:text-[#F9D94D]">LinkedIn</Link></li>
+                            {/* <li><Link href="#" target="_blank" className="hover:text-[#F9D94D]">X (Twitter)</Link></li> */}
+                            <li><Link href="https://www.instagram.com/vistazo.studio/" target="_blank" className="hover:text-[#F9D94D]">Instagram</Link></li>
+                            <li><Link href="https://www.linkedin.com/company/vistazo-studio/" target="_blank" className="hover:text-[#F9D94D]">LinkedIn</Link></li>
                         </ul>
                     </div>
 
@@ -50,14 +50,14 @@ export default function Footer() {
                     <div>
                         <h4 className="font-bold text-[20px] leading-normal mb-4">Pages</h4>
                         <ul className="space-y-3 text-[16px] leading-normal font-medium">
-                            <li><Link href="#" className="hover:text-[#F9D94D]">About Us</Link></li>
-                            <li><Link href="#" className="hover:text-[#F9D94D]">Projects</Link></li>
-                            <li><Link href="#" className="hover:text-[#F9D94D]">Blog Posts</Link></li>
+                            <li><Link href="#services" className="hover:text-[#F9D94D]">Services</Link></li>
+                            <li><Link href="#processes" className="hover:text-[#F9D94D]">Our Process</Link></li>
+                            <li><Link href="#pricing" className="hover:text-[#F9D94D]">Pricing</Link></li>
                         </ul>
                     </div>
 
                     {/* Legal */}
-                    <div className="max-sm:mt-8">
+                    <div>
                         <h4 className="font-bold text-[20px] leading-normal mb-4">For Nerds</h4>
                         <ul className="space-y-3 text-[16px] leading-normal font-medium">
                             <li><Link href="#" className="hover:text-[#F9D94D]">Privacy Policy</Link></li>
