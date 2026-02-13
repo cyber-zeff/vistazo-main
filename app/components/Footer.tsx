@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#361E98] px-8 md:px-20 mt-2 sm:mt-6 md:mt-16 lg:mt-26 pt-16 md:pt-20 lg:pt-24 pb-8 md:pb-10 lg:pb-12">
+        <footer className="bg-[#361E98] px-8 md:px-20 mt-6 sm:mt-6 md:mt-16 lg:mt-26 pt-16 md:pt-20 lg:pt-24 pb-8 md:pb-10 lg:pb-12">
             <div className="max-md:place-items-center grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32">
 
                 {/* Left Section */}
@@ -27,14 +27,14 @@ export default function Footer() {
                         </span>
                     </div>
 
-                    <p className="text-[12px] text-[#FFFEF7] max-w-95 leading-normal font-[310]">
+                    <p className="text-[12px] text-[#FFFEF7] max-w-95 leading-normal font-[310] max-md:text-center">
                         By submitting your email, you&apos;ll receive tips on personal branding,
                         LinkedIn hacks, and updates on what we&apos;re working on.
                     </p>
                 </div>
 
                 {/* Right Section */}
-                <div className="inline-grid grid-cols-3 gap-6 md:gap-10 lg:gap-12 xl:gap-16 max-md:gap-8">
+                <div className="inline-grid grid-cols-3 gap-6 md:gap-10 lg:gap-12 xl:gap-16 max-md:gap-8 max-md:justify-items-center">
 
                     {/* Socials */}
                     <div>
