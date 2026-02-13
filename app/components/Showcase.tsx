@@ -6,7 +6,7 @@ import Typewriter from "./Typewriter";
 
 export default function Showcase() {
   return (
-    <section className="relative bg-main text-white md:min-h-[89vh] sm:min-h-screen h-full w-full flex flex-col items-center overflow-hidden mt-3 md:mt-8">
+    <section className="relative bg-main text-white lg:min-h-[89vh] h-full w-full flex flex-col items-center overflow-hidden mt-3 md:mt-8 lg:items-center">
 
       {/* Showcase Container */}
       <div className="relative w-full max-w-360 px-6 md:px-16 py-12 md:pt-12 md:pb-20 flex justify-center">
@@ -73,41 +73,52 @@ export default function Showcase() {
         </div>
 
         {/* MOBILE / TABLET VERSION */}
-        <div className="block lg:hidden px-8">
-
-          <h1 className="font-extrabold text-[clamp(48px,13vw,118px)] leading-[1.1] tracking-tight quantaFont">
-            DESIGNED
-          </h1>
-          <div className="flex items-center max-[450px]:gap-5 gap-10">
-            <h1 className="font-extrabold text-[clamp(48px,13vw,118px)] leading-[1.1] tracking-tight quantaFont">FOR</h1>
-            <div className="flex justify-center">
-              <div className="rounded-full overflow-hidden w-[clamp(230px,13vw,327px)] h-[clamp(76px,13vw,104px)] max-w-full bg-gray-400">
-                {/* IMAGE TO COME */}
+        <div className="lg:hidden w-full">
+          <div className="w-full max-w-full" style={{ 
+            fontSize: 'clamp(48px, 10vw, 118px)',
+            lineHeight: '1.1'
+          }}>
+            <h1 className="font-extrabold tracking-tight quantaFont mb-0 whitespace-nowrap">
+              DESIGNED
+            </h1>
+            <div className="flex items-center gap-[0.4em] mt-0">
+              <h1 className="font-extrabold tracking-tight quantaFont mb-0 whitespace-nowrap shrink-0">FOR</h1>
+              <div className="flex-1 min-w-0">
+                <div className="rounded-full overflow-hidden bg-gray-400 w-full" style={{ 
+                  height: 'clamp(60px, 8vw, 104px)'
+                }}>
+                  {/* IMAGE TO COME  */}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="mt-4 font-extrabold text-[clamp(48px,13vw,118px)] leading-[1.1] tracking-tight text-[#F9D94D] quantaFont">
-            <Typewriter />
-          </div>
-
-          {/* Bunny + Text Line */}
-          <div className="mt-2 flex items-center">
-            <div className="relative">
-              <Image
-                src="/head-bunny.png"
-                alt="bunny mascot"
-                width={339}
-                height={333}
-                className="max-sm:w-[200px] max-sm:h-[120px]"
-                priority
-                sizes="100px"
-              />
+            <div className="mt-[0.3em] font-extrabold tracking-tight text-[#F9D94D] quantaFont whitespace-nowrap">
+              <Typewriter />
             </div>
 
-            <h1 className="font-extrabold text-[clamp(48px,13vw,118px)] leading-[1.1] tracking-tight quantaFont text-right">
-              BUILT TO SCALE.
-            </h1>
+            {/* Bunny + Text Lines */}
+            <div className="mt-[0.15em] flex items-start gap-[0.25em]">
+              <div className="relative shrink-0" style={{ width: 'clamp(120px, 30vw, 200px)' }}>
+                <Image
+                  src="/head-bunny.png"
+                  alt="bunny mascot"
+                  width={339}
+                  height={333}
+                  className="w-full h-auto"
+                  priority
+                  sizes="(max-width: 640px) 120px, 200px"
+                />
+              </div>
+
+              <div className="flex-1 min-w-0">
+                <h1 className="font-extrabold tracking-tight quantaFont mb-0 whitespace-nowrap">
+                  BUILT TO
+                </h1>
+                <h1 className="font-extrabold tracking-tight quantaFont mt-0 whitespace-nowrap">
+                  SCALE.
+                </h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>

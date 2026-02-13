@@ -34,7 +34,7 @@ export default function Footer() {
                 </div>
 
                 {/* Right Section */}
-                <div className="grid grid-cols-3 gap-6 md:gap-10 lg:gap-12 xl:gap-16 max-md:gap-8">
+                <div className="inline-grid grid-cols-3 gap-6 md:gap-10 lg:gap-12 xl:gap-16 max-md:gap-8">
 
                     {/* Socials */}
                     <div>

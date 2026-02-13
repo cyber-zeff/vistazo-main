@@ -143,7 +143,7 @@ function ServiceItem({
 
 
             {/* Bottom Divider */}
-            <div className="absolute left-0 right-0 -bottom-3 h-[0.5px] bg-white pointer-events-none transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0" />
+            <div className="absolute left-0 right-0 -bottom-3 h-[0.5px] bg-gray-300/80 pointer-events-none transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0" />
         </motion.div>
     )
 }
