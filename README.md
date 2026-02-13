@@ -24,7 +24,7 @@ Upon project completion, clients receive all source files and assets.
 The website is built with a modern and robust tech stack to ensure performance and scalability:
 
 - **Framework:** [Next.js](https://nextjs.org/)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Language:** [TypeScript (TS)](https://www.typescriptlang.org/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **UI Components:** [Radix UI](https://www.radix-ui.com/) & [Lucide Icons](https://lucide.dev/)
 - **Animations:** [Framer Motion](https://www.framer.com/motion/) & [GSAP](https://greensock.com/gsap/)
