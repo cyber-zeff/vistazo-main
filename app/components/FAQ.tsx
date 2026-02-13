@@ -88,7 +88,7 @@ export default function FAQSection() {
                                 animate={{ height: isOpen ? (isMobile ? 240 : 200) : 100, }}
                                 transition={{ type: "spring", stiffness: 160, damping: 15, }}
                                 onClick={() => setActiveIndex(isOpen ? null : index)}
-                                className="relative cursor-pointer w-150 md:w-220 lg:w-[clamp(30.25rem,45vw,42.5rem)] bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)]
+                                className="relative cursor-pointer max-w-[90vw] w-150 md:w-220 lg:w-[clamp(30.25rem,45vw,42.5rem)] bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)]
                                     px-8 pt-8.5 pb-10.5 flex max-[460px]:items-center items-start justify-between overflow-hidden shrink-0 border-2 border-[#121213]">
                                 {/* STAR */}
                                 <motion.span
