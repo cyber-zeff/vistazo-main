@@ -84,6 +84,25 @@ const NavbarLinkBtn: React.FC<LinkProps> = ({ name, href }) => {
       className="relative text-white text-[20px] font-medium transition-colors px-4 py-2 md:p-0"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={(e) => {
+        e.preventDefault();
+
+        const targetId = href.replace("#", "");
+        const section = document.getElementById(targetId);
+
+        if (section) {
+          const yOffset = -100; // adjust if you have fixed navbar
+          const y =
+            section.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
+
+          window.scrollTo({
+            top: y,
+            behavior: "smooth",
+          });
+        }
+      }}
     >
       {name}
       <motion.span

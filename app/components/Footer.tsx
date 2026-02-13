@@ -1,6 +1,27 @@
+"use client"
 import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
+const handleSmoothScroll = (e:any, href:any) => {
+  e.preventDefault();
+
+  const targetId = href.replace("#", "");
+  const section = document.getElementById(targetId);
+
+  if (section) {
+    const yOffset = -100; // adjust for fixed navbar
+    const y =
+      section.getBoundingClientRect().top +
+      window.pageYOffset +
+      yOffset;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
+  }
+};
 
 export default function Footer() {
     return (
@@ -50,9 +71,9 @@ export default function Footer() {
                     <div>
                         <h4 className="font-bold text-[20px] leading-normal mb-4 md:mb-5 lg:mb-6">Pages</h4>
                         <ul className="space-y-3 md:space-y-3.5 lg:space-y-4 text-[16px] leading-normal font-medium">
-                            <li><Link href="#services" className="hover:text-[#F9D94D]">Services</Link></li>
-                            <li><Link href="#processes" className="hover:text-[#F9D94D]">Our Process</Link></li>
-                            <li><Link href="#pricing" className="hover:text-[#F9D94D]">Pricing</Link></li>
+                            <li><Link href="#services" onClick={(e) => handleSmoothScroll(e, "#services")} className="hover:text-[#F9D94D]">Services</Link></li>
+                            <li><Link href="#processes" onClick={(e) => handleSmoothScroll(e, "#processes")} className="hover:text-[#F9D94D]">Our Process</Link></li>
+                            <li><Link href="#pricing" onClick={(e) => handleSmoothScroll(e, "#pricing")} className="hover:text-[#F9D94D]">Pricing</Link></li>
                         </ul>
                     </div>
 
