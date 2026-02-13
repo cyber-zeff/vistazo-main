@@ -23,13 +23,13 @@ export default function CTASection() {
     return (
         <>
             {/* Padding wrapper */}
-            <div className="bg-[#FFF] w-full pt-10 md:pt-20 lg:pt-20">
+            <div className="bg-[#FFFEF7] w-full pt-10 md:pt-20 lg:pt-20">
 
                 <div className="w-full m-0 p-0 overflow-hidden">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 1440 175"
-                        className="block w-full h-auto"
+                        className="max-md:relative max-md:-left-27 lg:w-full h-38.75 lg:h-auto"
                         fill="none"
                         preserveAspectRatio="none"
                     >
@@ -41,11 +41,11 @@ export default function CTASection() {
             </div>
 
             <section className="bg-main relative -top-2">
-                <h2 className="capitalize text-center text-[20px] leading-normal font-medium text-balance max-w-90.25 mx-auto mb-14 lg:mb-22 pt-2">
+                <h2 className="capitalize text-center text-[16px] md:text-[20px] leading-normal font-normal text-balance max-w-90.25 mx-auto mb-8 md::mb-22 pt-2">
                     Decided to build with us?
                 </h2>
 
-                <h2 className="quantaFont leading-normal font-black text-[clamp(40px,8vw,96px)] uppercase text-center mb-10 md:mb-16 text-balance max-w-232.75 mx-auto">
+                <h2 className="max-md:px-8 quantaFont leading-normal font-black text-[clamp(36px,8vw,64px)] md:text-[clamp(64px,8vw,96px)] uppercase text-center mb-8 md:mb-16 text-balance max-w-232.75 mx-auto">
                     Let&apos;s Get Cooking <span className="text-[#F9D94D]">Good Looking!</span>
                 </h2>
 
@@ -61,7 +61,7 @@ export default function CTASection() {
                                 : "0px 10px 0px 0px #ffffff",
                         }}
                         transition={{ duration: 0.2, ease: "easeInOut" }}
-                        className="relative overflow-visible uppercase bg-transparent w-58 h-17 min-[530px]:w-64 min-[530px]:h-18 md:w-87.5 md:h-21.75 px-20 py-5 border border-white rounded-[500px] text-white text-[20px] min-[530px]:text-[24px] md:text-[32px] font-medium leading-normal -tracking-[1.6px] text-center flex items-center justify-center"
+                        className="relative overflow-visible uppercase bg-transparent w-64 h-15 min-[530px]:w-64 min-[530px]:h-18 md:w-87.5 md:h-21.75 px-20 py-5 border border-white rounded-[500px] text-white text-[20px] min-[530px]:text-[24px] md:text-[32px] font-medium leading-normal -tracking-[1.6px] text-center flex items-center justify-center"
                     >
                         {/* Text */}
                         <span className="relative z-10">Lessgooo!!!</span>
