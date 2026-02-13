@@ -38,8 +38,8 @@ export default function FAQSection() {
     const isMobile = useIsMobile();
 
     return (
-        <section id="faqs" className="w-full flex justify-center items-center py-16 bg-[#FFF] text-[#121213]">
-            <div className="max-w-310 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-[clamp(35px, 8vw,40px)] gap-16 max-w-120 items-start justify-items-center">
+        <section id="faqs" className="w-full flex justify-center items-center py-16 bg-[#FFFEF7] text-[#121213]">
+            <div className="max-w-310 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-[clamp(35px, 8vw,40px)] gap-8 max-w-120 items-start justify-items-center">
 
                 {/* ================= LEFT COLUMN ================= */}
                 <div className="flex flex-col justify-between self-start lg:h-158.75">
@@ -88,14 +88,14 @@ export default function FAQSection() {
                                 animate={{ height: isOpen ? (isMobile ? 240 : 200) : 100, }}
                                 transition={{ type: "spring", stiffness: 160, damping: 15, }}
                                 onClick={() => setActiveIndex(isOpen ? null : index)}
-                                className="relative cursor-pointer w-150 md:w-220 lg:w-[45vw] xl:w-170 max-w-[90vw] bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)]
-                                    px-8 pt-8.5 pb-10.5 flex items-start justify-between overflow-hidden shrink-0 border-2 border-[#121213]">
+                                className="relative cursor-pointer w-150 md:w-220 lg:w-[clamp(30.25rem,45vw,42.5rem)] bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)]
+                                    px-8 pt-8.5 pb-10.5 flex max-[460px]:items-center items-start justify-between overflow-hidden shrink-0 border-2 border-[#121213]">
                                 {/* STAR */}
                                 <motion.span
                                     animate={{ rotate: isOpen ? 90 : -90 }}
                                     transition={{ duration: 0.3, ease: "easeInOut" }}
                                     className="absolute top-7.5 right-6 sm:right-10 z-10" >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" className=" max-[460px]:w-[30px] max-[460px]:h-[30px]" viewBox="0 0 35 35" fill="none" >
                                         <path d="M17.5 0C21.6501 14.109 35 17.5 35 17.5C35 17.5 22.3021 20.891 17.5 35C12.6979 20.891 0 17.5 0 17.5C0 17.5 13.3499 14.109 17.5 0Z" fill="#F9D94D" />
                                     </svg>
                                 </motion.span>
