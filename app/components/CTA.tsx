@@ -29,7 +29,7 @@ export default function CTASection() {
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 1440 175"
-                        className="max-md:relative max-md:-left-27 lg:w-full h-38.75 lg:h-auto"
+                        className="max-md:relative max-md:-left-27 lg:w-full h-32.75 lg:h-auto"
                         fill="none"
                         preserveAspectRatio="none"
                     >
