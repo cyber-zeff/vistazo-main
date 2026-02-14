@@ -30,7 +30,7 @@ function ServiceItem({
     isActive: boolean
     setActiveIndex: (index: number | null) => void
 }) {
-    const tilt = index % 2 === 0 ? 5 : -5
+    const tilt = index % 2 === 0 ? -5 : 5
     const ref = useRef<HTMLDivElement>(null)
 
     // Close on outside click
@@ -65,7 +65,7 @@ function ServiceItem({
             onPointerLeave={() => {
                 if (window.innerWidth < 1024) setActiveIndex(null)  // close if finger leaves the element
             }}
-            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 py-6 md:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] max-lg:active:bg-[rgba(103,85,207,0.75)] rounded-[15px]"
+            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 pt-6   md:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] max-lg:active:bg-[rgba(103,85,207,0.75)] rounded-none sm:rounded-[15px]"
         >
             <div className="sm:flex sm:items-center sm:gap-4 md:gap-6 max-sm:mx-auto">
                 <motion.div
@@ -160,7 +160,7 @@ export default function Services() {
 
     return (
         <>
-            <section id="services" className="px-0 sm:px-10 md:px-20 md:py-24">
+            <section id="services" className="px-0 sm:px-10 md:px-20 md:py-24 max-sm:pt-8">
                 <div className="max-w-7xl mx-auto mb-12 max-sm:px-10 max-sm:text-center">
                     <h2 className="text-[clamp(30px,9vw,64px)] sm:text-[clamp(50px,8vw,96px)] mt-16 md:mt-0 quantaFont leading-normal">
                         What we serve <br className="block sm:hidden" /> on <br className="hidden sm:block" /> the <span className="text-[#F9D94D]">menu</span>
