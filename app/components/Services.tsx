@@ -65,7 +65,7 @@ function ServiceItem({
             onPointerLeave={() => {
                 if (window.innerWidth < 1024) setActiveIndex(null)  // close if finger leaves the element
             }}
-            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 pt-6   md:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] max-lg:active:bg-[rgba(103,85,207,0.75)] rounded-none sm:rounded-[15px]"
+            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 pt-6 sm:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] max-lg:active:bg-[rgba(103,85,207,0.75)] rounded-none sm:rounded-[15px]"
         >
             <div className="sm:flex sm:items-center sm:gap-4 md:gap-6 max-sm:mx-auto">
                 <motion.div
