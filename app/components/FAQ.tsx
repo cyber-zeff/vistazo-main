@@ -39,7 +39,7 @@ export default function FAQSection() {
 
     return (
         <section id="faqs" className="w-full flex justify-center items-center py-16 bg-[#FFFEF7] text-[#121213]">
-            <div className="max-w-310 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-[clamp(35px, 8vw,40px)] gap-8 max-w-120 items-start justify-items-center">
+            <div className="max-w-310 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-[clamp(35px, 8vw,40px)] gap-36 max-w-120 items-start justify-items-center">
 
                 {/* ================= LEFT COLUMN ================= */}
                 <div className="flex flex-col justify-between self-start lg:h-158.75">
@@ -66,7 +66,7 @@ export default function FAQSection() {
                             good fit, and map out how we&apos;d actually execute your brand.
                         </p>
 
-                        <button className="flex items-center gap-2 py-1.75 pr-6.25 pl-7.75 rounded-[83px] w-45 h-10.5 bg-white text-[#361E98] text-[16px] font-bold leading-normal -tracking-[0.8] border-2 border-transparent
+                        <button className="flex items-center gap-2 py-1.75 pr-6.25 pl-7.75 rounded-[83px] w-45 h-10.5 bg-[#FFFEF7] text-[#361E98] text-[16px] font-bold leading-normal -tracking-[0.8] border-2 border-transparent
                             transition-all duration-300 ease-out hover:bg-transparent hover:border-white hover:text-white">
                             Claim Yours!
                             <span>

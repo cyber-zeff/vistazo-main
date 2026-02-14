@@ -16,7 +16,7 @@ const BookACall: React.FC<BookACallProps> = ({ path }) => {
         href={path}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="relative flex items-center justify-start w-44.75 h-12 rounded-[192px] border border-white bg-white overflow-hidden">
+        className="relative flex items-center justify-start w-44.75 h-12 rounded-[192px] border border-white bg-[#FFFEF7] overflow-hidden">
         {/* Animated Background */}
         <motion.div
           animate={{ width: isHovered ? "100%" : "45px" }}

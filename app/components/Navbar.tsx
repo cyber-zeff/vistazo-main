@@ -113,7 +113,7 @@ const NavbarLinkBtn: React.FC<LinkProps> = ({ name, href }) => {
             : { scaleX: 0, transformOrigin: "right" }
         }
         transition={{ duration: 0.4, ease: "easeInOut" }}
-        className="absolute left-0 -bottom-1 h-0.75 w-full bg-white"
+        className="absolute left-0 -bottom-1 h-0.75 w-full bg-[#FFFEF7]"
       />
     </a>
   );

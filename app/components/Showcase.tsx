@@ -32,6 +32,7 @@ export default function Showcase() {
                 src="/head-frame.gif"
                 alt="hero animation"
                 fill
+                unoptimized
                 className="object-cover"
                 priority
                 sizes="(max-width: 1024px) 300px, 350px"
