@@ -65,7 +65,7 @@ function ServiceItem({
             onPointerLeave={() => {
                 if (window.innerWidth < 1024) setActiveIndex(null)  // close if finger leaves the element
             }}
-            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 pt-6 sm:py-8 cursor-pointer transition-colors duration-300 hover:bg-[rgba(103,85,207,0.75)] max-lg:active:bg-[rgba(103,85,207,0.75)] rounded-none sm:rounded-[15px]"
+            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 pt-6 sm:py-8 cursor-pointer transition-colors duration-250 ease-in-out hover:bg-[rgba(103,85,207,0.75)] max-lg:active:bg-[rgba(103,85,207,0.75)] rounded-none sm:rounded-[15px]"
         >
             <div className="sm:flex sm:items-center sm:gap-4 md:gap-6 max-sm:mx-auto">
                 <motion.div
@@ -73,13 +73,13 @@ function ServiceItem({
                         rest: { rotate: 0 },
                         hover: { rotate: 180 },
                     }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
                     className="text-white group-hover:text-[#F9D94D] max-lg:group-active:text-[#F9D94D]"
                 >
                     <DiamondStar />
                 </motion.div>
 
-                <h3 className="text-[clamp(20px,6vw,48px)] quantaFont tracking-tight group-hover:text-[#F9D94D] max-lg:group-active:text-[#F9D94D]">
+                <h3 className="text-[clamp(20px,6vw,48px)] quantaFont tracking-tight transition-colors duration-250 ease-in-out group-hover:text-[#F9D94D] max-lg:group-active:text-[#F9D94D]">
                     {service.title}
                 </h3>
             </div>
@@ -100,12 +100,7 @@ function ServiceItem({
                         pointerEvents: "auto",
                     },
                 }}
-                transition={{
-                    type: "spring",
-                    stiffness: 120,
-                    damping: 18,
-                    mass: 0.8,
-                }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
                 style={{
                     transformOrigin: "90% 50%",
                     boxShadow:
@@ -131,12 +126,7 @@ function ServiceItem({
                         pointerEvents: "auto",
                     },
                 }}
-                transition={{
-                    type: "spring",
-                    stiffness: 120,
-                    damping: 18,
-                    mass: 0.8,
-                }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
                 style={{
                     transformOrigin: "90% 50%",
                     boxShadow:
@@ -149,7 +139,7 @@ function ServiceItem({
 
 
             {/* Bottom Divider */}
-            <div className="absolute left-0 right-0 -bottom-3 h-[0.5px] bg-gray-300/80 pointer-events-none transition-opacity duration-300 group-hover:opacity-0 max-lg:group-active:opacity-0" />
+            <div className="absolute left-0 right-0 -bottom-3 h-[0.5px] bg-gray-300/80 pointer-events-none transition-opacity duration-250 ease-in-out group-hover:opacity-0 max-lg:group-active:opacity-0" />
         </motion.div>
     )
 }

@@ -6,7 +6,7 @@ import Typewriter from "./Typewriter";
 
 export default function Showcase() {
   return (
-    <section className="relative bg-main text-white lg:min-h-[89vh] h-full w-full flex flex-col items-center overflow-hidden mt-3 md:mt-8 lg:items-center">
+    <section className="relative bg-main text-white lg:min-h-[85vh] h-full w-full flex flex-col items-center overflow-hidden mt-3 md:mt-8 lg:items-center">
 
       {/* Showcase Container */}
       <div className="relative w-full max-w-360 px-6 md:px-16 py-12 md:pt-12 md:pb-20 flex justify-center">
