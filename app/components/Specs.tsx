@@ -8,7 +8,7 @@ export default function Specs() {
     const duplicatedFeatures = [...features, ...features, ...features]
 
     return (
-        <section className="border-t border-b border-white py-12.25 overflow-hidden">
+        <section className="border-t border-b border-white py-9 md:py-12.25 overflow-hidden">
             <motion.div
                 className="flex items-center gap-8 whitespace-nowrap"
                 animate={{ x: [0, -1920] }}
