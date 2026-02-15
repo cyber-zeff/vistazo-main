@@ -8,6 +8,7 @@ type CardType = {
     step: string
     title: string
     subTitle: string
+    subDesc: string
     description?: string
     image: string
 }
@@ -22,8 +23,9 @@ const column1: CardType[] = [
         step: '01',
         title: 'Deep Dive',
         subTitle: 'Understanding your work and goals',
+        subDesc: "We don't start designing until we actually understand you.",
         description:
-            "We don't start designing until we actually understand you.\n\nYour work, your goals, your competition, what makes you different. We dig into your industry, study what's working, and uncover the unique angle that'll make your brand stand out.",
+            "Your work, your goals, your competition, what makes you different. We dig into your industry, study what's working, and uncover the unique angle that'll make your brand stand out.",
         image: "/illustrations/illustration-1.png"
     },
     {
@@ -31,8 +33,9 @@ const column1: CardType[] = [
         step: '02',
         title: 'Strategy Session',
         subTitle: 'Deciding how your brand will look like',
+        subDesc: "We get on a call and plan out everything before creating anything.",
         description:
-            "We get on a call and plan out everything before creating anything.\n\nWe align on your brand direction,messaging, and aesthetic so when we start designing, we're not guessing—we're executing a plan.",
+            "We align on your brand direction,messaging, and aesthetic so when we start designing, we're not guessing—we're executing a plan.",
         image: "/illustrations/illustration-2.png"
     },
 ]
@@ -43,8 +46,9 @@ const column2: CardType[] = [
         step: '03',
         title: 'The Build',
         subTitle: 'Creating your full brand',
+        subDesc: "Our team designs your complete visual identity, builds your website, and writes all the copy.",
         description:
-            "Our team designs your complete visual identity, builds your website, and writes all the copy.\n\nDesigners create your logo and brand look. Copywriters write every page. Developers code it to work fast on all devices. Everything gets built in sync so it all works together perfectly",
+            "Designers create your logo and brand look. Copywriters write every page. Developers code it to work fast on all devices. Everything gets built in sync so it all works together perfectly",
         image: "/illustrations/illustration-3.png"
     },
     {
@@ -52,8 +56,9 @@ const column2: CardType[] = [
         step: '04',
         title: 'Go Live',
         subTitle: 'Your site goes live + we stay available',
+        subDesc: "Your new brand launches, you get all the files, and we're here for 30 days after.",
         description:
-            "Your new brand launches, you get all the files, and we're here for 30 days after.\n\nWe walk you through how to use everything, handle any bugs or tweaks, and make sure you're comfortable. The relationship doesn't end at launch.",
+            "We walk you through how to use everything, handle any bugs or tweaks, and make sure you're comfortable. The relationship doesn't end at launch.",
         image: "/illustrations/illustration-4.png"
     },
 ]
@@ -121,14 +126,19 @@ function Column({ cards }: { cards: CardType[] }) {
                         className="w-full max-w-[620px] min-w-[320px] h-75 rounded-[30px] bg-[#6755CF] px-6 md:px-8 pt-8 overflow-hidden cursor-pointer flex justify-between"
                     >
                         {/* LEFT CONTENT */}
-                        <div className="flex flex-col gap-4 max-w-[280px] md:max-w-86.25 flex-1">
+                        <div className="flex flex-col gap-2 max-w-[280px] md:max-w-86.25 flex-1">
                             <h3 className="text-[clamp(26px,8vw,48px)] font-black leading-normal quantaFont -tracking-[2.4px] capitalize">
                                 {card.title}
                             </h3>
 
-                            <p className="text-[clamp(14px,8vw,20px)] font-medium leading-normal -tracking-[1px] mb-4">
+                            <p className="text-[clamp(14px,8vw,20px)] font-medium leading-normal -tracking-[1px]">
                                 {card.subTitle}
                             </p>
+                            <motion.div animate={{opacity: isSibling ? 0 : 1 }}>
+                                <p className={`text-[clamp(14px,8vw,16px)] font-medium leading-normal -tracking-[1px] mb-4`}>
+                                    {card.subDesc}
+                                </p>
+                            </motion.div>
 
                             <motion.div
                                 initial={false}
