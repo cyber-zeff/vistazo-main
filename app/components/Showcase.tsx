@@ -26,8 +26,8 @@ export default function Showcase() {
           </div>
 
           {/* GIF */}
-          <div className="absolute right-10 min-[1160px]:right-20 top-0 z-0 pointer-events-none">
-            <div className="relative rounded-[100px] overflow-hidden w-[clamp(250px,20vw,350px)] h-[clamp(250px,20vw,350px)] max-w-full">
+          <div className="absolute right-20 min-[1160px]:right-35 xl:right-40 2xl:right-20 top-0 z-0 pointer-events-none">
+            <div className="relative rounded-[100px] overflow-hidden w-[clamp(250px,22vw,350px)] h-[clamp(250px,22vw,350px)] max-w-full">
               <Image
                 src="/head-frame.gif"
                 alt="hero animation"
@@ -76,7 +76,7 @@ export default function Showcase() {
         {/* MOBILE / TABLET VERSION */}
         <div className="lg:hidden w-full">
           <div className="w-full max-w-full" style={{ 
-            fontSize: 'clamp(48px, 10vw, 118px)',
+            fontSize: 'clamp(48px, 15vw, 158px)',
             lineHeight: '1.1'
           }}>
             <h1 className="font-extrabold tracking-tight quantaFont mb-0 whitespace-nowrap">
@@ -85,8 +85,8 @@ export default function Showcase() {
             <div className="flex items-center gap-[0.4em] mt-0">
               <h1 className="font-extrabold tracking-tight quantaFont mb-0 whitespace-nowrap shrink-0">FOR</h1>
               <div className="flex-1 min-w-0">
-                <div className="rounded-full overflow-hidden bg-gray-400 w-full" style={{ 
-                  height: 'clamp(60px, 8vw, 104px)'
+                <div className="rounded-full overflow-hidden bg-gray-400 shrink-0 w-full min-[540px]:w-[clamp(300px,52vw,400px)] md:w-[clamp(300px,42vw,400px)]" style={{ 
+                  height: 'clamp(70px, 15vw, 144px)'
                 }}>
                   {/* IMAGE TO COME  */}
                 </div>
@@ -98,8 +98,8 @@ export default function Showcase() {
             </div>
 
             {/* Bunny + Text Lines */}
-            <div className="mt-[0.15em] flex items-start gap-[0.25em]">
-              <div className="relative shrink-0" style={{ width: 'clamp(120px, 30vw, 200px)' }}>
+            <div className="mt-[0.15em] flex items-start gap-[0.125em]">
+              <div className="relative shrink-0" style={{ width: 'clamp(120px, 25vw, 220px)' }}>
                 <Image
                   src="/head-bunny.png"
                   alt="bunny mascot"
@@ -111,7 +111,7 @@ export default function Showcase() {
                 />
               </div>
 
-              <div className="flex-1 min-w-0">
+              <div className="max-[410px]:-ml-10 flex-1 min-w-0 text-right">
                 <h1 className="font-extrabold tracking-tight quantaFont mb-0 whitespace-nowrap">
                   BUILT TO
                 </h1>
