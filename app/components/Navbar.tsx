@@ -46,14 +46,27 @@ export default function WaveNavbar() {
       <nav className="text-white py-3 md:py-2 lg:py-2 flex flex-nowrap justify-between items-center w-full relative z-10 h-22">
         {/* Logo */}
         <div className="flex items-center">
-          <Image
-            src="/logo.png"
-            width={155}
-            height={35}
-            alt="Company logo"
-            className="max-sm:w-36 max-sm:h-8"
-            priority
-          />
+          <a
+            href={"/"}
+            className="relative text-white text-[20px] font-medium transition-colors px-4 py-2 md:p-0"
+            onClick={(e) => {
+              e.preventDefault();
+
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
+            <Image
+              src="/logo.png"
+              width={155}
+              height={35}
+              alt="Company logo"
+              className="max-sm:w-36 max-sm:h-8"
+              priority
+            />
+          </a>
         </div>
 
         {/* Navigation Links + CTA */}
