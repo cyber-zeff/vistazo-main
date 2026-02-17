@@ -17,7 +17,7 @@ export default function LinkedInBrand() {
     }
 
     return (
-        <section className="w-full bg-[#FFFEF7] px-[22px] sm:px-[36px] md:px-[45px] lg:px-[45px]">
+        <section className="w-full bg-[#FFFEF7] px-[22px] sm:px-[36px] md:px-[45px] lg:px-[80px]">
             <div className="bg-[#361E98] rounded-[21px] sm:rounded-[28px] lg:rounded-[30px] w-full max-w-380 mx-auto overflow-hidden relative px-[16px] py-[10px] sm:px-[24px] sm:py-[16px] lg:px-[32px] lg:py-[17px]">
                 {/* Top Row: LinkedIn Icon + Limited Time Badge */}
                 <div className="flex items-center justify-between w-full mb-[2px] sm:mb-[4px] lg:mb-0">
@@ -84,30 +84,27 @@ export default function LinkedInBrand() {
                             </div>
 
                             {/* Claim Yours Button */}
-                            <motion.a
-                                href="#"
-                                className="bg-[#FFFEF7] rounded-full flex items-center gap-[3px] sm:gap-[5px] lg:gap-[8px] px-[10px] py-[5px] sm:px-[18px] sm:py-[8px] lg:px-[30px] lg:py-[14px] cursor-pointer"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.97 }}
-                            >
-                                <span className="font-bold text-[#361E98] text-[7px] sm:text-[10px] lg:text-[16px] tracking-[-0.3px] sm:tracking-[-0.5px] lg:tracking-[-0.8px] whitespace-nowrap">
-                                    Claim Yours!
+                            <button className="flex items-center gap-[3px] sm:gap-[5px] lg:gap-[8px] px-[10px] py-[5px] sm:px-[18px] sm:py-[8px] lg:px-[25px] lg:py-[12px] cursor-pointer rounded-full bg-[#FFFEF7] text-[#361E98] font-bold leading-normal text-[7px] sm:text-[10px] lg:text-[16px] tracking-[-0.3px] sm:tracking-[-0.5px] lg:tracking-[-0.8px] border-2 border-transparent
+                            whitespace-nowrap transition-all duration-300 ease-out hover:bg-transparent hover:border-white hover:text-white">
+                                Claim Yours!
+                                <span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 22 22"
+                                        fill="none"
+                                        className="transition-colors duration-300 size-[8px] sm:size-[13px] lg:size-[22px]"
+                                    >
+                                        <path
+                                            d="M6 16L16 6M16 6H8M16 6V14"
+                                            stroke="currentColor"
+                                            strokeWidth="2.5"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        />
+                                    </svg>
                                 </span>
-                                <svg
-                                    className="size-[8px] sm:size-[13px] lg:size-[22px]"
-                                    viewBox="0 0 22 22"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M6 16L16 6M16 6H8M16 6V14"
-                                        stroke="#361E98"
-                                        strokeWidth="2.5"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    />
-                                </svg>
-                            </motion.a>
+
+                            </button>
                         </div>
                     </div>
 
