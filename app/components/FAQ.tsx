@@ -38,19 +38,19 @@ export default function FAQSection() {
     const isMobile = useIsMobile();
 
     return (
-        <section id="faqs" className="w-full flex justify-center items-center py-16 bg-[#FFFEF7] text-[#121213]">
-            <div className="max-w-310 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-[clamp(35px, 8vw,40px)] gap-16 max-w-120 items-start justify-items-center">
+        <section id="faqs" className="py-16 lg:pt-16 lg:pb-30 bg-[#FFFEF7] text-[#121213]">
+            <div className="max-w-310 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-[clamp(35px, 8vw,40px)] gap-8 md:gap-16 items-start justify-items-center">
 
                 {/* ================= LEFT COLUMN ================= */}
                 <div className="flex flex-col justify-between self-start lg:h-158.75">
                     {/* Heading */}
-                    <div className="mb-[clamp(22px,2vw,48px)] mx-auto max-lg:text-center">
-                        <h2 className="quantaFont text-[clamp(30px,8vw,64px)] lg:text-[clamp(45px,5vw,64px)] font-black leading-normal">
+                    <div className="mb-[clamp(0px,2vw,48px)] mx-auto max-lg:text-center">
+                        <h2 className="quantaFont text-[clamp(40px,8vw,64px)] lg:text-[clamp(45px,5vw,64px)] font-black leading-normal">
                             GOT QUESTIONS?
                             <br />
                             BET YOU DO.
                         </h2>
-                        <p className="max-lg:mx-auto mt-4 text-[clamp(14px,4vw,24px)] md:text-[clamp(14px,2vw,20px)] lg:text-[20px] max-w-md font-medium leading-normal">
+                        <p className="max-lg:mx-auto mt-2 md:mt-4 text-[clamp(14px,4vw,24px)] md:text-[clamp(14px,2vw,20px)] lg:text-[20px] max-w-md font-medium leading-normal">
                             What We Do, How We Do It, And What <br className="block lg:hidden" /> You Actually Get At The End.
                         </p>
                     </div>
@@ -66,9 +66,9 @@ export default function FAQSection() {
                             good fit, and map out how we&apos;d actually execute your brand.
                         </p>
 
-                        <button className="flex items-center gap-2 py-1.75 pr-6.25 pl-7.75 rounded-[83px] w-45 h-10.5 bg-[#FFFEF7] text-[#361E98] text-[16px] font-bold leading-normal -tracking-[0.8] border-2 border-transparent
-                            transition-all duration-300 ease-out hover:bg-transparent hover:border-white hover:text-white">
-                            Claim Yours!
+                        <button className="flex items-center gap-2 py-1.75 pr-6.25 pl-7.75 rounded-[83px] w-40 h-10.5 bg-[#FFFEF7] text-[#361E98] text-[16px] font-bold leading-normal -tracking-[0.8] border-2 border-transparent
+                            capitalize transition-all duration-300 ease-out hover:bg-transparent hover:border-white hover:text-white">
+                            Talk to us
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="currentColor" className="transition-colors duration-300">
                                     <path d="M7.51891 1.83109L1.16674 1.83109C0.907464 1.83109 0.693996 1.74207 0.526333 1.56404C0.358671 1.386 0.275056 1.16714 0.275488 0.907431C0.286291 0.658961 0.375307 0.445494 0.542538 0.267028C0.709769 0.0885617 0.923236 -0.00045478 1.18294 -2.25222e-05L9.73893 -2.2733e-05C9.86857 -2.27119e-05 9.98481 0.0241759 10.0877 0.0725735C10.1905 0.120971 10.2847 0.188814 10.3703 0.276102C10.4558 0.363391 10.5232 0.458025 10.5725 0.560006C10.6218 0.661986 10.6462 0.778011 10.6457 0.908079L10.6457 9.46407C10.6457 9.70174 10.5565 9.9098 10.378 10.0883C10.1996 10.2667 9.98632 10.3612 9.73828 10.3715C9.47901 10.3715 9.26014 10.2823 9.08168 10.1038C8.90321 9.92536 8.81419 9.70671 8.81463 9.44787L8.81527 3.12745L1.57185 10.3709C1.3882 10.5545 1.17192 10.6464 0.923021 10.6464C0.674119 10.6464 0.458274 10.5545 0.275488 10.3709C0.0927003 10.1872 0.000874152 9.97095 1.03101e-05 9.72205C-0.000853869 9.47314 0.0909716 9.2573 0.275488 9.07451L7.51891 1.83109Z" />
@@ -79,7 +79,7 @@ export default function FAQSection() {
                 </div>
 
                 {/* ================= RIGHT COLUMN ================= */}
-                <div className="grid gap-8 text-white">
+                <div className="grid gap-5 sm:gap-8 text-white">
                     {faqs.map((faq, index) => {
                         const isOpen = activeIndex === index;
 
@@ -94,7 +94,7 @@ export default function FAQSection() {
                                 <motion.span
                                     animate={{ rotate: isOpen ? 90 : -90 }}
                                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                                    className="absolute top-5 min-[570px]:top-7.5 right-6 sm:right-10 z-10" >
+                                    className="absolute top-6 min-[570px]:top-7.5 right-6 sm:right-10 z-10" >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" className=" max-[460px]:w-[30px] max-[460px]:h-[30px]" viewBox="0 0 35 35" fill="none" >
                                         <path d="M17.5 0C21.6501 14.109 35 17.5 35 17.5C35 17.5 22.3021 20.891 17.5 35C12.6979 20.891 0 17.5 0 17.5C0 17.5 13.3499 14.109 17.5 0Z" fill="#F9D94D" />
                                     </svg>
@@ -102,10 +102,25 @@ export default function FAQSection() {
 
                                 {/* LEFT CONTENT */}
                                 <div className="flex-1 sm:flex-1 max-[650px]:flex-[1.4]">
-                                    <h3 className="text-[clamp(14px,3vw,18px)] sm:text-[18px] font-medium leading-normal mr-10"> {faq.question} </h3>
+                                    <h3 className="max-sm:sticky max-sm:top-0 text-[clamp(14px,3vw,18px)] sm:text-[18px] font-medium leading-normal mr-10"> {faq.question} </h3>
                                     <AnimatePresence>
                                         {isOpen && (
-                                            <p className="mt-4 text-[clamp(12px,3vw,16px)] leading-5.5 font-medium whitespace-pre-line capitalize max-w-[90%]">{faq.answer}</p>
+                                            <motion.p
+                                                initial={{ opacity: 0, y: 0 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                transition={{
+                                                    duration: isMobile ? 0.65 : 0.8,
+                                                    ease: "easeOut"
+                                                }}
+                                                exit={{
+                                                    opacity: 0,
+                                                    y: -5,
+                                                    transition: {
+                                                        duration: isMobile ? 0.1 : 0.2,
+                                                        ease: "easeIn"
+                                                    }
+                                                }}
+                                                className="mt-4 text-[clamp(12px,3vw,16px)] leading-5.5 font-medium whitespace-pre-line capitalize max-w-[90%]">{faq.answer}</motion.p>
                                         )}
                                     </AnimatePresence>
                                 </div>
