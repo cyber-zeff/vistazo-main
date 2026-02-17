@@ -33,21 +33,14 @@ function ServiceItem({
     const tilt = index % 2 === 0 ? -5 : 5
     const ref = useRef<HTMLDivElement>(null)
 
-    // Close on outside click
     useEffect(() => {
-        function handleClickOutside(event: MouseEvent) {
-            if (ref.current && !ref.current.contains(event.target as Node)) {
-                setActiveIndex(null)
-            }
-        }
+        if (!isActive) return
 
-        if (isActive) {
-            document.addEventListener("pointerdown", handleClickOutside)
-        }
+        const timer = setTimeout(() => {
+            setActiveIndex(null)
+        }, 2500)
 
-        return () => {
-            document.removeEventListener("pointerdown", handleClickOutside)
-        }
+        return () => clearTimeout(timer)
     }, [isActive, setActiveIndex])
 
     return (
@@ -56,16 +49,13 @@ function ServiceItem({
             initial="rest"
             animate={isActive ? "hover" : "rest"}
             whileHover="hover"
-            onPointerDown={() => {
-                if (window.innerWidth < 1024) setActiveIndex(index)  // open on press
+            onClick={() => {
+                if (window.innerWidth < 1024) {
+                    ref.current?.focus()
+                    setActiveIndex(isActive ? null : index)
+                }
             }}
-            onPointerUp={() => {
-                if (window.innerWidth < 1024) setActiveIndex(null)  // close on release
-            }}
-            onPointerLeave={() => {
-                if (window.innerWidth < 1024) setActiveIndex(null)  // close if finger leaves the element
-            }}
-            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 pt-6 sm:py-8 cursor-pointer transition-colors duration-250 ease-in-out hover:bg-[rgba(103,85,207,0.75)] max-lg:active:bg-[rgba(103,85,207,0.75)] rounded-none sm:rounded-[15px]"
+            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 pt-6 sm:py-8 cursor-pointer transition-colors duration-250 ease-in-out hover:bg-[rgba(103,85,207,0.75)] max-lg:focus:bg-[rgba(103,85,207,0.75)] rounded-none sm:rounded-[15px]"
         >
             <div className="sm:flex sm:items-center sm:gap-4 md:gap-6 max-sm:mx-auto">
                 <motion.div
@@ -74,12 +64,12 @@ function ServiceItem({
                         hover: { rotate: 180 },
                     }}
                     transition={{ duration: 0.25, ease: "easeInOut" }}
-                    className="text-white group-hover:text-[#F9D94D] max-lg:group-active:text-[#F9D94D]"
+                    className="text-white group-hover:text-[#F9D94D] max-lg:group-focus-within:text-[#F9D94D]"
                 >
                     <DiamondStar />
                 </motion.div>
 
-                <h3 className="text-[clamp(20px,6vw,48px)] quantaFont tracking-tight transition-colors duration-250 ease-in-out group-hover:text-[#F9D94D] max-lg:group-active:text-[#F9D94D]">
+                <h3 className="text-[clamp(20px,6vw,48px)] quantaFont tracking-tight transition-colors duration-250 ease-in-out group-hover:text-[#F9D94D] max-lg:group-focus-within:text-[#F9D94D]">
                     {service.title}
                 </h3>
             </div>
@@ -134,12 +124,12 @@ function ServiceItem({
                             ? "8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)"
                             : "-8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)",
                 }}
-                className={`block sm:hidden absolute top-1/2 ${(tilt == 5) ? "right-0" : "left-0"} -translate-y-[65%] w-[clamp(200px,4vw,230px)] h-[clamp(250px,4vw,270px)] bg-gray-100 z-10 rounded-[53px] md:rounded-[53px] overflow-hidden`}
+                className={`block sm:hidden absolute top-1/2 ${(tilt == 5) ? "right-2" : "left-2"} -translate-y-[65%] w-[clamp(150px,4vw,230px)] h-[clamp(190px,4vw,270px)] bg-gray-100 z-10 rounded-[35px] overflow-hidden`}
             />
 
 
             {/* Bottom Divider */}
-            <div className="absolute left-0 right-0 -bottom-3 h-[0.5px] bg-gray-300/80 pointer-events-none transition-opacity duration-250 ease-in-out group-hover:opacity-0 max-lg:group-active:opacity-0" />
+            <div className="absolute left-0 right-0 -bottom-3 h-[0.5px] bg-gray-300/80 pointer-events-none transition-opacity duration-250 ease-in-out group-hover:opacity-0 max-lg:group-focus-within:opacity-0" />
         </motion.div>
     )
 }
@@ -151,8 +141,8 @@ export default function Services() {
     return (
         <>
             <section id="services" className="px-0 sm:px-10 md:px-20 md:py-24 max-sm:pt-8">
-                <div className="max-w-7xl mx-auto mb-12 max-sm:px-10 max-sm:text-center">
-                    <h2 className="text-[clamp(30px,9vw,64px)] sm:text-[clamp(50px,8vw,96px)] mt-16 md:mt-0 quantaFont leading-normal">
+                <div className="max-w-7xl mx-auto mb-4 max-sm:px-10 max-sm:text-center">
+                    <h2 className="text-[clamp(30px,9vw,64px)] sm:text-[clamp(50px,8vw,96px)] mt-8 mb-2 md:mt-0 quantaFont leading-normal">
                         What we serve <br className="block sm:hidden" /> on <br className="hidden sm:block" /> the <span className="text-[#F9D94D]">menu</span>
                     </h2>
                     <p className="text-[14px] sm:text-[clamp(14px,6vw,20px)] font-medium">
