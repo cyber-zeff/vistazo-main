@@ -76,7 +76,7 @@ const MOBILE_CARDS = CARD_VARIANTS.filter(
   (c) => PRICING_CONFIG.showCanDecideOnMobile || !c.isCallToAction
 );
 
-const ProcessSection = () => {
+const Pricing = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [swipeAwayDirection, setSwipeAwayDirection] = useState<number | null>(null);
   const [cardRejoiningId, setCardRejoiningId] = useState<string | null>(null);
@@ -433,4 +433,4 @@ function DesktopCard({
   );
 }
 
-export default ProcessSection;
+export default Pricing;
