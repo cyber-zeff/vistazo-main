@@ -3,7 +3,7 @@ import Services from "./components/Services";
 import Showcase from "./components/Showcase";
 import Specs from "./components/Specs";
 import LinkedInBrand from "./components/LinkedInBrand";
-import ProcessSection from "./components/Pricing";
+import Pricing from "./components/Pricing";
 import OPCard from "./components/Process";
 import FAQSection from "./components/FAQ";
 import Footer from "./components/Footer";
@@ -18,7 +18,7 @@ export default function Home() {
       <Specs />
       <Services />
       <OPCard />
-      <ProcessSection />
+      <Pricing />
       <FAQSection />
       <LinkedInBrand />
       <CTASection />
