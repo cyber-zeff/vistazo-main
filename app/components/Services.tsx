@@ -47,6 +47,7 @@ function ServiceItem({
         <motion.div
             ref={ref}
             initial="rest"
+            tabIndex={0}
             animate={isActive ? "hover" : "rest"}
             whileHover="hover"
             onClick={() => {
@@ -55,7 +56,7 @@ function ServiceItem({
                     setActiveIndex(isActive ? null : index)
                 }
             }}
-            className="group relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 pt-6 sm:py-8 cursor-pointer transition-colors duration-250 ease-in-out hover:bg-[rgba(103,85,207,0.75)] max-lg:focus:bg-[rgba(103,85,207,0.75)] rounded-none sm:rounded-[15px]"
+            className={`group ${isActive ? 'border-0' : 'max-sm:border-b max-sm:border-gray-300/80'} relative mt-4 md:mt-8 flex items-center justify-between px-0 md:px-3 pt-4 pb-3 sm:py-8 cursor-pointer transition-colors duration-250 ease-in-out hover:bg-[rgba(103,85,207,0.75)]  ${isActive ? "bg-[rgba(103,85,207,0.75)]" : ""} rounded-none sm:rounded-[15px]`}
         >
             <div className="sm:flex sm:items-center sm:gap-4 md:gap-6 max-sm:mx-auto">
                 <motion.div
@@ -64,12 +65,12 @@ function ServiceItem({
                         hover: { rotate: 180 },
                     }}
                     transition={{ duration: 0.25, ease: "easeInOut" }}
-                    className="text-white group-hover:text-[#F9D94D] max-lg:group-focus-within:text-[#F9D94D]"
+                    className={`group-hover:text-[#F9D94D] ${isActive ? "text-[#F9D94D]" : "text-white"}`}
                 >
                     <DiamondStar />
                 </motion.div>
 
-                <h3 className="text-[clamp(20px,6vw,48px)] quantaFont tracking-tight transition-colors duration-250 ease-in-out group-hover:text-[#F9D94D] max-lg:group-focus-within:text-[#F9D94D]">
+                <h3 className={`text-[clamp(20px,6vw,48px)] quantaFont tracking-tight transition-colors duration-250 ease-in-out group-hover:text-[#F9D94D] ${isActive ? "text-[#F9D94D]" : "text-white"}`}>
                     {service.title}
                 </h3>
             </div>
@@ -129,7 +130,7 @@ function ServiceItem({
 
 
             {/* Bottom Divider */}
-            <div className="absolute left-0 right-0 -bottom-3 h-[0.5px] bg-gray-300/80 pointer-events-none transition-opacity duration-250 ease-in-out group-hover:opacity-0 max-lg:group-focus-within:opacity-0" />
+            <div className="max-sm:hidden absolute left-0 right-0 sm:-bottom-3 h-[0.5px] bg-gray-300/80 pointer-events-none transition-opacity duration-250 ease-in-out group-hover:opacity-0 max-lg:group-focus-within:opacity-0" />
         </motion.div>
     )
 }
