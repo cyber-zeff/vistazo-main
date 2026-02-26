@@ -66,7 +66,7 @@ export default function FAQSection() {
                             good fit, and map out how we&apos;d actually execute your brand.
                         </p>
 
-                        <button className="flex items-center gap-2 py-1.75 pr-6.25 pl-7.75 rounded-[83px] w-40 h-10.5 bg-[#FFFEF7] text-[#361E98] text-[16px] font-bold leading-normal -tracking-[0.8] border-2 border-transparent
+                        <button className="flex items-center justify-center gap-2 py-2.5 rounded-[83px] w-35 bg-[#FFFEF7] text-[#361E98] text-[15px] font-bold leading-normal -tracking-[0.8] border-2 border-transparent
                             capitalize transition-all duration-300 ease-out hover:bg-transparent hover:border-white hover:text-white">
                             Talk to us
                             <span>
@@ -109,7 +109,7 @@ export default function FAQSection() {
                                                 initial={{ opacity: 0, y: 0 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{
-                                                    duration: isMobile ? 0.65 : 0.8,
+                                                    duration: isMobile ? 0.65 : 0.25,
                                                     ease: "easeOut"
                                                 }}
                                                 exit={{
