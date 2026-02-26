@@ -6,10 +6,10 @@ import Typewriter from "./Typewriter";
 
 export default function Showcase() {
   return (
-    <section className="relative bg-main text-white lg:min-h-[85vh] h-full w-full flex flex-col items-center overflow-hidden mt-3 md:mt-8 lg:items-center">
+    <section className="relative bg-main text-white lg:min-h-[82vh] h-full w-full flex flex-col items-center overflow-hidden mt-3 md:mt-6 lg:items-center">
 
       {/* Showcase Container */}
-      <div className="relative w-full max-w-360 px-6 md:px-16 py-12 md:pt-12 md:pb-20 flex justify-center">
+      <div className="relative w-full max-w-360 px-6 md:px-20 py-12 md:pt-8 md:pb-0 flex justify-center">
 
         {/* DESKTOP / LAPTOP VERSION */}
         <div className="hidden lg:block relative z-10 w-full">
@@ -26,7 +26,7 @@ export default function Showcase() {
           </div>
 
           {/* GIF */}
-          <div className="absolute right-20 min-[1160px]:right-35 xl:right-40 2xl:right-20 top-0 z-0 pointer-events-none">
+          <div className="absolute right-20 min-[1160px]:right-35 xl:right-30 2xl:right-10 -top-10 z-0 pointer-events-none">
             <div className="relative rounded-[100px] overflow-hidden w-[clamp(250px,22vw,350px)] h-[clamp(250px,22vw,350px)] max-w-full">
               <Image
                 src="/head-frame.gif"
@@ -41,9 +41,9 @@ export default function Showcase() {
           </div>
 
           {/* Bunny + Heading */}
-          <div className="flex items-center gap-12 flex-wrap">
+          <div className="flex items-center justify-between flex-wrap lg:-mt-6">
             <div className="shrink-0">
-              <div className="w-[clamp(170px,15vw,228px)] h-[clamp(170px,15vw,221px)] relative -top-10 left-10">
+              <div className="w-[clamp(170px,15vw,228px)] h-[clamp(170px,15vw,221px)] relative -top-12">
                 <Image
                   src="/head-bunny.png"
                   alt="bunny mascot"
@@ -61,7 +61,7 @@ export default function Showcase() {
           </div>
 
           {/* Text + CTA */}
-          <div className="mt-2 max-w-md">
+          <div className="max-w-md">
             <p className="text-white text-lg mb-6 font-medium leading-normal">
               We help creators and mavericks build
               <br />
@@ -69,7 +69,7 @@ export default function Showcase() {
               <br />
               Don&apos;t just be seen, be <span className="text-[#FFE400] italic font-bold">remembered.</span>
             </p>
-            <BookACall path="#" />
+            {/* <BookACall path="#" /> */}
           </div>
         </div>
 
