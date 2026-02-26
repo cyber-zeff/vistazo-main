@@ -39,13 +39,13 @@ export default function FAQSection() {
 
     return (
         <section id="faqs" className="py-16 lg:pt-16 lg:pb-30 bg-[#FFFEF7] text-[#121213]">
-            <div className="max-w-310 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-[clamp(35px, 8vw,40px)] gap-8 md:gap-16 items-start justify-items-center">
+            <div className="max-w-310 mx-auto grid grid-cols-1 lg:flex lg:justify-center items-start justify-items-center gap-8 md:gap-8 lg:gap-12 xl:gap-16">
 
                 {/* ================= LEFT COLUMN ================= */}
                 <div className="flex flex-col justify-between self-start lg:h-158.75">
                     {/* Heading */}
                     <div className="mb-[clamp(0px,2vw,48px)] mx-auto max-lg:text-center">
-                        <h2 className="quantaFont text-[clamp(40px,8vw,64px)] lg:text-[clamp(45px,5vw,64px)] font-black leading-normal">
+                        <h2 className="quantaFont text-[clamp(40px,8vw,64px)] lg:text-[clamp(45px,5vw,64px)] font-black leading-normal xl:min-w-140">
                             GOT QUESTIONS?
                             <br />
                             BET YOU DO.
