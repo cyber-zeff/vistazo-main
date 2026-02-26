@@ -109,7 +109,7 @@ export default function LinkedInBrand() {
                     </div>
 
                     {/* Right Side: Card Mockups */}
-                    <div className="relative shrink-0 self-end w-[90px] h-[100px] min-[480px]:w-[130px] min-[480px]:h-[130px] sm:w-[200px] sm:h-[180px] md:w-[340px] md:h-[260px] lg:w-[470px] lg:h-[340px]">
+                    <div className="relative shrink-0 z-10 self-end w-[90px] h-[100px] min-[480px]:w-[130px] min-[480px]:h-[130px] sm:w-[200px] sm:h-[180px] md:w-[340px] md:h-[260px] lg:w-[470px] lg:h-[340px]">
                         {/* Left card - tilted left */}
                         <motion.div
                             className="absolute -left-15 -bottom-10 min-[480px]:-left-14 min-[480px]:-bottom-10 sm:-left-6 sm:-bottom-15 md:-left-15 lg:left-0 xl:-left-18 md:-bottom-15 lg:-bottom-20 origin-bottom"
