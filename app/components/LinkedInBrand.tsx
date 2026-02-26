@@ -57,7 +57,7 @@ export default function LinkedInBrand() {
                         <div className="flex items-center gap-[12px] sm:gap-[30px] lg:gap-[50px]">
                             {/* Overlapping Avatars */}
                             <div className="flex items-center">
-                                <div className="size-[20px] sm:size-[30px] lg:size-[50px] rounded-full overflow-hidden border-2 border-[#361E98] relative z-3">
+                                <div className="size-[20px] sm:size-[30px] lg:size-[50px] rounded-full overflow-hidden relative z-1">
                                     <Image
                                         src="/li/test-1.svg"
                                         alt="User 1"
@@ -65,7 +65,7 @@ export default function LinkedInBrand() {
                                         className="object-cover"
                                     />
                                 </div>
-                                <div className="size-[20px] sm:size-[30px] lg:size-[50px] rounded-full overflow-hidden border-2 border-[#361E98] relative z-2 ml-[-7px] sm:ml-[-12px] lg:ml-[-22px]">
+                                <div className="size-[20px] sm:size-[30px] lg:size-[50px] rounded-full overflow-hidden relative z-2 ml-[-7px] sm:ml-[-12px] lg:ml-[-22px]">
                                     <Image
                                         src="/li/test-2.svg"
                                         alt="User 2"
@@ -73,7 +73,7 @@ export default function LinkedInBrand() {
                                         className="object-cover"
                                     />
                                 </div>
-                                <div className="size-[20px] sm:size-[30px] lg:size-[50px] rounded-full overflow-hidden border-2 border-[#361E98] relative z-1 ml-[-7px] sm:ml-[-12px] lg:ml-[-22px]">
+                                <div className="size-[20px] sm:size-[30px] lg:size-[50px] rounded-full overflow-hidden relative z-3 ml-[-7px] sm:ml-[-12px] lg:ml-[-22px]">
                                     <Image
                                         src="/li/test-3.svg"
                                         alt="User 3"
