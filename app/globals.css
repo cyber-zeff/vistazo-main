@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'QuantaGroteskPro';
-  src: url('/fonts/QuantaGroteskPro-Black-BF6459a54a8323e.woff') format('woff'),
-       url('/fonts/QuantaGroteskPro-Black-BF6459a54cb6e36.ttf') format('truetype'),
-       url('/fonts/QuantaGroteskPro-Black-BF6459a54c2cd19.otf') format('opentype');
+  font-family: "QuantaGroteskPro";
+  src:
+    url("/fonts/QuantaGroteskPro-Black-BF6459a54a8323e.woff") format("woff"),
+    url("/fonts/QuantaGroteskPro-Black-BF6459a54cb6e36.ttf") format("truetype"),
+    url("/fonts/QuantaGroteskPro-Black-BF6459a54c2cd19.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: block;
@@ -37,5 +38,40 @@
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0; 
+  letter-spacing: 0;
+}
+
+/* PROCESSES */
+.proc {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 525px;
+  gap: 12px;
+  padding: 12px;
+}
+@media (max-width: 1120px) {
+  .proc {
+    width: 475px !important;
+  }
+}
+@media (max-width: 1024px) {
+  .proc {
+    width: 425px !important;
+  }
+}
+@media (max-width: 910px) {
+  .proc {
+    width: 405px !important;
+  }
+}
+@media (max-width: 480px) {
+  .proc {
+    width: 380px !important;
+  }
+}
+@media (max-width: 380px) {
+  .proc {
+    width: 360px !important;
+  }
 }
