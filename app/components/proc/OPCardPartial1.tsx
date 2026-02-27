@@ -25,7 +25,7 @@ const data: CardType[] = [
     step: '03',
     title: 'The Build',
     subTitle: 'Creating your full brand',
-    subDesc: "We design your brand and build your website",
+    subDesc: "Our team designs your complete visual identity, builds your website, and writes all the copy.",
     description:
       "Designers create your logo and brand look. Copywriters write every page. Developers code it to work fast on all devices.",
     image: "/illustrations/three.svg"
@@ -100,7 +100,7 @@ const OPCardCol1 = () => {
             position: 'absolute',
             inset: 0,
             zIndex: 2,
-            padding: '18px 18px 16px 18px',
+            padding: '26px 18px 16px 26px',
             color: '#ffffff',
             display: 'flex',
             flexDirection: 'column'
@@ -110,8 +110,8 @@ const OPCardCol1 = () => {
           <div
             style={{
               position: 'absolute',
-              top: '10px',
-              right: '16px',
+              top: '16px',
+              right: '18px',
               fontSize: '75px',
               fontWeight: 800,
               lineHeight: 0.85,
@@ -214,7 +214,7 @@ const OPCardCol1 = () => {
             position: 'absolute',
             inset: 0,
             zIndex: 2,
-            padding: '18px 18px 16px 18px',
+            padding: '26px 18px 16px 26px',
             color: '#ffffff',
             display: 'flex',
             flexDirection: 'column'
@@ -224,8 +224,8 @@ const OPCardCol1 = () => {
           <div
             style={{
               position: 'absolute',
-              top: '10px',
-              right: '16px',
+              top: '16px',
+              right: '18px',
               fontSize: '75px',
               fontWeight: 800,
               lineHeight: 0.85,

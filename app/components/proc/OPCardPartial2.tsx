@@ -15,7 +15,7 @@ const data: CardType[] = [
     {
         step: '02',
         title: 'Strategy',
-        subTitle: 'Deciding how your brand look',
+        subTitle: 'Deciding how your brand look like',
         subDesc: "We get on a call and plan out everything before creating anything.",
         description:
             "We align on your brand direction,messaging, and aesthetic so when we start designing, we're not guessing instead we're executing a plan",
@@ -24,7 +24,7 @@ const data: CardType[] = [
     {
         step: '04',
         title: 'Go Live',
-        subTitle: 'Your site goes live',
+        subTitle: 'Your site goes live + we stay available',
         subDesc: "Your new brand launches, you get all the files, and we're here for 30 days after.",
         description:
             "We walk you through how to use everything, handle any bugs or tweaks, and make sure you're comfortable. The relationship doesn't end at launch.",
@@ -96,7 +96,7 @@ const OPCardCol2 = () => {
             position: 'absolute',
             inset: 0,
             zIndex: 2,
-            padding: '18px 18px 16px 18px',
+            padding: '26px 18px 16px 26px',
             color: '#ffffff',
             display: 'flex',
             flexDirection: 'column'
@@ -106,8 +106,8 @@ const OPCardCol2 = () => {
           <div
             style={{
               position: 'absolute',
-              top: '10px',
-              right: '16px',
+              top: '16px',
+              right: '18px',
               fontSize: '75px',
               fontWeight: 800,
               lineHeight: 0.85,
@@ -210,7 +210,7 @@ const OPCardCol2 = () => {
             position: 'absolute',
             inset: 0,
             zIndex: 2,
-            padding: '18px 18px 16px 18px',
+            padding: '26px 18px 16px 26px',
             color: '#ffffff',
             display: 'flex',
             flexDirection: 'column'
@@ -220,8 +220,8 @@ const OPCardCol2 = () => {
           <div
             style={{
               position: 'absolute',
-              top: '10px',
-              right: '16px',
+              top: '16px',
+              right: '18px',
               fontSize: '75px',
               fontWeight: 800,
               lineHeight: 0.85,
