@@ -49,7 +49,7 @@ export default function OPCard() {
     }, [])
     return (
         <section id='processes' className='bg-[#FFFEF7] px-[clamp(1rem,5vw,5rem)] py-[clamp(3rem,8vw,5rem)] overflow-hidden'>
-            <h2 className='relative quantaFont max-md:py-4 text-[#121213] leading-tight font-black text-[clamp(2rem,6vw,6rem)] uppercase text-center mb-[clamp(2rem,5vw,5rem)] text-balance max-w-[1200px] mx-auto'>
+            <h2 className='relative quantaFont max-md:py-4 text-[#121213] leading-tight font-black text-[clamp(36px,8vw,64px)] lg:text-[clamp(64px,8vw,96px)] uppercase text-center mb-[clamp(2rem,5vw,5rem)] text-balance max-w-[1200px] mx-auto'>
                 We keep our Process Simple
                 {/* Floating Labels */}
                 <span className="and-box absolute left-[30%] top-[31%] md:top-[28%] -rotate-[5deg] bg-[#F95DAF] text-[#F8F8F8] px-3 py-0.5 rounded-full text-[12px] md:text-[15px] lg:text-[20px] font-bold md:font-black leading-normal capitalize interFont">

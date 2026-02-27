@@ -51,7 +51,7 @@ export default function FAQSection() {
                             BET YOU DO.
                         </h2>
                         <p className="max-lg:mx-auto mt-2 md:mt-4 text-[clamp(14px,4vw,24px)] md:text-[clamp(14px,2vw,20px)] lg:text-[20px] max-w-md font-medium leading-normal">
-                            What We Do, How We Do It, And What <br className="block lg:hidden" /> You Actually Get At The End.
+                            What we do, how we do it, and what <br className="block lg:hidden" /> you actually get at the end.
                         </p>
                     </div>
 
