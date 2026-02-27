@@ -106,7 +106,7 @@ export default function FAQSection() {
                                     <AnimatePresence>
                                         {isOpen && (
                                             <motion.p
-                                                initial={{ opacity: 0, y: 0 }}
+                                                initial={{ opacity: 0, y: 10 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{
                                                     duration: isMobile ? 0.65 : 0.25,
@@ -114,9 +114,9 @@ export default function FAQSection() {
                                                 }}
                                                 exit={{
                                                     opacity: 0,
-                                                    y: -5,
+                                                    y: 25,
                                                     transition: {
-                                                        duration: isMobile ? 0.1 : 0.2,
+                                                        duration: isMobile ? 0.2 : 0.2,
                                                         ease: "easeIn"
                                                     }
                                                 }}
