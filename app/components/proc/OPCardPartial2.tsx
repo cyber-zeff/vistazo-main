@@ -84,7 +84,7 @@ const OPCardCol2 = () => {
         style={{
           flex: topFlex,
           backgroundColor: '#6755CF', 
-          borderRadius: '30px',
+          borderRadius: '24px',
           overflow: 'hidden',
           position: 'relative',
           transition: 'flex 300ms ease'
@@ -197,7 +197,7 @@ const OPCardCol2 = () => {
         style={{
           flex: bottomFlex,
           backgroundColor: '#6755CF', 
-          borderRadius: '30px',
+          borderRadius: '24px',
           overflow: 'hidden',
           position: 'relative',
           transition: 'flex 300ms ease'
