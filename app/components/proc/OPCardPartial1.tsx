@@ -88,7 +88,7 @@ const OPCardCol1 = () => {
         style={{
           flex: topFlex,
           backgroundColor: '#6755CF', 
-          borderRadius: '12px',
+          borderRadius: '30px',
           overflow: 'hidden',
           position: 'relative',
           transition: 'flex 300ms ease'
@@ -118,6 +118,7 @@ const OPCardCol1 = () => {
               opacity: 0.95,
               pointerEvents: 'none'
             }}
+            className='quantaFont mt-1'
           >
             {data[0].step}
           </div>
@@ -125,7 +126,7 @@ const OPCardCol1 = () => {
           {/* TOP CARD: left text stack wrapper */}
           <div style={{ width: '100%', position: 'relative', zIndex: 3 }}>
             {/* TOP CARD: title */}
-            <div style={{ maxWidth: '72%', fontSize: '32px', fontWeight: 800, lineHeight: 1.0 }}>
+            <div style={{ maxWidth: '72%', fontSize: '32px', fontWeight: 800, lineHeight: 1.0 }} className='quantaFont'>
               {data[0].title}
             </div>
 
@@ -201,7 +202,7 @@ const OPCardCol1 = () => {
         style={{
           flex: bottomFlex,
           backgroundColor: '#6755CF', 
-          borderRadius: '12px',
+          borderRadius: '30px',
           overflow: 'hidden',
           position: 'relative',
           transition: 'flex 300ms ease'
@@ -231,6 +232,7 @@ const OPCardCol1 = () => {
               opacity: 0.95,
               pointerEvents: 'none'
             }}
+            className='quantaFont mt-1'
           >
             {data[1].step}
           </div>
@@ -238,7 +240,7 @@ const OPCardCol1 = () => {
           {/* BOTTOM CARD: left text stack wrapper */}
           <div style={{ width: '100%', position: 'relative', zIndex: 3 }}>
             {/* BOTTOM CARD: title */}
-            <div style={{ maxWidth: '72%', fontSize: '32px', fontWeight: 800, lineHeight: 1.0 }}>
+            <div style={{ maxWidth: '72%', fontSize: '32px', fontWeight: 800, lineHeight: 1.0 }} className='quantaFont'>
               {data[1].title}
             </div>
 
