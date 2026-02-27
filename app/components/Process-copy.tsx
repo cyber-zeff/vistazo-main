@@ -16,7 +16,7 @@ export default function OPCard() {
             scrollTrigger: {
                 trigger: '#processes',
                 start: 'top 70%',
-                end: 'bottom 125%',
+                end: 'bottom 150%',
                 scrub: true,
             }
         })
