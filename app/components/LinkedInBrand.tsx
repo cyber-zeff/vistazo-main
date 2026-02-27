@@ -54,7 +54,7 @@ export default function LinkedInBrand() {
                         </div>
 
                         {/* Avatars + CTA Button */}
-                        <div className="flex items-center gap-[12px] sm:gap-[30px] lg:gap-[50px]">
+                        <div className="flex items-center gap-[12px] sm:gap-[30px] lg:gap-[35px] xl:gap-[50px]">
                             {/* Overlapping Avatars */}
                             <div className="flex items-center">
                                 <div className="size-[20px] sm:size-[30px] lg:size-[50px] rounded-full overflow-hidden relative z-1">
