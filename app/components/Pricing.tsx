@@ -248,7 +248,7 @@ const Pricing = () => {
 
   return (
     <section id="pricing" className="w-full bg-[#FFFEF7] text-black overflow-hidden py-16 lg:py-20 px-8 lg:px-12">
-      <h2 className="quantaFont font-black uppercase text-center lg:mb-16 text-[clamp(36px,9vw,128px)] leading-none">
+      <h2 className="quantaFont font-black uppercase text-center lg:mb-16 text-[clamp(40px,9vw,128px)] leading-none">
         Find What Fits
       </h2>
 
