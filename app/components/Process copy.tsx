@@ -285,15 +285,15 @@ export default function OPCard() {
             <h2 className='relative quantaFont max-md:py-4 text-[#121213] leading-tight font-black text-[clamp(2rem,6vw,6rem)] uppercase text-center mb-[clamp(2rem,5vw,5rem)] text-balance max-w-[1200px] mx-auto'>
                 We keep our Process Simple
                 {/* Floating Labels */}
-                <span className="and-box absolute left-[30%] top-[31%] md:top-[28%] -rotate-[5deg] bg-[#F95DAF] text-[#F8F8F8] px-3 py-0.5 rounded-full text-[13px] md:text-[15px] lg:text-[20px] font-black leading-normal capitalize interFont">
+                <span className="and-box absolute left-[30%] top-[31%] md:top-[28%] -rotate-[5deg] bg-[#F95DAF] text-[#F8F8F8] px-3 py-0.5 rounded-full text-[12px] md:text-[15px] lg:text-[20px] font-bold md:font-black leading-normal capitalize interFont">
                     And
                 </span>
 
-                <span className="results-box absolute right-[29%] top-[32%] md:top-[29%] rotate-3 bg-[#6755CF] text-[#F8F8F8] px-3 py-0.5 rounded-full text-[13px] md:text-[15px] lg:text-[20px] font-black leading-normal capitalize interFont">
+                <span className="results-box absolute right-[29%] top-[32%] md:top-[29%] rotate-3 bg-[#6755CF] text-[#F8F8F8] px-3 py-0.5 rounded-full text-[12px] md:text-[15px] lg:text-[20px] font-bold md:font-black leading-normal capitalize interFont">
                     Results
                 </span>
 
-                <span className="extra-box absolute left-[37%] bottom-[7%] md:-bottom-[5%] xl:bottom-[1%] -rotate-3 bg-[#F9D94D] text-[#361E98] px-3 py-0.5 rounded-full text-[13px] md:text-[15px] lg:text-[20px] font-black leading-normal capitalize interFont">
+                <span className="extra-box absolute left-[37%] bottom-[7%] md:-bottom-[5%] xl:bottom-[1%] -rotate-3 bg-[#F9D94D] text-[#361E98] px-3 py-0.5 rounded-full text-[12px] md:text-[15px] lg:text-[20px] font-bold md:font-black leading-normal capitalize interFont">
                     Extraordinary!
                 </span>
             </h2>
