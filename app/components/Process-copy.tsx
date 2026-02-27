@@ -15,7 +15,7 @@ export default function OPCard() {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '#processes',
-                start: 'top 70%',
+                start: 'top 60%',
                 end: 'bottom 150%',
                 scrub: true,
             }
