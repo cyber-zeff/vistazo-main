@@ -28,7 +28,7 @@ const Typewriter: React.FC = () => {
         setWordIndex((prev) => (prev + 1) % words.length);
       }, 300);
     } else {
-      const speed = isDeleting ? 75 : 120;
+      const speed = isDeleting ? 100 : 120;
       timeout = setTimeout(() => {
         const currentWord = words[wordIndex];
         if (isDeleting) {
