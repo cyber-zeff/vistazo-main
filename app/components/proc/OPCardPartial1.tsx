@@ -134,10 +134,9 @@ const OPCardCol1 = () => {
             <div
               style={{
                 maxWidth: '72%',
-                marginTop: '8px',
-                fontSize: '15px',
                 lineHeight: 1.15
               }}
+              className='max-sm:text-[13px] text-[15px] max-sm:mt-0 mt-2'
             >
               {data[0].subTitle}
             </div>
@@ -248,10 +247,9 @@ const OPCardCol1 = () => {
             <div
               style={{
                 maxWidth: '72%',
-                marginTop: '8px',
-                fontSize: '15px',
                 lineHeight: 1.15
               }}
+              className='max-sm:text-[13px] text-[15px] max-sm:mt-0 mt-2'
             >
               {data[1].subTitle}
             </div>
