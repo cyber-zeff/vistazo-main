@@ -15,7 +15,7 @@ export default function OPCard() {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '#processes',
-                start: 'top 60%',
+                start: 'top 80%',
                 end: 'bottom 150%',
                 scrub: true,
             }
@@ -42,29 +42,6 @@ export default function OPCard() {
             ease: "back.out(0.8)",
             duration: 1.2,
         }, 0)
-
-        // LEFT SIDE BOXES
-        // tl.from('.and-box', {
-        //     x: -1000,
-        //     opacity: 1,
-        //     ease: isMobile ? "back.out(0)" : "back.out(0.8)",
-        //     duration: 1.2,
-        // }, 0)
-
-        // tl.from('.extra-box', {
-        //     x: -1200,
-        //     opacity: 1,
-        //     ease: isMobile ? "back.out(0)" : "back.out(0.8)",
-        //     duration: 1.2,
-        // }, 0.1)
-
-        // // RIGHT SIDE BOX
-        // tl.from('.results-box', {
-        //     x: 1000,
-        //     opacity: 1,
-        //     ease: isMobile ? "back.out(0)" : "back.out(0.8)",
-        //     duration: 1.2,
-        // }, 0)
 
         ScrollTrigger.refresh()
 
