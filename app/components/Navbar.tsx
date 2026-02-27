@@ -19,7 +19,7 @@ const links: LinkProps[] = [
 
 export default function WaveNavbar() {
   return (
-    <header className="w-full sticky top-0 z-50 px-5 md:px-20">
+    <header className="w-full sticky top-0 z-100 px-5 md:px-20">
       {/* Wave Background with drop shadow */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
