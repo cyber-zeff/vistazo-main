@@ -50,6 +50,11 @@
   gap: 12px;
   padding: 12px;
 }
+@media (min-width: 1024px) {
+  .proc {
+    min-height: 500px;
+  }
+}
 @media (max-width: 1120px) {
   .proc {
     width: 475px !important;
