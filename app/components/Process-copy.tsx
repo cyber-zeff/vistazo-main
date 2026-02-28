@@ -5,9 +5,11 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import OPCardCol1 from './proc/OPCardPartial1'
 import OPCardCol2 from './proc/OPCardPartial2'
+import { useIsMobile } from "@/lib/utils";
 
 
 export default function OPCard() {
+    const isMobile = useIsMobile();
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
@@ -15,8 +17,8 @@ export default function OPCard() {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '#processes',
-                start: 'top 80%',
-                end: 'bottom 150%',
+                start: isMobile ? 'top 100%' : 'top 80%',
+                end: isMobile ? 'bottom 120%' : 'bottom 150%',
                 scrub: true,
             }
         })
