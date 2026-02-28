@@ -85,24 +85,27 @@ export default function FAQSection() {
 
                         return (
                             <motion.div key={index} layout initial={false}
-                                animate={{ height: isOpen ? (isMobile ? 200 : 200) : (isMobile ? 80 : 100), }}
-                                transition={{ type: "spring", stiffness: 160, damping: 15, }}
+                                animate={{ height: isOpen ? (isMobile ? 220 : 200) : (isMobile ? 80 : 100) }}
+                                transition={{ type: "spring", stiffness: 160, damping: 15 }}
                                 onClick={() => setActiveIndex(isOpen ? null : index)}
+                                style={{
+                                    paddingTop: !isOpen && isMobile ? '28px' : undefined,
+                                }}
                                 className="relative cursor-pointer max-w-[90vw] w-150 md:w-220 lg:w-[clamp(30.25rem,45vw,42.5rem)] bg-[#361E98] rounded-3xl shadow-[4px_6px_4px_0_rgba(0,0,0,0.25)]
-                                    px-8 py-6 min-[570px]:pt-8.5 min-[570px]:pb-10.5 flex max-[460px]:items-center items-start justify-between overflow-hidden shrink-0 border-2 border-[#121213]">
+                                    px-8 py-6 min-[570px]:pt-8.5 min-[570px]:pb-10.5 flex items-start justify-between overflow-hidden shrink-0 border-2 border-[#121213]">
                                 {/* STAR */}
                                 <motion.span
                                     animate={{ rotate: isOpen ? 90 : -90 }}
                                     transition={{ duration: 0.3, ease: "easeInOut" }}
                                     className="absolute top-6 min-[570px]:top-7.5 right-6 sm:right-10 z-10" >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" className=" max-[460px]:w-[30px] max-[460px]:h-[30px]" viewBox="0 0 35 35" fill="none" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" className="max-[460px]:w-[30px] max-[460px]:h-[30px]" viewBox="0 0 35 35" fill="none" >
                                         <path d="M17.5 0C21.6501 14.109 35 17.5 35 17.5C35 17.5 22.3021 20.891 17.5 35C12.6979 20.891 0 17.5 0 17.5C0 17.5 13.3499 14.109 17.5 0Z" fill="#F9D94D" />
                                     </svg>
                                 </motion.span>
 
                                 {/* LEFT CONTENT */}
                                 <div className="flex-1 sm:flex-1 max-[650px]:flex-[1.4]">
-                                    <h3 className="max-sm:sticky max-sm:top-0 text-[clamp(14px,3vw,18px)] sm:text-[18px] font-medium leading-normal mr-10"> {faq.question} </h3>
+                                    <h3 className="max-[460px]:sticky max-[460px]:top-0 text-[clamp(14px,3vw,18px)] sm:text-[18px] font-medium leading-tight min-[460px]:leading-normal mr-10"> {faq.question} </h3>
                                     <AnimatePresence>
                                         {isOpen && (
                                             <motion.p
