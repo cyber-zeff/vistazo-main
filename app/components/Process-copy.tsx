@@ -49,6 +49,8 @@ export default function OPCard() {
 
 
     }, [])
+
+    
     return (
         <section id='processes' className='bg-[#FFFEF7] px-[clamp(1rem,5vw,5rem)] py-[clamp(3rem,8vw,5rem)] overflow-hidden'>
             <h2 className='relative quantaFont max-md:py-4 text-[#121213] leading-tight font-black text-[clamp(40px,9vw,64px)] lg:text-[clamp(64px,8vw,96px)] uppercase text-center mb-[clamp(2rem,5vw,5rem)] text-balance max-w-[1200px] mx-auto'>

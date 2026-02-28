@@ -122,7 +122,7 @@ const OPCardCol2 = () => {
           {/* TOP CARD: left text stack wrapper */}
           <div style={{ width: '100%', position: 'relative', zIndex: 3 }}>
             {/* TOP CARD: title */}
-            <div style={{ maxWidth: '72%', fontSize: '32px', fontWeight: 800, lineHeight: 1.0 }} className='quantaFont'>
+            <div style={{ maxWidth: '72%', fontSize: '32px', fontWeight: 800, lineHeight: 1.0 }} className='quantaFont normal-case!'>
               {data[0].title}
             </div>
 
@@ -132,7 +132,7 @@ const OPCardCol2 = () => {
                 maxWidth: '72%',
                 lineHeight: 1.15
               }}
-              className='max-sm:text-[13px] text-[15px] max-sm:mt-0 mt-2'
+              className='max-sm:text-[13px] text-[15px] max-sm:mt-0 mt-2 font-medium'
             >
               {data[0].subTitle}
             </div>
@@ -149,6 +149,7 @@ const OPCardCol2 = () => {
                 overflow: 'hidden',
                 transition: 'opacity 180ms ease, max-height 220ms ease, margin-top 220ms ease'
               }}
+              className='font-medium'
             >
               {data[0].subDesc}
             </div>
@@ -166,6 +167,7 @@ const OPCardCol2 = () => {
                 overflow: 'hidden',
                 transition: 'opacity 220ms ease, transform 220ms ease, max-height 280ms ease, margin-top 220ms ease'
               }}
+              className='font-medium'
             >
               {data[0].description}
             </div>
@@ -235,7 +237,7 @@ const OPCardCol2 = () => {
           {/* BOTTOM CARD: left text stack wrapper */}
           <div style={{ width: '100%', position: 'relative', zIndex: 3 }}>
             {/* BOTTOM CARD: title */}
-            <div style={{ maxWidth: '72%', fontSize: '32px', fontWeight: 800, lineHeight: 1.0 }} className='quantaFont'>
+            <div style={{ maxWidth: '72%', fontSize: '32px', fontWeight: 800, lineHeight: 1.0 }} className='quantaFont normal-case!'>
               {data[1].title}
             </div>
 
@@ -246,7 +248,7 @@ const OPCardCol2 = () => {
                 // marginTop: '8px',
                 lineHeight: 1.15
               }}
-              className='max-sm:text-[13px] text-[15px] max-sm:mt-0 mt-2'
+              className='max-sm:text-[13px] text-[15px] max-sm:mt-0 mt-2 font-medium'
             >
               {data[1].subTitle}
             </div>
@@ -263,6 +265,7 @@ const OPCardCol2 = () => {
                 overflow: 'hidden',
                 transition: 'opacity 180ms ease, max-height 220ms ease, margin-top 220ms ease'
               }}
+              className='font-medium'
             >
               {data[1].subDesc}
             </div>
@@ -280,6 +283,7 @@ const OPCardCol2 = () => {
                 overflow: 'hidden',
                 transition: 'opacity 220ms ease, transform 220ms ease, max-height 280ms ease, margin-top 220ms ease'
               }}
+              className='font-medium'
             >
               {data[1].description}
             </div>
