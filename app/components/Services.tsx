@@ -4,11 +4,11 @@ import { motion } from "framer-motion"
 import { useState, useRef, useEffect } from "react"
 
 const services = [
-    { title: "logo & brand identity", image: "/placeholders/services/Logo & Branding.webp" },
-    { title: "website design", image: "/placeholders/services/" },
-    { title: "website copywriting", image: "/placeholders/services/" },
-    { title: "web development", image: "/placeholders/services/" },
-    { title: "seo optimization", image: "/placeholders/services/" },
+    { id: 1, title: "logo & brand identity", image: "/placeholders/services/Logo-Branding.webp" },
+    { id: 2, title: "website design", image: "/placeholders/services/" },
+    { id: 3, title: "website copywriting", image: "/placeholders/services/" },
+    { id: 4, title: "web development", image: "/placeholders/services/" },
+    { id: 5, title: "seo optimization", image: "/placeholders/services/" },
 ]
 
 function DiamondStar() {
@@ -25,7 +25,7 @@ function ServiceItem({
     isActive,
     setActiveIndex,
 }: {
-    service: { title: string; image: string }
+    service: { id:number, title: string; image: string }
     index: number
     isActive: boolean
     setActiveIndex: (index: number | null) => void
@@ -101,7 +101,7 @@ function ServiceItem({
                 }}
                 className="hidden sm:block absolute right-8 top-1/2 -translate-y-[65%] w-73.75 h-89.5 bg-gray-100 z-10 rounded-[53px] md:rounded-[53px] overflow-hidden"
             >
-                <img src={service.image} alt="Image Not Found" className="w-full h-full object-cover object-left" />
+                <img src={service.image} alt="Image Not Found" className={`w-full h-full object-cover ${service.id == 1 ? 'object-left' : ' '} `} />
             </motion.div>
 
             <motion.div
@@ -129,7 +129,7 @@ function ServiceItem({
                 }}
                 className={`block sm:hidden absolute top-1/2 ${(tilt == 5) ? "right-2" : "left-2"} -translate-y-[65%] w-[clamp(150px,4vw,230px)] h-[clamp(190px,4vw,270px)] bg-gray-100 z-10 rounded-[35px] overflow-hidden`}
             >
-                <img src={service.image} alt="Image Not Found" className="w-full h-full object-cover object-left" />
+                <img src={service.image} alt="Image Not Found" className={`w-full h-full object-cover ${service.id == 1 ? 'object-left' : ' '} `} />
             </motion.div>
 
 
