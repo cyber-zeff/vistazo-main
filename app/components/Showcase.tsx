@@ -1,81 +1,70 @@
 "use client";
 
 import Image from "next/image";
-import BookACall from "./BookACall";
+// import BookACall from "./BookACall";
 import Typewriter from "./Typewriter";
+// import DesktopHeroFrames from "./HeroFrameAnimation";
+import { useEffect, useRef } from "react";
+
+const TOTAL_FRAMES = 884;
+const FPS = 30;
 
 export default function Showcase() {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const frameRef = useRef(0);
+  const lastTimeRef = useRef(0);
+
+  useEffect(() => {
+    let rafId: number;
+
+    const animate = (time: number) => {
+      if (!lastTimeRef.current) lastTimeRef.current = time;
+      const delta = time - lastTimeRef.current;
+
+      if (delta >= 1000 / FPS) {
+        frameRef.current = (frameRef.current + 1) % TOTAL_FRAMES;
+
+        if (imgRef.current) {
+          imgRef.current.src = `/Comp 1/Comp 1_${String(
+            frameRef.current
+          ).padStart(5, "0")}.png`;
+        }
+
+        lastTimeRef.current = time;
+      }
+
+      rafId = requestAnimationFrame(animate);
+    };
+
+    rafId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
+
   return (
-    <section className="relative bg-main text-white lg:min-h-[82vh] h-full w-full flex flex-col items-center overflow-hidden mt-3 md:mt-6 lg:items-center">
+    <section className="relative bg-main text-white lg:h-svh lg:-mt-3 h-auto w-full flex flex-col items-center overflow-hidden mt-3 md:mt-0">
+      {/* DESKTOP / LAPTOP VERSION */}
+      <section
+        className="hidden lg:block min-[1680px]:absolute min-[1680px]:-top-10 w-full h-full overflow-hidden z-0"
+        aria-hidden="true"
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          disablePictureInPicture
+          controlsList="nodownload nofullscreen noremoteplayback"
+          className="block mx-auto h-full w-full max-w-[1440px] max-[1600px]:object-cover object-contain"
+        >
+          <source src="/hero-animation.webm" type="video/webm" />
+        </video>
+      </section>
 
-      {/* Showcase Container */}
-      <div className="relative w-full max-w-360 px-6 md:px-20 py-12 md:pt-8 md:pb-0 flex justify-center">
 
-        {/* DESKTOP / LAPTOP VERSION */}
-        <div className="hidden lg:block relative z-10 w-full">
-
-          <h1 className="font-extrabold text-[clamp(86px,8vw,128px)] leading-normal tracking-tight quantaFont">
-            DESIGNED FOR
-          </h1>
-
-          {/* Typewriter Line */}
-          <div className="font-extrabold text-[clamp(86px,8vw,128px)] leading-normal tracking-tight quantaFont">
-            <span className="text-[#F9D94D]">
-              <Typewriter />
-            </span>
-          </div>
-
-          {/* GIF */}
-          <div className="absolute right-20 min-[1160px]:right-35 xl:right-30 2xl:right-10 -top-10 z-0 pointer-events-none">
-            <div className="relative rounded-[100px] overflow-hidden w-[clamp(250px,22vw,350px)] h-[clamp(250px,22vw,350px)] max-w-full">
-              <Image
-                src="/head-frame.gif"
-                alt="hero animation"
-                fill
-                unoptimized
-                className="object-cover"
-                priority
-                sizes="(max-width: 1024px) 300px, 350px"
-              />
-            </div>
-          </div>
-
-          {/* Bunny + Heading */}
-          <div className="flex items-center justify-between flex-wrap lg:-mt-6">
-            <div className="shrink-0">
-              <div className="w-[clamp(170px,15vw,228px)] h-[clamp(170px,15vw,221px)] relative -top-12">
-                <Image
-                  src="/head-bunny.png"
-                  alt="bunny mascot"
-                  fill
-                  className="object-contain"
-                  priority
-                  sizes="(max-width: 768px) 200px, 228px"
-                />
-              </div>
-            </div>
-
-            <h1 className="font-extrabold text-[clamp(86px,8vw,128px)] leading-normal tracking-tight quantaFont">
-              BUILT TO SCALE.
-            </h1>
-          </div>
-
-          {/* Text + CTA */}
-          <div className="max-w-md">
-            <p className="text-white text-lg mb-6 font-medium leading-normal">
-              We help creators and mavericks build
-              <br />
-              personal brands that scream confidence.
-              <br />
-              Don&apos;t just be seen, be <span className="text-[#FFE400] italic font-bold">remembered.</span>
-            </p>
-            {/* <BookACall path="#" /> */}
-          </div>
-        </div>
-
+      <div className="lg:hidden relative w-full max-w-360 px-6 md:px-20 py-12 md:pt-8 md:pb-0 flex justify-center">
         {/* MOBILE / TABLET VERSION */}
-        <div className="lg:hidden w-full">
-          <div className="w-full max-w-full" style={{ 
+        <div className="">
+          <div className="w-full max-w-full" style={{
             fontSize: 'clamp(48px, 15vw, 158px)',
             lineHeight: '1.1'
           }}>
@@ -85,7 +74,7 @@ export default function Showcase() {
             <div className="flex items-center gap-[0.4em] mt-0">
               <h1 className="font-extrabold tracking-tight quantaFont mb-0 whitespace-nowrap shrink-0">FOR</h1>
               <div className="flex-1 min-w-0">
-                <div className="rounded-full overflow-hidden bg-gray-400 shrink-0 w-full min-[540px]:w-[clamp(300px,52vw,400px)] md:w-[clamp(300px,42vw,400px)]" style={{ 
+                <div className="rounded-full overflow-hidden bg-gray-400 shrink-0 w-full min-[540px]:w-[clamp(300px,52vw,400px)] md:w-[clamp(300px,42vw,400px)]" style={{
                   height: 'clamp(70px, 15vw, 144px)'
                 }}>
                   {/* IMAGE TO COME  */}
