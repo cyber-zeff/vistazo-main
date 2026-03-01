@@ -387,11 +387,11 @@ const Pricing = () => {
 
         <div className="px-6 py-5 flex flex-col justify-between w-[85vw] max-w-[380px] min-h-[160px] rounded-[32px] border-2 border-dashed border-[#123123]">
           <div>
-            <h2 className="quantaFont text-[28px] leading-tight mb-2">No-Code Dev</h2>
-            <p className="text-[15px] leading-snug font-medium opacity-90">We will build your website in framer for an additional fee.</p>
+            <h2 className="quantaFont text-[28px] leading-tight mb-2">Brand Identity</h2>
+            <p className="text-[15px] leading-snug font-medium opacity-90">Need more than a website? We&apos;ll craft your full visual identity.</p>
           </div>
-          <Link href={"https://cal.com/vistazo"} target="_blank" className="bg-black w-full rounded-full text-white text-center text-[17px] py-2.5 mt-4 font-medium">
-            Add
+          <Link href={"https://cal.com/vistazo"} target="_blank" className="bg-black w-full rounded-full text-white text-center text-[17px] py-3 mt-4 font-medium">
+            Add On
           </Link>
         </div>
 
