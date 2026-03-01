@@ -16,6 +16,20 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.vistazo.studio/"),
   title: "Vistazo Studio",
   description: "Helping you build a personal brand that actually stands out. From web design and development to copywriting and SEO optimization, Vistazo's got you. Let’s make your brand iconic !",
+  
+  keywords: [
+    "personal branding",
+    "web design",
+    "web development",
+    "copywriting services",
+    "SEO optimization",
+    "branding studio",
+    "Vistazo Studio",
+    "seo",
+    "designing",
+    "UI/UX",
+  ],
+
   openGraph: {
     title: "Vistazo Studio",
     description:
