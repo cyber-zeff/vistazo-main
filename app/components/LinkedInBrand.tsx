@@ -116,9 +116,11 @@ export default function LinkedInBrand() {
                             {...hoverStandUp}
                         >
                             <div
-                                className="bg-[#D9D9D9] rounded-[5px] min-[480px]:rounded-[8px] sm:rounded-[15px] lg:rounded-[25px] w-18 h-24 sm:w-23.75 sm:h-33.75 md:w-[10.175rem] md:h-[12.419rem] lg:w-46 lg:h-[17.313rem] xl:w-55 xl:h-75 shadow-md"
+                                className="bg-transparent rounded-[5px] min-[480px]:rounded-[8px] sm:rounded-[15px] lg:rounded-[20px] w-18 h-24 sm:w-23.75 sm:h-33.75 md:w-[10.175rem] md:h-[12.419rem] lg:w-46 lg:h-[17.313rem] xl:w-55 xl:h-75 shadow-md overflow-hidden"
                                 style={{ transform: "rotate(-5deg)" }}
-                            />
+                            >
+                                <img src="/placeholders/li/left.svg" alt="Image Not Found" className="w-full h-full object-cover" />
+                            </div>
                         </motion.div>
 
                         {/* Center card - straight */}
@@ -127,8 +129,10 @@ export default function LinkedInBrand() {
                             {...hoverStandUp}
                         >
                             <div
-                                className="bg-[#C0C0C0] rounded-[5px] min-[480px]:rounded-[8px] sm:rounded-[15px] lg:rounded-[25px] w-18 h-24 sm:w-23.75 sm:h-33.75 md:w-[10.175rem] md:h-[12.419rem] lg:w-46 lg:h-[17.313rem] xl:w-55 xl:h-75 shadow-lg"
-                            />
+                                className="bg-transparent rounded-[5px] min-[480px]:rounded-[8px] sm:rounded-[15px] lg:rounded-[20px] w-18 h-24 sm:w-23.75 sm:h-33.75 md:w-[10.175rem] md:h-[12.419rem] lg:w-46 lg:h-[17.313rem] xl:w-55 xl:h-75 shadow-lg overflow-hidden"
+                            >
+                                <img src="/placeholders/li/center.svg" alt="Image Not Found" className="w-full h-full object-cover" />
+                            </div>
                         </motion.div>
 
                         {/* Right card - tilted right */}
@@ -137,10 +141,10 @@ export default function LinkedInBrand() {
                             {...hoverStandUp}
                         >
                             <div
-                                className="bg-[#919191] rounded-[5px] min-[480px]:rounded-[8px] sm:rounded-[15px] lg:rounded-[25px] w-18 h-24 sm:w-23.75 sm:h-33.75 md:w-[10.175rem] md:h-[12.419rem] lg:w-46 lg:h-[17.313rem] xl:w-55 xl:h-75 shadow-md overflow-hidden"
+                                className="bg-transparent rounded-[5px] min-[480px]:rounded-[8px] sm:rounded-[15px] lg:rounded-[20px] w-18 h-24 sm:w-23.75 sm:h-33.75 md:w-[10.175rem] md:h-[12.419rem] lg:w-46 lg:h-[17.313rem] xl:w-55 xl:h-75 shadow-md overflow-hidden"
                                 style={{ transform: "rotate(5deg)" }}
                             >
-                                <img src="/placeholders/li/right.svg" alt="Not Found" className="w-full h-full object-cover" />
+                                <img src="/placeholders/li/right.svg" alt="Image Not Found" className="w-full h-full object-cover" />
                             </div>
                         </motion.div>
                     </div>
