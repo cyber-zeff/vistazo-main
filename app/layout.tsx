@@ -13,8 +13,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.vistazo.studio/"),
   title: "Vistazo Studio",
   description: "Helping you build a personal brand that actually stands out. From web design and development to copywriting and SEO optimization, Vistazo's got you. Let’s make your brand iconic !",
+  openGraph: {
+    title: "Vistazo Studio",
+    description:
+      "Helping you build a personal brand that actually stands out. From web design and development to copywriting and SEO optimization, Vistazo's got you. Let’s make your brand iconic!",
+    url: "https://www.vistazo.studio/",
+    siteName: "Vistazo Studio",
+    images: [
+      {
+        url: "/li-banner.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Vistazo Studio",
+    description:
+      "Helping you build a personal brand that actually stands out...",
+    images: ["/li-banner.png"],
+  },
 };
 
 export default function RootLayout({
