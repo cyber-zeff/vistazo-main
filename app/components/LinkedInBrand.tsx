@@ -119,7 +119,7 @@ export default function LinkedInBrand() {
                                 className="bg-transparent rounded-[5px] min-[480px]:rounded-[8px] sm:rounded-[15px] lg:rounded-[20px] w-18 h-24 sm:w-23.75 sm:h-33.75 md:w-[10.175rem] md:h-[12.419rem] lg:w-46 lg:h-[17.313rem] xl:w-55 xl:h-75 shadow-md overflow-hidden"
                                 style={{ transform: "rotate(-5deg)" }}
                             >
-                                <img src="/placeholders/li/left.svg" alt="Image Not Found" className="w-full h-full object-cover" />
+                                <img src="/placeholders/li/left.webp" alt="Image Not Found" className="w-full h-full object-contain" />
                             </div>
                         </motion.div>
 
@@ -131,7 +131,7 @@ export default function LinkedInBrand() {
                             <div
                                 className="bg-transparent rounded-[5px] min-[480px]:rounded-[8px] sm:rounded-[15px] lg:rounded-[20px] w-18 h-24 sm:w-23.75 sm:h-33.75 md:w-[10.175rem] md:h-[12.419rem] lg:w-46 lg:h-[17.313rem] xl:w-55 xl:h-75 shadow-lg overflow-hidden"
                             >
-                                <img src="/placeholders/li/center.svg" alt="Image Not Found" className="w-full h-full object-cover" />
+                                <img src="/placeholders/li/center.webp" alt="Image Not Found" className="w-full h-full object-contain" />
                             </div>
                         </motion.div>
 
@@ -144,7 +144,7 @@ export default function LinkedInBrand() {
                                 className="bg-transparent rounded-[5px] min-[480px]:rounded-[8px] sm:rounded-[15px] lg:rounded-[20px] w-18 h-24 sm:w-23.75 sm:h-33.75 md:w-[10.175rem] md:h-[12.419rem] lg:w-46 lg:h-[17.313rem] xl:w-55 xl:h-75 shadow-md overflow-hidden"
                                 style={{ transform: "rotate(5deg)" }}
                             >
-                                <img src="/placeholders/li/right.svg" alt="Image Not Found" className="w-full h-full object-cover" />
+                                <img src="/placeholders/li/right.webp" alt="Image Not Found" className="w-full h-full object-contain" />
                             </div>
                         </motion.div>
                     </div>
