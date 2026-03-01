@@ -99,9 +99,9 @@ function ServiceItem({
                             ? "8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)"
                             : "-8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)",
                 }}
-                className="hidden sm:block absolute right-8 top-1/2 -translate-y-[65%] w-73.75 h-89.5 bg-gray-100 z-10 rounded-[53px] md:rounded-[53px] overflow-hidden"
+                className="hidden sm:block absolute right-8 top-1/2 -translate-y-[65%] w-73.75 h-89.5 bg-transparent z-10 rounded-[53px] md:rounded-[53px] overflow-hidden"
             >
-                <img src={service.image} alt="Image Not Found" className={`w-full h-full object-cover ${service.id == 1 ? 'object-left' : ' '} `} />
+                <img src={service.image} alt="Image Not Found" className={`w-full h-full ${service.id == 2 ? 'object-contain' : 'object-cover'} ${service.id == 1 ? 'object-left' : ' '} `} />
             </motion.div>
 
             <motion.div
@@ -127,9 +127,9 @@ function ServiceItem({
                             ? "8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)"
                             : "-8px 12px 2.5px 0 rgba(0, 0, 0, 0.25)",
                 }}
-                className={`block sm:hidden absolute top-1/2 ${(tilt == 5) ? "right-2" : "left-2"} -translate-y-[65%] w-[clamp(150px,4vw,230px)] h-[clamp(190px,4vw,270px)] bg-gray-100 z-10 rounded-[35px] overflow-hidden`}
+                className={`block sm:hidden absolute top-1/2 ${(tilt == 5) ? "right-2" : "left-2"} -translate-y-[65%] w-[clamp(150px,4vw,230px)] h-[clamp(190px,4vw,270px)] bg-transparent z-10 rounded-[35px] overflow-hidden`}
             >
-                <img src={service.image} alt="Image Not Found" className={`w-full h-full object-cover ${service.id == 1 ? 'object-left' : ' '} `} />
+                <img src={service.image} alt="Image Not Found" className={`w-full h-full ${service.id == 2 ? 'object-contain' : 'object-cover'} ${service.id == 1 ? 'object-left' : ' '} `} />
             </motion.div>
 
 
