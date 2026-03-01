@@ -5,10 +5,10 @@ import { useState, useRef, useEffect } from "react"
 
 const services = [
     { id: 1, title: "logo & brand identity", image: "/placeholders/services/Logo-Branding.webp" },
-    { id: 2, title: "website design", image: "/placeholders/services/" },
-    { id: 3, title: "website copywriting", image: "/placeholders/services/" },
-    { id: 4, title: "web development", image: "/placeholders/services/" },
-    { id: 5, title: "seo optimization", image: "/placeholders/services/" },
+    { id: 2, title: "website design", image: "/placeholders/services/design.webp" },
+    { id: 3, title: "website copywriting", image: "/placeholders/services/copy.webp" },
+    { id: 4, title: "web development", image: "/placeholders/services/dev.webp" },
+    { id: 5, title: "seo optimization", image: "/placeholders/services/seo.webp" },
 ]
 
 function DiamondStar() {
