@@ -84,8 +84,8 @@ export default function LinkedInBrand() {
                             </div>
 
                             {/* Claim Yours Button */}
-                            <button className="flex items-center gap-[3px] sm:gap-[5px] lg:gap-[8px] px-[10px] py-[5px] sm:px-[18px] sm:py-[8px] lg:px-[25px] lg:py-[12px] cursor-pointer rounded-full bg-[#FFFEF7] text-[#361E98] font-bold leading-normal text-[7px] sm:text-[10px] lg:text-[16px] tracking-[-0.3px] sm:tracking-[-0.5px] lg:tracking-[-0.8px] border-2 border-transparent
-                            whitespace-nowrap transition-all duration-300 ease-out hover:bg-transparent hover:border-white hover:text-white">
+                            <a className="flex items-center gap-[3px] sm:gap-[5px] lg:gap-[8px] px-[10px] py-[5px] sm:px-[18px] sm:py-[8px] lg:px-[25px] lg:py-[12px] cursor-pointer rounded-full bg-[#FFFEF7] text-[#361E98] font-bold leading-normal text-[7px] sm:text-[10px] lg:text-[16px] tracking-[-0.3px] sm:tracking-[-0.5px] lg:tracking-[-0.8px] border-2 border-transparent
+                            whitespace-nowrap transition-all duration-300 ease-out hover:bg-transparent hover:border-white hover:text-white" href="https://cal.com/vistazo" target="_blank">
                                 Claim Yours!
                                 <span>
                                     <svg
@@ -104,7 +104,7 @@ export default function LinkedInBrand() {
                                     </svg>
                                 </span>
 
-                            </button>
+                            </a>
                         </div>
                     </div>
 

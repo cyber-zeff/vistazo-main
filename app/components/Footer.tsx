@@ -3,24 +3,24 @@ import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const handleSmoothScroll = (e:any, href:any) => {
-  e.preventDefault();
+const handleSmoothScroll = (e: any, href: any) => {
+    e.preventDefault();
 
-  const targetId = href.replace("#", "");
-  const section = document.getElementById(targetId);
+    const targetId = href.replace("#", "");
+    const section = document.getElementById(targetId);
 
-  if (section) {
-    const yOffset = -100; // adjust for fixed navbar
-    const y =
-      section.getBoundingClientRect().top +
-      window.pageYOffset +
-      yOffset;
+    if (section) {
+        const yOffset = -100; // adjust for fixed navbar
+        const y =
+            section.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
 
-    window.scrollTo({
-      top: y,
-      behavior: "smooth",
-    });
-  }
+        window.scrollTo({
+            top: y,
+            behavior: "smooth",
+        });
+    }
 };
 
 export default function Footer() {
@@ -36,16 +36,16 @@ export default function Footer() {
 
                     {/* Email input */}
                     <div className="relative max-w-md">
-                        <input
-                            type="email"
-                            placeholder="Your email"
-                            className="w-full bg-transparent text-[20px] leading-normal font-medium border-b border-white/50 py-3 pr-10 outline-none placeholder:text-white focus:border-white"
-                        />
-                        <span className="absolute right-0 top-1/2 -translate-y-1/2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
-                                <path d="M29.9324 18.5149V26.3718C29.9324 26.6647 30.0317 26.9104 30.2301 27.1089C30.4286 27.3074 30.674 27.4063 30.9662 27.4056C31.2584 27.4049 31.5038 27.3056 31.7023 27.1078C31.9008 26.91 32 26.6647 32 26.3718V16.0338C32 15.7409 31.9008 15.4955 31.7023 15.2977C31.5038 15.0999 31.2584 15.0007 30.9662 15H20.6282C20.3353 15 20.0896 15.0992 19.8911 15.2977C19.6926 15.4962 19.5937 15.7416 19.5944 16.0338C19.5951 16.326 19.6944 16.5717 19.8922 16.7709C20.09 16.9701 20.3353 17.069 20.6282 17.0676H28.4851L19.2843 26.2684C19.0948 26.4579 19 26.6991 19 26.992C19 27.285 19.0948 27.5262 19.2843 27.7157C19.4738 27.9052 19.715 28 20.008 28C20.3009 28 20.5421 27.9052 20.7316 27.7157L29.9324 18.5149Z" fill="white" />
-                            </svg>
-                        </span>
+                            <input
+                                type="email"
+                                placeholder="Your email"
+                                className="w-full bg-transparent text-[20px] leading-normal font-medium border-b border-white/50 py-3 pr-10 outline-none placeholder:text-white focus:border-white"
+                            />
+                            <span className="absolute right-0 top-1/2 -translate-y-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
+                                    <path d="M29.9324 18.5149V26.3718C29.9324 26.6647 30.0317 26.9104 30.2301 27.1089C30.4286 27.3074 30.674 27.4063 30.9662 27.4056C31.2584 27.4049 31.5038 27.3056 31.7023 27.1078C31.9008 26.91 32 26.6647 32 26.3718V16.0338C32 15.7409 31.9008 15.4955 31.7023 15.2977C31.5038 15.0999 31.2584 15.0007 30.9662 15H20.6282C20.3353 15 20.0896 15.0992 19.8911 15.2977C19.6926 15.4962 19.5937 15.7416 19.5944 16.0338C19.5951 16.326 19.6944 16.5717 19.8922 16.7709C20.09 16.9701 20.3353 17.069 20.6282 17.0676H28.4851L19.2843 26.2684C19.0948 26.4579 19 26.6991 19 26.992C19 27.285 19.0948 27.5262 19.2843 27.7157C19.4738 27.9052 19.715 28 20.008 28C20.3009 28 20.5421 27.9052 20.7316 27.7157L29.9324 18.5149Z" fill="white" />
+                                </svg>
+                            </span>
                     </div>
 
                     <p className="text-[12px] text-[#FFFEF7] max-w-95 leading-normal font-[310] max-md:text-center">

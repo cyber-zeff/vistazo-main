@@ -14,6 +14,7 @@ export default function NavbarBtn({ path }: NavbarBtnProps) {
     <div className="flex items-center justify-center gap-2">
       <motion.a
         href={path}
+        target="_blank"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         animate={{

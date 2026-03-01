@@ -25,7 +25,8 @@ const CARD_VARIANTS = [
       { icon: TrendingUp, text: "SEO-friendly structure" },
       { icon: FileHeart, text: "50/50 secure payment process" },
     ],
-    btnBg: "#FFF",
+    btnBg: "#FFFEF7",
+    link: "https://cal.com/vistazo/landing-page",
   },
   {
     id: "card-2",
@@ -40,7 +41,8 @@ const CARD_VARIANTS = [
       { icon: TrendingUp, text: "SEO-friendly structure" },
       { icon: FileHeart, text: "50/50 secure payment process" },
     ],
-    btnBg: "#FFF",
+    btnBg: "#FFFEF7",
+    link: "https://cal.com/vistazo/partnership",
   },
   {
     id: "card-3",
@@ -55,7 +57,8 @@ const CARD_VARIANTS = [
       { icon: TrendingUp, text: "Advanced SEO & Marketing" },
       { icon: FileHeart, text: "50/50 secure payment process" },
     ],
-    btnBg: "#FFF",
+    btnBg: "#FFFEF7",
+    link: "https://cal.com/vistazo/custom",
   },
   {
     id: "card-4",
@@ -64,8 +67,9 @@ const CARD_VARIANTS = [
     title: "Can't Decide?",
     description: null,
     features: [],
-    btnBg: "#FFF",
+    btnBg: "#FFFEF7",
     isCallToAction: true,
+    link: "https://cal.com/vistazo/15min",
   },
 ];
 
@@ -275,7 +279,7 @@ const Pricing = () => {
               <h2 className="quantaFont text-[30px] leading-normal">No-Code Dev</h2>
               <p className="mt-1 text-[16px] leading-tight font-medium">We will build your website in framer for an additional fee.</p>
             </div>
-            <Link href="#" className="bg-black w-full rounded-full text-white text-center text-[18px] py-2 font-medium">
+            <Link href="https://cal.com/vistazo" target="_blank" className="bg-black w-full rounded-full text-white text-center text-[18px] py-2 font-medium">
               Add
             </Link>
           </div>
@@ -284,7 +288,7 @@ const Pricing = () => {
             style={{ backgroundColor: CARD_VARIANTS[3].color, gridArea: "2 / 3" }}
           >
             <h2 className="quantaFont text-[30px] leading-normal mb-3 text-center">Can&apos;t Decide?</h2>
-            <PricingBtn path="#" name="Book a Call" bg={CARD_VARIANTS[3].btnBg} />
+            <PricingBtn path={CARD_VARIANTS[3].link} name="Book a Call" bg={CARD_VARIANTS[3].btnBg} />
           </div>
         </div>
       </div>
@@ -347,7 +351,7 @@ const Pricing = () => {
                   <div className="flex flex-col justify-center items-center h-full px-6">
                     <h2 className="quantaFont text-[40px] leading-tight mb-8 text-center">{card.title}</h2>
                     <div className="w-full">
-                      <PricingBtn path="#" name="Book a Call" bg={card.btnBg} />
+                      <PricingBtn path="https://cal.com/vistazo" name="Book a Call" bg={card.btnBg} />
                     </div>
                   </div>
                 ) : (
@@ -372,7 +376,7 @@ const Pricing = () => {
                       </div>
                     </div>
                     <div className="px-6 pb-2">
-                      <PricingBtn path="#" name="Get Started" bg={card.btnBg} />
+                      <PricingBtn path={card.link} name="Get Started" bg={card.btnBg} />
                     </div>
                   </>
                 )}
@@ -386,7 +390,7 @@ const Pricing = () => {
             <h2 className="quantaFont text-[28px] leading-tight mb-2">No-Code Dev</h2>
             <p className="text-[15px] leading-snug font-medium opacity-90">We will build your website in framer for an additional fee.</p>
           </div>
-          <Link href="#" className="bg-black w-full rounded-full text-white text-center text-[17px] py-2.5 mt-4 font-medium">
+          <Link href={"https://cal.com/vistazo"} target="_blank" className="bg-black w-full rounded-full text-white text-center text-[17px] py-2.5 mt-4 font-medium">
             Add
           </Link>
         </div>
@@ -428,7 +432,7 @@ function DesktopCard({
           );
         })}
       </div>
-      <PricingBtn path="#" name="Get Started" bg={card.btnBg} />
+      <PricingBtn path={card.link} name="Get Started" bg={card.btnBg} />
     </div>
   );
 }

@@ -51,7 +51,8 @@ export default function CTASection() {
 
                 <div className="flex items-center justify-center shrink-0 gap-2 self-stretch">
                     <motion.a
-                        href="#"
+                        href="https://cal.com/vistazo"
+                        target="_blank"
                         onMouseEnter={() => setHover(true)}
                         onMouseLeave={() => setHover(false)}
                         animate={{

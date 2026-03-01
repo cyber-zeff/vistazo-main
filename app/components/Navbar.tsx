@@ -81,7 +81,7 @@ export default function WaveNavbar() {
 
         {/* CTA Button for desktop */}
         <div className="block mt-0">
-          <NavbarBtn path="#" />
+          <NavbarBtn path="https://cal.com/vistazo" />
         </div>
       </nav>
     </header>

@@ -66,15 +66,15 @@ export default function FAQSection() {
                             good fit, and map out how we&apos;d actually execute your brand.
                         </p>
 
-                        <button className="flex items-center justify-center gap-2 py-2.5 rounded-[83px] w-35 bg-[#FFFEF7] text-[#361E98] text-[15px] font-bold leading-normal -tracking-[0.8] border-2 border-transparent
-                            capitalize transition-all duration-300 ease-out hover:bg-transparent hover:border-white hover:text-white">
+                        <a className="flex items-center justify-center gap-2 py-2.5 rounded-[83px] w-35 bg-[#FFFEF7] text-[#361E98] text-[15px] font-bold leading-normal -tracking-[0.8] border-2 border-transparent
+                            capitalize transition-all duration-300 ease-out hover:bg-transparent hover:border-white hover:text-white" href="https://cal.com/vistazo" target="_blank">
                             Talk to us
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="currentColor" className="transition-colors duration-300">
                                     <path d="M7.51891 1.83109L1.16674 1.83109C0.907464 1.83109 0.693996 1.74207 0.526333 1.56404C0.358671 1.386 0.275056 1.16714 0.275488 0.907431C0.286291 0.658961 0.375307 0.445494 0.542538 0.267028C0.709769 0.0885617 0.923236 -0.00045478 1.18294 -2.25222e-05L9.73893 -2.2733e-05C9.86857 -2.27119e-05 9.98481 0.0241759 10.0877 0.0725735C10.1905 0.120971 10.2847 0.188814 10.3703 0.276102C10.4558 0.363391 10.5232 0.458025 10.5725 0.560006C10.6218 0.661986 10.6462 0.778011 10.6457 0.908079L10.6457 9.46407C10.6457 9.70174 10.5565 9.9098 10.378 10.0883C10.1996 10.2667 9.98632 10.3612 9.73828 10.3715C9.47901 10.3715 9.26014 10.2823 9.08168 10.1038C8.90321 9.92536 8.81419 9.70671 8.81463 9.44787L8.81527 3.12745L1.57185 10.3709C1.3882 10.5545 1.17192 10.6464 0.923021 10.6464C0.674119 10.6464 0.458274 10.5545 0.275488 10.3709C0.0927003 10.1872 0.000874152 9.97095 1.03101e-05 9.72205C-0.000853869 9.47314 0.0909716 9.2573 0.275488 9.07451L7.51891 1.83109Z" />
                                 </svg>
                             </span>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
