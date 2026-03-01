@@ -2,6 +2,7 @@
 import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const handleSmoothScroll = (e: any, href: any) => {
     e.preventDefault();
@@ -24,6 +25,24 @@ const handleSmoothScroll = (e: any, href: any) => {
 };
 
 export default function Footer() {
+    const [email, setEmail] = useState("");
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const res = await fetch("https://formspree.io/f/mzdaqkow", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email }),
+        });
+
+        if (res.ok) {
+            setSubmitted(true);
+            setEmail("");
+            setTimeout(() => setSubmitted(false), 3000); // hides after 3s
+        }
+    };
     return (
         <footer className="bg-[#361E98] px-8 md:px-20 mt-6 sm:mt-6 md:mt-16 lg:mt-26 pt-16 md:pt-20 lg:pt-24 pb-8 md:pb-6 lg:pb-8">
             <div className="max-md:place-items-center grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32">
@@ -35,18 +54,27 @@ export default function Footer() {
                     </h2>
 
                     {/* Email input */}
-                    <div className="relative max-w-md">
-                            <input
-                                type="email"
-                                placeholder="Your email"
-                                className="w-full bg-transparent text-[20px] leading-normal font-medium border-b border-white/50 py-3 pr-10 outline-none placeholder:text-white focus:border-white"
-                            />
-                            <span className="absolute right-0 top-1/2 -translate-y-1/2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
-                                    <path d="M29.9324 18.5149V26.3718C29.9324 26.6647 30.0317 26.9104 30.2301 27.1089C30.4286 27.3074 30.674 27.4063 30.9662 27.4056C31.2584 27.4049 31.5038 27.3056 31.7023 27.1078C31.9008 26.91 32 26.6647 32 26.3718V16.0338C32 15.7409 31.9008 15.4955 31.7023 15.2977C31.5038 15.0999 31.2584 15.0007 30.9662 15H20.6282C20.3353 15 20.0896 15.0992 19.8911 15.2977C19.6926 15.4962 19.5937 15.7416 19.5944 16.0338C19.5951 16.326 19.6944 16.5717 19.8922 16.7709C20.09 16.9701 20.3353 17.069 20.6282 17.0676H28.4851L19.2843 26.2684C19.0948 26.4579 19 26.6991 19 26.992C19 27.285 19.0948 27.5262 19.2843 27.7157C19.4738 27.9052 19.715 28 20.008 28C20.3009 28 20.5421 27.9052 20.7316 27.7157L29.9324 18.5149Z" fill="white" />
-                                </svg>
-                            </span>
-                    </div>
+                    <form onSubmit={handleSubmit} className="relative max-w-md">
+                        <input
+                            type="email"
+                            placeholder="Your email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                            className="w-full bg-transparent text-[20px] leading-normal font-medium border-b border-white/50 py-3 pr-10 outline-none placeholder:text-white focus:border-white"
+                        />
+                        <button type="submit" className="absolute right-0 top-1/2 -translate-y-1/2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
+                                <path d="M29.9324 18.5149V26.3718C29.9324 26.6647 30.0317 26.9104 30.2301 27.1089C30.4286 27.3074 30.674 27.4063 30.9662 27.4056C31.2584 27.4049 31.5038 27.3056 31.7023 27.1078C31.9008 26.91 32 26.6647 32 26.3718V16.0338C32 15.7409 31.9008 15.4955 31.7023 15.2977C31.5038 15.0999 31.2584 15.0007 30.9662 15H20.6282C20.3353 15 20.0896 15.0992 19.8911 15.2977C19.6926 15.4962 19.5937 15.7416 19.5944 16.0338C19.5951 16.326 19.6944 16.5717 19.8922 16.7709C20.09 16.9701 20.3353 17.069 20.6282 17.0676H28.4851L19.2843 26.2684C19.0948 26.4579 19 26.6991 19 26.992C19 27.285 19.0948 27.5262 19.2843 27.7157C19.4738 27.9052 19.715 28 20.008 28C20.3009 28 20.5421 27.9052 20.7316 27.7157L29.9324 18.5149Z" fill="white" />
+                            </svg>
+                        </button>
+                    </form>
+                    {submitted && (
+                        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-white text-black text-sm font-semibold px-4 py-3 rounded-full shadow-lg animate-fade-in">
+                            <span className="w-2 h-2 rounded-full bg-green-500 inline-block" />
+                            You're in! We'll be in touch.
+                        </div>
+                    )}
 
                     <p className="text-[12px] text-[#FFFEF7] max-w-95 leading-normal font-[310] max-md:text-center">
                         By submitting your email, you&apos;ll receive tips on personal branding,
