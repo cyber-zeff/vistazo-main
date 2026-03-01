@@ -17,13 +17,13 @@ const CARD_VARIANTS = [
     id: "card-1",
     color: "#361E98",
     textColor: "text-white",
-    title: "Landing Page",
-    description: "Ideal for designing or redesigning a website to increase your conversion rates",
+    title: "LANDING PAGE",
+    description: "High-converting single page built to capture attention and turn visitors into leads — fast.",
     features: [
-      { icon: TimerIcon, text: "04–07 day turnaround" },
-      { icon: Sparkles, text: "Custom layout tailored for conversions" },
-      { icon: TrendingUp, text: "SEO-friendly structure" },
-      { icon: FileHeart, text: "50/50 secure payment process" },
+      { icon: TimerIcon, text: "08–10 day turnaround" },
+      { icon: Sparkles, text: "Custom UI/UX layout built for conversions" },
+      { icon: TrendingUp, text: "SEO-optimized structure & on-page setup" },
+      { icon: FileHeart, text: "Professional graphic design included" },
     ],
     btnBg: "#FFFEF7",
     link: "https://cal.com/vistazo/landing-page",
@@ -32,14 +32,14 @@ const CARD_VARIANTS = [
     id: "card-2",
     color: "#361E98",
     textColor: "text-white",
-    title: "Partnership",
-    description: "Tailored for businesses with ongoing design",
+    title: "WEBSITE GROWTH",
+    description: "Everything in the Full Website, plus ongoing strategy and optimization — built for scaling brands that need a long-term partner.",
     features: [
-      { icon: TimerIcon, text: "5-7 Days turnaround time" },
+      { icon: TimerIcon, text: "Fully custom timeline & scope" },
       { icon: Infinity, text: "Unlimited Requests" },
-      { icon: ChartSpline, text: "Monthly CRO & Growth Strategy" },
-      { icon: TrendingUp, text: "SEO-friendly structure" },
-      { icon: FileHeart, text: "50/50 secure payment process" },
+      { icon: ChartSpline, text: "End-to-end web dev & UI/UX" },
+      { icon: TrendingUp, text: "Advanced SEO & growth marketing" },
+      { icon: FileHeart, text: "Branded graphic design system" },
     ],
     btnBg: "#FFFEF7",
     link: "https://cal.com/vistazo/partnership",
@@ -48,14 +48,14 @@ const CARD_VARIANTS = [
     id: "card-3",
     color: "#6755CF",
     textColor: "text-white",
-    title: "Custom",
-    description: "Tailored digital experiences built for unique business needs",
+    title: "FULL WEBSITE",
+    description: "Complete multi-page brand presence, strategically built to convert and attract qualified leads.",
     features: [
-      { icon: TimerIcon, text: "Fully Custom Timeline & Scope" },
-      { icon: Infinity, text: "Unlimited Requests" },
-      { icon: FileCheck, text: "End-to-End Web Dev" },
-      { icon: TrendingUp, text: "Advanced SEO & Marketing" },
-      { icon: FileHeart, text: "50/50 secure payment process" },
+      { icon: TimerIcon, text: "15–18 day turnaround" },
+      { icon: Infinity, text: "Unlimited revision requests" },
+      { icon: FileCheck, text: "Custom web design + full development" },
+      { icon: TrendingUp, text: "SEO foundation & on-page optimization" },
+      { icon: FileHeart, text: "Branded graphic design assets" },
     ],
     btnBg: "#FFFEF7",
     link: "https://cal.com/vistazo/custom",
@@ -64,7 +64,7 @@ const CARD_VARIANTS = [
     id: "card-4",
     color: "#6755CF",
     textColor: "text-white",
-    title: "Can't Decide?",
+    title: "NOT SURE WHICH FITS?",
     description: null,
     features: [],
     btnBg: "#FFFEF7",
@@ -272,23 +272,23 @@ const Pricing = () => {
           </div>
           <DesktopCard card={desktopCards[2]} style={{ gridArea: "1 / 3" }} />
           <div
-            className="w-[354px] h-[186px] px-4 flex flex-col justify-around rounded-[32px] border-2 border-dashed border-[#123123]"
+            className="w-[354px] h-[186px] px-8 py-3 flex flex-col justify-around rounded-[32px] border-2 border-dashed border-[#123123]"
             style={{ gridArea: "2 / 1" }}
           >
-            <div className="mt-1">
-              <h2 className="quantaFont text-[30px] leading-normal">No-Code Dev</h2>
-              <p className="mt-1 text-[16px] leading-tight font-medium">We will build your website in framer for an additional fee.</p>
+            <div className="">
+              <h2 className="quantaFont text-[30px] leading-normal">Brand Identity</h2>
+              <p className="mt-1 text-[16px] leading-tight font-medium">Need more than a website? We&apos;ll craft your full visual identity.</p>
             </div>
-            <Link href="https://cal.com/vistazo" target="_blank" className="bg-black w-full rounded-full text-white text-center text-[18px] py-2 font-medium">
-              Add
+            <Link href="https://cal.com/vistazo" target="_blank" className="bg-black w-full rounded-full text-white text-center text-[18px] py-3 font-medium">
+              Add On
             </Link>
           </div>
           <div
             className="w-[354px] h-[186px] p-4 text-white rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center"
             style={{ backgroundColor: CARD_VARIANTS[3].color, gridArea: "2 / 3" }}
           >
-            <h2 className="quantaFont text-[30px] leading-normal mb-3 text-center">Can&apos;t Decide?</h2>
-            <PricingBtn path={CARD_VARIANTS[3].link} name="Book a Call" bg={CARD_VARIANTS[3].btnBg} />
+            <h2 className="quantaFont text-[26px] leading-normal mb-3 text-center">NOT SURE WHICH FITS?</h2>
+            <PricingBtn path={CARD_VARIANTS[3].link} name="Book a Free Call" bg={CARD_VARIANTS[3].btnBg} />
           </div>
         </div>
       </div>
@@ -417,15 +417,15 @@ function DesktopCard({
       }`}
       style={{ backgroundColor: card.color, ...style }}
     >
-      <div className="mx-4">
+      <div className="mx-8">
         <h2 className="quantaFont text-[30px] lg:text-[26px] xl:[36px] leading-normal">{card.title}</h2>
-        <p className="mt-2 text-[18px] leading-tight font-medium">{card.description}</p>
+        <p className="mt-2 text-[16px] leading-tight font-medium">{card.description}</p>
       </div>
-      <div className="mx-4 pt-6 pl-3 border-t border-white/30">
+      <div className="mx-8 pt-4 border-t border-white/30">
         {card.features.map((feature, idx) => {
           const Icon = feature.icon;
           return (
-            <div key={idx} className="flex items-center gap-8 lg:mb-2 xl:mb-4">
+            <div key={idx} className="flex items-center gap-4 lg:mb-2 xl:mb-3.5">
               <Icon />
               <p className="text-[16px] font-medium">{feature.text}</p>
             </div>
