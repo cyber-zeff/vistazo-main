@@ -26,7 +26,7 @@ export default function Showcase() {
       </section>
 
 
-      <div className="sm:hidden relative w-full -top-8 -mb-20">
+      <div className="sm:hidden relative w-full -top-8 -mb-20 bg-main">
         {/* MOBILE / TABLET VERSION */}
         <video
           autoPlay
@@ -35,7 +35,7 @@ export default function Showcase() {
           // playsInline
           disablePictureInPicture
           controlsList="nodownload nofullscreen noremoteplayback"
-          className="block mx-auto h-full w-full max-w-[640px] object-contain"
+          className="block mx-auto h-full w-full max-w-[640px] object-contain bg-main"
         >
           <source src="/hero-animation-mobile.webm" type="video/webm" />
         </video>
