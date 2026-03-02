@@ -38,7 +38,7 @@ export default function Showcase() {
           className="block mx-auto h-full w-full max-w-[640px] object-contain"
         >
           <source src="/output.mov" type="video/quicktime" />
-          <source src="/hero-animation-mobile.webm" type="video/webm" />
+          <source src="/hero-animation-mobile.webm" type='video/webm;  codecs="hvc1"' />
         </video>
       </section>
 
