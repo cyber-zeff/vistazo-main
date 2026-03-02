@@ -64,7 +64,7 @@ const CARD_VARIANTS = [
     id: "card-4",
     color: "#6755CF",
     textColor: "text-white",
-    title: "NOT SURE WHICH FITS?",
+    title: "Can't Decide?",
     description: null,
     features: [],
     btnBg: "#FFFEF7",
@@ -276,8 +276,8 @@ const Pricing = () => {
             style={{ gridArea: "2 / 1" }}
           >
             <div className="">
-              <h2 className="quantaFont text-[30px] leading-normal">Brand Identity</h2>
-              <p className="mt-1 text-[16px] leading-tight font-medium">Need more than a website? We&apos;ll craft your full visual identity.</p>
+              <h2 className="quantaFont text-[30px] leading-normal">No-Code Dev</h2>
+              <p className="mt-1 text-[16px] leading-tight font-medium">We will build your website in framer for an additional fee.</p>
             </div>
             <Link href="https://cal.com/vistazo" target="_blank" className="bg-black w-full rounded-full text-white text-center text-[18px] py-3 font-medium">
               Add On
@@ -287,7 +287,7 @@ const Pricing = () => {
             className="w-[354px] h-[186px] p-4 text-white rounded-[32px] shadow-[4px_6px_8px_0px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center"
             style={{ backgroundColor: CARD_VARIANTS[3].color, gridArea: "2 / 3" }}
           >
-            <h2 className="quantaFont text-[26px] leading-normal mb-3 text-center">NOT SURE WHICH FITS?</h2>
+            <h2 className="quantaFont text-[28px] leading-normal mb-3 text-center">Can&apos;t Decide?</h2>
             <PricingBtn path={CARD_VARIANTS[3].link} name="Book a Free Call" bg={CARD_VARIANTS[3].btnBg} />
           </div>
         </div>
@@ -387,8 +387,8 @@ const Pricing = () => {
 
         <div className="px-6 py-5 flex flex-col justify-between w-[85vw] max-w-[380px] min-h-[160px] rounded-[32px] border-2 border-dashed border-[#123123]">
           <div>
-            <h2 className="quantaFont text-[28px] leading-tight mb-2">Brand Identity</h2>
-            <p className="text-[15px] leading-snug font-medium opacity-90">Need more than a website? We&apos;ll craft your full visual identity.</p>
+            <h2 className="quantaFont text-[28px] leading-tight mb-2">No-Code Dev</h2>
+            <p className="text-[15px] leading-snug font-medium opacity-90">We will build your website in framer for an additional fee.</p>
           </div>
           <Link href={"https://cal.com/vistazo"} target="_blank" className="bg-black w-full rounded-full text-white text-center text-[17px] py-3 mt-4 font-medium">
             Add On
