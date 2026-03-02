@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function TermsOfService() {
     return (
-        <main className="min-h-screen bg-[#0a0a0a] text-white px-6 py-20">
+        <main className="min-h-screen bg-main text-white px-6 py-20">
             <div className="max-w-3xl mx-auto mb-8">
                 <Link
                     href="/"
@@ -22,14 +22,14 @@ export default function TermsOfService() {
 
                 {/* Header */}
                 <div className="mb-16">
-                    <p className="text-xs uppercase tracking-[0.3em] text-white/40 mb-4">Legal</p>
-                    <h1 className="text-5xl font-bold tracking-tight mb-6">Terms of Service</h1>
-                    <p className="text-white/50 text-sm">Effective Date: March 2026 &nbsp;·&nbsp; Vistazo Studio</p>
-                    <div className="mt-8 h-px bg-white/10" />
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-4">Legal</p>
+                    <h1 className="text-5xl font-bold tracking-tight mb-3 quantaFont">Terms of Service</h1>
+                    <p className="text-white/60 text-sm">Effective Date: March 2026 &nbsp;·&nbsp; Vistazo Studio</p>
+                    <div className="mt-8 h-px bg-white/20" />
                 </div>
 
                 {/* Content */}
-                <div className="space-y-12 text-white/70 leading-relaxed text-[15px]">
+                <div className="space-y-12 text-white/80 leading-relaxed text-[15px]">
 
                     <section>
                         <h2 className="text-white text-lg font-semibold mb-3">1. Agreement to Terms</h2>
@@ -79,7 +79,7 @@ export default function TermsOfService() {
                     <section>
                         <h2 className="text-white text-lg font-semibold mb-3">5. Client Responsibilities</h2>
                         <p>Clients are responsible for:</p>
-                        <ul className="mt-3 space-y-2 list-disc list-inside text-white/60">
+                        <ul className="mt-3 space-y-2 list-disc list-inside text-white/80">
                             <li>Providing accurate and complete project briefs and materials</li>
                             <li>Reviewing and providing feedback within agreed timelines</li>
                             <li>Ensuring all content and assets shared with us are legally owned or licensed</li>
@@ -157,8 +157,8 @@ export default function TermsOfService() {
 
                 </div>
 
-                <div className="mt-16 h-px bg-white/10" />
-                <p className="mt-6 text-white/30 text-xs text-center">© 2026 Vistazo Studio. All rights reserved.</p>
+                <div className="mt-16 h-px bg-white/20" />
+                <p className="mt-6 text-white/40 text-xs text-center">© 2026 Vistazo Studio. All rights reserved.</p>
             </div>
         </main>
     );
