@@ -37,7 +37,7 @@ export default function Showcase() {
           controlsList="nodownload nofullscreen noremoteplayback"
           className="block mx-auto h-full w-full max-w-[640px] object-contain"
         >
-          <source src="/hero-mobile.mov" type="video/quicktime" />
+          <source src="/output.mov" type="video/quicktime" />
           <source src="/hero-animation-mobile.webm" type="video/webm" />
         </video>
       </section>
