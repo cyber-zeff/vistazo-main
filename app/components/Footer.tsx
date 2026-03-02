@@ -31,7 +31,7 @@ export default function Footer() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const res = await fetch("https://formspree.io/f/mzdaqkow", {
+        const res = await fetch("https://formspree.io/f/meelwbag", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email }),
