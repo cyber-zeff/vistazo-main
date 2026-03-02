@@ -26,20 +26,20 @@ export default function Showcase() {
       </section>
 
 
-      <div className="sm:hidden relative w-full -top-8 -mb-20 bg-main">
+      <section className="sm:hidden relative w-full -top-8 -mb-20 bg-main overflow-hidden z-0" aria-hidden="true">
         {/* MOBILE / TABLET VERSION */}
         <video
           autoPlay
           muted
           loop
-          // playsInline
+          playsInline
           disablePictureInPicture
           controlsList="nodownload nofullscreen noremoteplayback"
           className="block mx-auto h-full w-full max-w-[640px] object-contain bg-main"
         >
           <source src="/hero-animation-mobile.webm" type="video/webm" />
         </video>
-      </div>
+      </section>
 
       <div className="max-lg:hidden absolute bottom-0 right-0 z-0 pointer-events-none">
         <svg xmlns="http://www.w3.org/2000/svg" width="1014" height="211" viewBox="0 0 1014 211" fill="none">
