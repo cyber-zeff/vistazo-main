@@ -42,7 +42,7 @@ const CARD_VARIANTS = [
       { icon: FileHeart, text: "Branded graphic design system" },
     ],
     btnBg: "#FFFEF7",
-    link: "https://cal.com/vistazo/partnership",
+    link: "https://cal.com/vistazo/growth",
   },
   {
     id: "card-3",
@@ -58,7 +58,7 @@ const CARD_VARIANTS = [
       { icon: FileHeart, text: "Branded graphic design assets" },
     ],
     btnBg: "#FFFEF7",
-    link: "https://cal.com/vistazo/custom",
+    link: "https://cal.com/vistazo/full-site",
   },
   {
     id: "card-4",
