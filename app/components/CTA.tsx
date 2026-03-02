@@ -46,7 +46,7 @@ export default function CTASection() {
                 </h2>
 
                 <h2 className="max-md:px-8 quantaFont leading-normal font-black text-[clamp(36px,8vw,64px)] md:text-[clamp(64px,8vw,96px)] uppercase text-center mb-8 md:mb-16 text-balance max-w-232.75 mx-auto">
-                    Let&apos;s Get Cooking <span className="text-[#F9D94D]">Good Looking!</span>
+                    Let&apos;s Get Cooking <br className="sm:hidden" /> <span className="text-[#F9D94D]">Good Looking!</span>
                 </h2>
 
                 <div className="flex items-center justify-center shrink-0 gap-2 self-stretch">
