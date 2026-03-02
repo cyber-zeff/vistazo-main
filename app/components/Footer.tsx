@@ -72,7 +72,7 @@ export default function Footer() {
                     {submitted && (
                         <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-white text-black text-sm font-semibold px-4 py-3 rounded-full shadow-lg animate-fade-in">
                             <span className="w-2 h-2 rounded-full bg-green-500 inline-block" />
-                            You're in! We'll be in touch.
+                            You&apos;re in! We&apos;ll be in touch.
                         </div>
                     )}
 
@@ -109,8 +109,8 @@ export default function Footer() {
                     <div>
                         <h4 className="font-bold text-[20px] leading-normal mb-4 md:mb-5 lg:mb-6">For Nerds</h4>
                         <ul className="space-y-3 md:space-y-3.5 lg:space-y-4 text-[16px] leading-normal font-medium">
-                            <li><Link href="#" className="hover:text-[#F9D94D]">Privacy Policy</Link></li>
-                            <li><Link href="#" className="hover:text-[#F9D94D]">Terms Of Service</Link></li>
+                            <li><Link href="/PrivacyPolicy" className="hover:text-[#F9D94D]">Privacy Policy</Link></li>
+                            <li><Link href="/TermsOfService" className="hover:text-[#F9D94D]">Terms Of Service</Link></li>
                         </ul>
                     </div>
 
