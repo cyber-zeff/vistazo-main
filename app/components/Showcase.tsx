@@ -23,8 +23,8 @@ export default function Showcase() {
       </section>
 
 
+      {/* MOBILE / TABLET VERSION */}
       <section className="sm:hidden relative w-full bg-main -top-10 -mb-20 overflow-hidden z-0" aria-hidden="true">
-        {/* MOBILE / TABLET VERSION */}
         <img
           src="/hero-mobile.gif"
           className="bg-main"
