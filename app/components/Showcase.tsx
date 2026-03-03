@@ -6,40 +6,34 @@ import Typewriter from "./Typewriter";
 
 export default function Showcase() {
   return (
-    <section className="relative bg-main text-white lg:h-svh lg:-mt-3 h-auto w-full flex flex-col items-center overflow-hidden mt-3 md:mt-0">
+    <section className="relative bg-main text-white lg:-mt-12 h-auto w-full flex flex-col items-center overflow-hidden mt-3 md:mt-0">
       {/* DESKTOP / LAPTOP VERSION */}
       <section
         className="hidden sm:block min-[1680px]:absolute min-[1680px]:-top-10 w-full h-full overflow-hidden z-0"
         aria-hidden="true"
       >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          disablePictureInPicture
-          controlsList="nodownload nofullscreen noremoteplayback"
-          className="block mx-auto h-full w-full max-w-[1440px] max-[1600px]:object-cover object-contain"
-        >
-          <source src="/hero-animation.webm" type="video/webm" />
-        </video>
+        <img
+          src="/hero.gif"
+          className="bg-main"
+          alt=""
+          draggable="false"
+          onContextMenu={(e) => e.preventDefault()}
+          style={{ pointerEvents: "none", userSelect: "none" }}
+        />
       </section>
 
 
-      <section className="sm:hidden relative w-full -top-8 -mb-20 bg-main overflow-hidden z-0" aria-hidden="true">
+      <section className="sm:hidden relative w-full bg-main -top-10 -mb-20 overflow-hidden z-0" aria-hidden="true">
         {/* MOBILE / TABLET VERSION */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          disablePictureInPicture
-          controlsList="nodownload nofullscreen noremoteplayback"
-          className="block mx-auto h-full w-full max-w-[640px] object-contain"
-        >
-          <source src="/output.mp4" type='video/mp4' />
-          <source src="/hero-animation-mobile.webm" type="video/webm" />
-        </video>
+        <img
+          src="/hero-mobile.gif"
+          className="bg-main"
+          alt=""
+          draggable="false"
+          onContextMenu={(e) => e.preventDefault()}
+          style={{ pointerEvents: "none", userSelect: "none" }}
+        />
+
       </section>
 
       <div className="max-sm:hidden absolute bottom-0 right-0 z-0 pointer-events-none">
