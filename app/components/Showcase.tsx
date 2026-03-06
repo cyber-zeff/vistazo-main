@@ -14,7 +14,7 @@ export default function Showcase() {
       >
         <img
           src="/hero_temp.gif"
-          className="bg-main"
+          className="bg-main mx-auto"
           alt=""
           draggable="false"
           onContextMenu={(e) => e.preventDefault()}
