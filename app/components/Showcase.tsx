@@ -9,7 +9,7 @@ export default function Showcase() {
     <section className="relative bg-main text-white lg:-mt-12 h-auto w-full flex flex-col items-center overflow-hidden mt-3 md:mt-0">
       {/* DESKTOP / LAPTOP VERSION */}
       <section
-        className="hidden sm:block min-[1680px]:absolute min-[1680px]:-top-10 w-full h-full overflow-hidden z-0"
+        className="hidden sm:block w-full h-full overflow-hidden z-0"
         aria-hidden="true"
       >
         <img
