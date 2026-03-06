@@ -13,7 +13,7 @@ export default function Showcase() {
         aria-hidden="true"
       >
         <img
-          src="/hero.gif"
+          src="/hero_temp.gif"
           className="bg-main"
           alt=""
           draggable="false"
